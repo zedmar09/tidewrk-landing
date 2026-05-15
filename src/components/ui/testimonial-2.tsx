@@ -97,7 +97,7 @@ export const AnimatedTestimonialGrid = ({
   return (
     <section
       className={cn(
-        "relative mx-auto w-full max-w-7xl px-4 py-24 sm:py-32",
+        "relative mx-auto min-h-[520px] w-full max-w-7xl px-4 py-20 sm:min-h-[600px] sm:py-32",
         className,
       )}
     >
@@ -143,7 +143,7 @@ export const AnimatedTestimonialGrid = ({
                   <motion.div
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     className={cn(
-                      "pointer-events-none absolute z-50 w-64 rounded-2xl border border-[#e3e7ec] bg-white p-4 text-left shadow-[0_22px_70px_rgba(0,52,102,0.18)]",
+                      "pointer-events-none absolute z-50 w-60 max-w-[calc(100vw-2rem)] rounded-2xl border border-[#e3e7ec] bg-white p-4 text-left shadow-[0_22px_70px_rgba(0,52,102,0.18)] sm:w-64",
                       getPopupClassName(position),
                     )}
                     exit={{ opacity: 0, scale: 0.96, y: -4 }}
@@ -180,10 +180,10 @@ export const AnimatedTestimonialGrid = ({
             {badgeText}
           </div>
         ) : null}
-        <h2 className="mb-4 max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] md:text-6xl">
+        <h2 className="mb-4 max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-4xl md:text-6xl">
           {title}
         </h2>
-        <p className="mb-8 max-w-xl text-lg leading-8 text-[#666666]">
+        <p className="mb-8 max-w-xl text-base leading-8 text-[#666666] sm:text-lg">
           {description}
         </p>
         <a

@@ -71,7 +71,10 @@ const features = [
 
 export function Features() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 md:py-24" id="services">
+    <section
+      className="relative overflow-hidden bg-white py-14 md:py-24"
+      id="services"
+    >
       <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-[#f7f8fa]" />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-[#f7f8fa]" />
       <div className="absolute inset-x-0 top-32 bottom-32 bg-[#f7f8fa]" />
@@ -81,7 +84,7 @@ export function Features() {
           <div className="mb-5 inline-flex rounded-full border border-[#dedfe6] bg-white/74 px-4 py-2 text-sm font-normal text-[#666666] shadow-[0_10px_36px_rgba(0,52,102,0.06)]">
             Our Services
           </div>
-          <h2 className="text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] lg:text-5xl">
+          <h2 className="text-balance text-3xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-4xl lg:text-5xl">
             Built to cover your needs
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[#666666] sm:text-lg">
@@ -90,7 +93,7 @@ export function Features() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-sm gap-6 md:mt-14 md:max-w-full md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-sm gap-5 sm:max-w-md md:mt-14 md:max-w-full md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
 
@@ -99,7 +102,7 @@ export function Features() {
                 className="group flex h-full flex-col text-center shadow-[0_18px_60px_rgba(0,52,102,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#003466] hover:bg-[#003466] hover:shadow-[0_24px_70px_rgba(0,52,102,0.18)]"
                 key={feature.title}
               >
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3 px-5 sm:px-6">
                   <CardDecorator>
                     <Icon
                       aria-hidden
@@ -107,12 +110,12 @@ export function Features() {
                     />
                   </CardDecorator>
 
-                  <h3 className="mt-6 text-lg font-medium text-[#111217] transition-colors duration-300 group-hover:text-white">
+                  <h3 className="mt-6 text-pretty text-lg font-medium text-[#111217] transition-colors duration-300 group-hover:text-white">
                     {feature.title}
                   </h3>
                 </CardHeader>
 
-                <CardContent className="flex flex-1 flex-col items-center">
+                <CardContent className="flex flex-1 flex-col items-center px-5 sm:px-6">
                   <p className="text-sm leading-6 text-[#666666] transition-colors duration-300 group-hover:text-white/82">
                     {feature.description}
                   </p>

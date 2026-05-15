@@ -7,7 +7,7 @@ export const navigationItems: NavigationItem[] = [
     children: [
       {
         label: "Software Development",
-        href: "#software-development",
+        href: "/software-development",
       },
       {
         label: "Staff Augmentation",

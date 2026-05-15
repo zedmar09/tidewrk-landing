@@ -78,7 +78,7 @@ export const Footer7 = ({
   className,
 }: Footer7Props) => {
   return (
-    <section className={cn("bg-white py-20 md:py-28", className)}>
+    <section className={cn("bg-white py-16 md:py-28", className)} id="contact">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
@@ -144,7 +144,7 @@ export const Footer7 = ({
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="w-full break-words">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#003466]">
               Lets Collaborate
             </p>

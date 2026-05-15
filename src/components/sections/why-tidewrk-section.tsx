@@ -95,7 +95,7 @@ export function WhyTidewrkSection() {
 
   return (
     <section className="relative overflow-hidden bg-white text-[#111217]">
-      <div className="relative grid min-h-[32vh] place-items-center bg-white px-5 pb-4 pt-0 sm:px-8 sm:pb-6 lg:px-12">
+      <div className="relative grid min-h-[32vh] place-items-center bg-white px-5 pb-8 pt-2 sm:px-8 sm:pb-6 sm:pt-0 lg:px-12">
         <div
           className={cn(
             "w-full max-w-7xl rounded-none px-2 py-4 opacity-0 transition duration-700 ease-out sm:px-8",
@@ -105,23 +105,23 @@ export function WhyTidewrkSection() {
           )}
           ref={statsRef}
         >
-          <div className="grid gap-10 md:grid-cols-4 md:gap-0">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-0">
             {whyTidewrkContent.stats.map((item, index) => (
               <div
-                className="relative px-5 text-center md:px-8"
+                className="relative px-3 text-center sm:px-5 md:px-8"
                 key={item.label}
               >
                 {index > 0 ? (
                   <div className="absolute left-0 top-2 hidden h-32 border-l border-dashed border-[#cfd3da] md:block" />
                 ) : null}
-                <p className="text-[clamp(4.5rem,8vw,7.2rem)] font-normal leading-none tracking-normal text-black">
+                <p className="text-[clamp(3.25rem,14vw,5rem)] font-normal leading-none tracking-normal text-black md:text-[clamp(4.5rem,8vw,7.2rem)]">
                   <AnimatedCounter
                     active={statsInView}
                     suffix={item.suffix}
                     value={item.value}
                   />
                 </p>
-                <p className="mx-auto mt-6 max-w-48 text-sm leading-6 text-[#333333] sm:text-base">
+                <p className="mx-auto mt-4 max-w-48 text-sm leading-6 text-[#333333] sm:mt-6 sm:text-base">
                   {item.label}
                 </p>
               </div>
