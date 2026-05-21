@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import type { MouseEvent } from "react";
 import { useEffect, useState } from "react";
 import { ChevronDown, Mail, Menu, X } from "lucide-react";
 import { navigationItems } from "@/constants/navigation";
@@ -9,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import tidewrkLogo from "@/assets/images/tidewrk-logo.svg";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(
     navigationItems.find((item) => item.children)?.label ?? null,
@@ -36,14 +39,23 @@ export function Navbar() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    closeMenu();
+
+    if (pathname === "/") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#eef0f3] bg-white">
       <nav className="mx-auto flex h-16 w-full max-w-[1800px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link
           href="/"
           className="flex items-center gap-2.5"
-          aria-label="Home"
-          onClick={closeMenu}
+          aria-label="Go to Tidewrk home page"
+          onClick={handleLogoClick}
         >
           <Image
             alt="Tidewrk"

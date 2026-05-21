@@ -95,10 +95,10 @@ export function WhyTidewrkSection() {
 
   return (
     <section className="relative overflow-hidden bg-white text-[#111217]">
-      <div className="relative grid min-h-[32vh] place-items-center bg-white px-5 pb-8 pt-2 sm:px-8 sm:pb-6 sm:pt-0 lg:px-12">
+      <div className="relative grid min-h-[24vh] place-items-center bg-white px-5 pb-8 pt-0 sm:px-8 sm:pb-6 lg:px-12">
         <div
           className={cn(
-            "w-full max-w-7xl rounded-none px-2 py-4 opacity-0 transition duration-700 ease-out sm:px-8",
+            "w-full max-w-7xl rounded-none px-2 py-2 opacity-0 transition duration-700 ease-out sm:px-8",
             statsInView
               ? "translate-y-0 opacity-100"
               : "translate-y-10",

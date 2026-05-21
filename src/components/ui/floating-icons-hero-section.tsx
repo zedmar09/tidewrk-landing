@@ -147,14 +147,14 @@ const FloatingIconsHero = React.forwardRef<
         ))}
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
+      <div className="relative z-10 mx-auto max-w-6xl text-center">
         <div className="mx-auto mb-6 inline-flex rounded-full border border-[#dedfe6] bg-white/80 px-4 py-2 text-sm font-normal text-[#666666] shadow-[0_10px_36px_rgba(0,52,102,0.06)]">
           Software Development
         </div>
         <h1 className="text-balance text-[clamp(2.5rem,8vw,5.7rem)] font-semibold leading-[1.04] tracking-normal text-[#111217]">
           {title}
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-balance text-base leading-8 text-[#666666] sm:text-lg">
+        <p className="mx-auto mt-6 max-w-4xl text-balance text-base leading-8 text-[#666666] sm:text-lg">
           {subtitle}
         </p>
         <div className="mt-9">

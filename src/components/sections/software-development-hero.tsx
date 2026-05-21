@@ -107,10 +107,10 @@ export function SoftwareDevelopmentHero() {
   return (
     <FloatingIconsHero
       ctaHref="#contact"
-      ctaText="Explore Our Solutions"
+      ctaText="Explore Solutions"
       icons={softwareDevelopmentIcons}
-      subtitle="Custom software should not just work. It should help your business move faster, serve customers better, and scale with confidence."
-      title="Software Development Built Around Your Business"
+      subtitle="We build practical, secure, and scalable software that helps your team work smarter, serve customers better, and grow with confidence."
+      title="Build Software That Works the Way Your Business Does"
     />
   );
 }

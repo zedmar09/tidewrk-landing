@@ -1,70 +1,55 @@
-import { ArrowRight, Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 interface Cta4Props {
   title?: string;
   description?: string;
   buttonText?: string;
   buttonUrl?: string;
-  items?: string[];
+  secondaryButtonText?: string;
+  secondaryButtonUrl?: string;
 }
-
-const defaultItems = [
-  "Vendor collaboration",
-  "Workflow automation",
-  "System modernization",
-  "Emerging technology adoption",
-  "Scalable delivery support",
-];
 
 export const Cta4 = ({
   title = "Modernize the way your business moves",
   description = "Tidewrk helps businesses improve how teams, vendors, systems, and technology work together so they can move faster with less friction.",
   buttonText = "Contact Us",
   buttonUrl = "#contact",
-  items = defaultItems,
+  secondaryButtonText = "Learn More",
+  secondaryButtonUrl = "#services",
 }: Cta4Props) => {
   return (
-    <section className="relative overflow-hidden bg-white py-14 md:py-24">
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-[#f7f8fa]" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-[#f7f8fa]" />
-      <div className="absolute inset-x-0 top-32 bottom-32 bg-[#f7f8fa]" />
+    <section className="relative w-full overflow-hidden bg-[#003466] px-[4vw] py-20 text-white md:py-28">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.10)_1px,transparent_1px)] bg-[size:44px_44px] opacity-70 [mask-image:radial-gradient(ellipse_at_center,white,transparent_72%)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_620px_at_50%_0%,rgba(255,255,255,0.14),transparent_62%)]"
+      />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        <div className="flex justify-center">
-          <div className="w-full">
-            <div className="flex flex-col items-start justify-between gap-8 rounded-lg border border-[#e2e6eb] bg-white px-5 py-8 shadow-[0_24px_80px_rgba(0,52,102,0.08)] sm:px-6 sm:py-10 md:flex-row md:items-center lg:px-16 lg:py-14">
-              <div className="w-full md:w-1/2">
-                <h2 className="mb-3 text-balance text-3xl font-semibold leading-tight text-[#111217] md:text-4xl">
-                  {title}
-                </h2>
-                <p className="text-base leading-8 text-[#666666]">
-                  {description}
-                </p>
-                <div className="mt-7 flex justify-start">
-                  <Button asChild>
-                    <a href={buttonUrl}>
-                      {buttonText}
-                      <ArrowRight className="size-4" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
+      <div className="relative mx-auto grid max-w-5xl place-items-center text-center">
+        <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-normal text-white sm:text-5xl lg:text-6xl">
+          {title}
+        </h2>
+        <p className="mt-5 max-w-2xl text-balance text-sm leading-7 text-white/78 sm:text-base">
+          {description}
+        </p>
 
-              <div className="flex w-full md:w-1/3 md:justify-center">
-                <ul className="flex flex-col space-y-3 text-sm font-medium text-[#333333]">
-                  {items.map((item) => (
-                    <li className="flex items-center" key={item}>
-                      <span className="mr-4 flex size-7 flex-shrink-0 items-center justify-center rounded-full bg-[#003466]/10 text-[#003466]">
-                        <Check className="size-4" />
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div className="mt-9 grid w-full max-w-md grid-cols-1 gap-3 sm:grid-cols-2">
+          <a
+            className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white bg-white px-8 text-lg font-semibold text-[#003466] shadow-[0_16px_40px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-white/92 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#003466]"
+            href={buttonUrl}
+          >
+            {buttonText}
+            <ArrowRight className="size-4" />
+          </a>
+          <a
+            className="inline-flex h-14 items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 text-lg font-semibold text-white shadow-[0_16px_40px_rgba(0,0,0,0.16)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#003466]"
+            href={secondaryButtonUrl}
+          >
+            {secondaryButtonText}
+          </a>
         </div>
       </div>
     </section>
