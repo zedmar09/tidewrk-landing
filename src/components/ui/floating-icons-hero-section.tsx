@@ -98,7 +98,12 @@ const Icon = ({
                 y: [0, -7, 0, 7, 0],
               }
         }
-        className="flex size-14 items-center justify-center rounded-2xl border border-[#e3e7ec]/80 bg-white/80 p-3 text-[#003466] shadow-[0_18px_55px_rgba(0,52,102,0.12)] backdrop-blur-md sm:size-16 md:size-20 md:rounded-3xl md:p-4"
+        className={cn(
+          "flex size-14 items-center justify-center border p-3 sm:size-16 md:size-20 md:p-4",
+          index % 3 === 1
+            ? "border-[#f1d5be] bg-[#fff8f2] text-[#f07835]"
+            : "border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]",
+        )}
         transition={{
           duration: 5 + (index % 5) * 0.6,
           ease: "easeInOut",
@@ -127,14 +132,15 @@ const FloatingIconsHero = React.forwardRef<
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-white px-5 pb-16 pt-28 sm:px-8 lg:px-12",
+        "relative flex min-h-[88svh] w-full items-center justify-center overflow-hidden bg-white px-5 pb-12 pt-24 sm:px-8 lg:px-12",
         className,
       )}
       onMouseMove={handleMouseMove}
       ref={ref}
       {...props}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_760px_at_center,rgba(0,52,102,0.10),transparent_66%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.045)_1px,transparent_1px)] bg-[size:48px_48px]" />
+      <div className="pointer-events-none absolute inset-0 bg-white/70" />
       <div className="pointer-events-none absolute inset-0 h-full w-full">
         {icons.map((iconData, index) => (
           <Icon

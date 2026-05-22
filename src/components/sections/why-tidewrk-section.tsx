@@ -94,9 +94,9 @@ export function WhyTidewrkSection() {
     useInView<HTMLDivElement>(0.25);
 
   return (
-    <section className="relative z-[60] -mt-10 isolate overflow-visible bg-white text-[#111217] sm:-mt-14 md:-mt-16 lg:-mt-20 xl:-mt-24">
+    <section className="relative z-[60] -mt-4 isolate overflow-visible bg-white text-[#111217] sm:-mt-5 md:-mt-6 lg:-mt-8">
       <div
-        className="relative z-[60] grid min-h-[24vh] scroll-mt-24 place-items-center bg-white px-4 pb-8 pt-0 sm:px-6 sm:pb-6 lg:px-6 xl:px-6"
+        className="relative z-[60] grid min-h-[20vh] scroll-mt-24 place-items-center bg-white px-4 pb-8 pt-6 sm:px-6 sm:pb-8 sm:pt-8 lg:px-6 xl:px-6"
         id="why-tidewrk"
       >
         <div
@@ -115,16 +115,18 @@ export function WhyTidewrkSection() {
                 key={item.label}
               >
                 {index > 0 ? (
-                  <div className="absolute left-0 top-2 hidden h-32 border-l border-dashed border-[#cfd3da] md:block" />
+                  <div className="absolute left-0 top-4 hidden h-28 w-[3px] bg-[#d8e3ee] md:block">
+                    <span className="absolute left-0 top-1/2 h-12 w-full -translate-y-1/2 bg-[#003466]" />
+                  </div>
                 ) : null}
-                <p className="overflow-visible text-[clamp(3.25rem,14vw,5rem)] font-normal leading-[1.08] tracking-normal text-black md:text-[clamp(4.5rem,8vw,7.2rem)]">
+                <p className="overflow-visible text-[clamp(3.25rem,14vw,5rem)] font-normal leading-[1.08] tracking-normal text-[#111217] md:text-[clamp(4.5rem,8vw,7.2rem)]">
                   <AnimatedCounter
                     active={statsInView}
                     suffix={item.suffix}
                     value={item.value}
                   />
                 </p>
-                <p className="mx-auto mt-4 max-w-56 text-sm leading-6 text-[#333333] sm:mt-6 sm:text-base">
+                <p className="mx-auto mt-4 max-w-56 text-sm leading-6 text-[#555555] sm:mt-6 sm:text-base">
                   {item.label}
                 </p>
               </div>

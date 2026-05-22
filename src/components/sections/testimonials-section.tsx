@@ -124,11 +124,17 @@ export function TestimonialsSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 md:px-12 md:py-24 lg:px-16 xl:px-20"
+      className="relative overflow-hidden bg-white px-5 py-10 sm:px-8 md:px-12 md:py-14 lg:px-16 xl:px-20"
       id="testimonials"
     >
-      <div className="relative mx-auto w-full max-w-[1900px] border border-[#e4e7ec] bg-white px-5 py-12 sm:px-8 md:px-12 md:py-16 lg:px-16 xl:px-20">
-        <div className="relative mx-auto grid max-w-[1500px] gap-12 md:grid-cols-[0.82fr_1.18fr] md:items-center lg:gap-20">
+      <div className="relative mx-auto w-full max-w-[1900px] overflow-hidden border border-[#dfe5ec] bg-white px-5 py-8 sm:px-8 md:px-12 md:py-10 lg:px-16 xl:px-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.035)_1px,transparent_1px)] bg-[size:48px_48px]"
+        />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-white/78" />
+
+        <div className="relative mx-auto grid max-w-[1500px] gap-10 md:grid-cols-[0.82fr_1.18fr] md:items-center lg:gap-16">
           <motion.div
             className="max-w-md text-left"
             initial={{ opacity: 0, y: 18 }}
@@ -136,10 +142,13 @@ export function TestimonialsSection() {
             viewport={{ once: true, margin: "-80px" }}
             whileInView={{ opacity: 1, y: 0 }}
           >
+            <div className="mb-6 inline-flex border border-[#f1d5be] bg-[#fff8f2] px-4 py-2 text-sm font-medium text-[#f07835]">
+              Client stories
+            </div>
             <h2 className="text-balance text-4xl font-normal leading-[1.05] tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
               From our <span className="block font-semibold">community.</span>
             </h2>
-            <p className="mt-7 max-w-sm text-base leading-8 text-[#333333] sm:text-lg">
+            <p className="mt-6 max-w-sm text-base leading-8 text-[#555555] sm:text-lg">
               Real stories from real teams. See how Tidewrk helps transform
               delivery, capability, and customer-focused work.
             </p>
@@ -149,7 +158,7 @@ export function TestimonialsSection() {
                 type="button"
                 aria-label="Show previous testimonial"
                 onClick={goToPrevious}
-                className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#111217] shadow-[0_12px_28px_rgba(0,52,102,0.08)] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:text-[#003466]"
+                className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#003466] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:bg-[#f7fbff]"
               >
                 <ChevronLeft className="size-5" aria-hidden="true" />
               </button>
@@ -157,14 +166,15 @@ export function TestimonialsSection() {
                 type="button"
                 aria-label="Show next testimonial"
                 onClick={goToNext}
-                className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#111217] shadow-[0_12px_28px_rgba(0,52,102,0.08)] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:text-[#003466]"
+                className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#003466] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:bg-[#f7fbff]"
               >
                 <ChevronRight className="size-5" aria-hidden="true" />
               </button>
             </div>
           </motion.div>
 
-          <div className="relative min-h-[320px]">
+          <div className="relative min-h-[320px] border border-[#e6e8ec] bg-white p-6 sm:p-8 lg:p-10">
+            <div className="absolute bottom-0 left-0 top-0 w-1.5 bg-[#003466]" />
             <motion.div
               key={activeTestimonial.name}
               className="max-w-4xl"
@@ -176,20 +186,20 @@ export function TestimonialsSection() {
                 aria-hidden="true"
                 className="mb-4 size-10 fill-[#003466] text-[#003466]"
               />
-              <blockquote className="text-balance text-3xl font-normal leading-[1.14] tracking-normal text-[#111217] sm:text-4xl lg:text-[2.7rem]">
+              <blockquote className="text-balance text-3xl font-normal leading-[1.14] tracking-normal text-[#111217] sm:text-4xl lg:text-[2.55rem]">
                 {activeTestimonial.text}
               </blockquote>
 
               <div className="mt-8 flex items-center gap-4">
                 <span
-                  className="block size-14 shrink-0 rounded-full bg-cover bg-center ring-1 ring-[#d8dde4]"
+                  className="block size-14 shrink-0 rounded-full bg-cover bg-center ring-2 ring-[#d8e6f5]"
                   role="img"
                   aria-label={activeTestimonial.name}
                   style={{
                     backgroundImage: `url(${activeTestimonial.image})`,
                   }}
                 />
-                <p className="text-sm leading-5 text-[#333333]">
+                <p className="text-sm leading-5 text-[#555555]">
                   <span className="block text-base font-semibold text-[#111217]">
                     {activeTestimonial.name}
                   </span>

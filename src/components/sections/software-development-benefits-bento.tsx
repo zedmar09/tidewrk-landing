@@ -57,7 +57,7 @@ const benefits = [
 
 export function SoftwareDevelopmentBenefitsBento() {
   return (
-    <section className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 md:py-24 lg:px-[6vw]">
+    <section className="relative overflow-hidden bg-white px-5 py-12 sm:px-8 md:py-20 lg:px-[6vw]">
       <div className="relative mx-auto w-full">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
@@ -69,13 +69,13 @@ export function SoftwareDevelopmentBenefitsBento() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit) => {
             const BenefitIcon = benefit.icon;
 
             return (
               <article
-                className="group overflow-hidden rounded-[1.35rem] border border-[#e6e8ec] bg-white transition duration-500 hover:-translate-y-1 hover:border-[#ccd8e4]"
+                className="group overflow-hidden border border-[#e6e8ec] bg-white transition duration-500 hover:-translate-y-1 hover:border-[#ccd8e4]"
                 key={benefit.title}
               >
                 <VisualPanel icon={BenefitIcon} variant={benefit.visual} />
@@ -105,7 +105,7 @@ function VisualPanel({
   variant: string;
 }) {
   return (
-    <div className="relative mx-3 mt-3 flex h-36 items-center justify-center overflow-hidden rounded-xl bg-[#fbfcfd] sm:h-40">
+    <div className="relative mx-3 mt-3 flex h-36 items-center justify-center overflow-hidden bg-[#fbfcfd] sm:h-40">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
       <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#f0a264]/50 to-transparent" />
       <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#f0a264]/40 to-transparent" />
