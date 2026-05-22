@@ -8,7 +8,7 @@ import { TypingHeadline } from "@/components/sections/typing-headline";
 
 export function HeroSection() {
   return (
-    <section className="relative isolate flex min-h-[100svh] overflow-hidden bg-white px-5 pt-24 sm:px-8 sm:pt-28 lg:px-12">
+    <section className="relative z-0 flex min-h-[82svh] overflow-hidden bg-white px-4 pt-20 sm:px-6 sm:pt-24 lg:min-h-[86svh] lg:px-6 xl:px-6">
       <BGPattern
         aria-hidden="true"
         className="z-0 opacity-90"
@@ -17,16 +17,14 @@ export function HeroSection() {
         size={44}
         variant="grid"
       />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-t from-white to-transparent" />
-
-      <div className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-col items-center justify-center pb-16 text-center sm:pb-20">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1900px] flex-col items-center justify-center pb-8 text-center sm:pb-10 lg:pb-12">
         <Badge className="mb-7 border-[#dedfe6] bg-white/74 px-4 py-2.5 text-sm font-normal text-[#666666] shadow-[0_10px_36px_rgba(0,52,102,0.06)] sm:mb-9">
           Connecting People
         </Badge>
 
         <TypingHeadline text={heroContent.headline} />
 
-        <p className="mt-6 max-w-3xl text-balance text-center text-base font-normal leading-8 text-[#666666] sm:mt-7 sm:text-lg">
+        <p className="mt-6 max-w-5xl text-balance text-center text-lg font-normal leading-8 text-[#666666] sm:mt-7 sm:text-xl sm:leading-9 lg:text-2xl lg:leading-10">
           {heroContent.description}
         </p>
 

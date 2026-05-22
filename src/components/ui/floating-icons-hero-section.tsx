@@ -154,7 +154,7 @@ const FloatingIconsHero = React.forwardRef<
         <h1 className="text-balance text-[clamp(2.5rem,8vw,5.7rem)] font-semibold leading-[1.04] tracking-normal text-[#111217]">
           {title}
         </h1>
-        <p className="mx-auto mt-6 max-w-4xl text-balance text-base leading-8 text-[#666666] sm:text-lg">
+        <p className="mx-auto mt-7 max-w-5xl text-balance text-lg leading-8 text-[#666666] sm:text-xl sm:leading-9 lg:text-2xl lg:leading-10">
           {subtitle}
         </p>
         <div className="mt-9">

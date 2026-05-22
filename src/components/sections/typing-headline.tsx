@@ -55,7 +55,7 @@ export function TypingHeadline({ text }: TypingHeadlineProps) {
   return (
     <h1
       aria-label={text}
-      className="mx-auto max-w-[16ch] text-balance text-center text-[clamp(2.25rem,10vw,5.4rem)] font-semibold leading-[1.06] tracking-normal text-[#111217] sm:max-w-[18ch] sm:text-[clamp(2.75rem,5.9vw,5.4rem)] sm:leading-[1.04]"
+      className="mx-auto max-w-[17ch] text-balance text-center text-[clamp(2.25rem,10vw,5.4rem)] font-semibold leading-[1.06] tracking-normal text-[#111217] sm:max-w-[19ch] sm:text-[clamp(2.75rem,5.9vw,5.4rem)] sm:leading-[1.04]"
     >
       <span aria-hidden="true">
         {visibleText || "\u00a0"}

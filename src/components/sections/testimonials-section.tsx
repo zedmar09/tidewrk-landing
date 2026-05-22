@@ -1,24 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion } from "motion/react";
-
-import { cn } from "@/lib/utils";
 
 type Testimonial = {
   text: string;
   image: string;
   name: string;
   role: string;
-};
-
-type ProfilePosition = {
-  offset: number;
-  left: string;
-  top: string;
-  className: string;
-  scale: number;
 };
 
 const testimonials: Testimonial[] = [
@@ -108,67 +98,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const profilePositions: ProfilePosition[] = [
-  {
-    offset: -3,
-    left: "8%",
-    top: "34%",
-    className: "size-14 sm:size-16",
-    scale: 0.86,
-  },
-  {
-    offset: -2,
-    left: "22%",
-    top: "61%",
-    className: "size-16 sm:size-20",
-    scale: 0.95,
-  },
-  {
-    offset: -1,
-    left: "36%",
-    top: "27%",
-    className: "size-16 sm:size-20",
-    scale: 0.98,
-  },
-  {
-    offset: 0,
-    left: "50%",
-    top: "45%",
-    className: "size-20 sm:size-24",
-    scale: 1.1,
-  },
-  {
-    offset: 1,
-    left: "64%",
-    top: "32%",
-    className: "size-16 sm:size-20",
-    scale: 0.98,
-  },
-  {
-    offset: 2,
-    left: "78%",
-    top: "61%",
-    className: "size-16 sm:size-20",
-    scale: 0.95,
-  },
-  {
-    offset: 3,
-    left: "92%",
-    top: "34%",
-    className: "size-14 sm:size-16",
-    scale: 0.86,
-  },
-];
-
-const pathDots = [
-  { left: "15%", top: "58%" },
-  { left: "30%", top: "38%" },
-  { left: "57%", top: "41%" },
-  { left: "73%", top: "73%" },
-  { left: "88%", top: "25%" },
-  { left: "98%", top: "52%" },
-];
-
 function getWrappedIndex(index: number) {
   return (index + testimonials.length) % testimonials.length;
 }
@@ -195,143 +124,93 @@ export function TestimonialsSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-white px-[4vw] py-16 md:py-24"
+      className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 md:px-12 md:py-24 lg:px-16 xl:px-20"
       id="testimonials"
     >
-      <div className="relative mx-auto max-w-7xl">
-        <motion.div
-          className="mx-auto flex max-w-3xl flex-col items-center text-center"
-          initial={{ opacity: 0, y: 18 }}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true, margin: "-80px" }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-balance text-3xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-4xl lg:text-5xl">
-            What Our Customers Say
-          </h2>
-          <p className="mt-4 max-w-xl text-balance text-sm leading-6 text-[#666666] sm:text-base">
-            Real stories from real teams. See how Tidewrk helps transform
-            delivery, capability, and customer-focused work.
-          </p>
-          <a
-            className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-[#003466] px-7 text-sm font-medium text-white shadow-[0_14px_32px_rgba(0,52,102,0.24)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#042a50]"
-            href="#contact"
-          >
-            Contact Us
-          </a>
-        </motion.div>
-
-        <div className="relative mx-auto mt-12 h-[250px] max-w-7xl sm:h-[318px]">
-          <svg
-            aria-hidden="true"
-            className="absolute inset-x-1/2 top-1/2 h-full w-[1180px] max-w-none -translate-x-1/2 -translate-y-1/2 overflow-visible text-[#003466]/30"
-            fill="none"
-            viewBox="0 0 1180 320"
-          >
-            <path
-              d="M-32 164 C 64 164 88 72 166 92 S 214 262 318 238 S 374 58 466 78 S 500 206 606 164 S 706 62 806 88 S 792 260 912 238 S 944 94 1042 90 S 1104 166 1212 164"
-              stroke="currentColor"
-              strokeDasharray="2 7"
-              strokeLinecap="round"
-              strokeWidth="1.25"
-            />
-          </svg>
-
-          {pathDots.map((dot) => (
-            <span
-              key={`${dot.left}-${dot.top}`}
-              aria-hidden="true"
-              className="absolute z-10 size-2.5 rounded-full bg-[#111217] sm:size-3"
-              style={{ left: dot.left, top: dot.top }}
-            />
-          ))}
-
-          {profilePositions.map((position) => {
-            const testimonial =
-              testimonials[getWrappedIndex(activeIndex + position.offset)];
-            const isActive = position.offset === 0;
-
-            return (
-              <motion.button
-                key={testimonial.name}
-                type="button"
-                aria-label={`Show testimonial from ${testimonial.name}`}
-                onClick={() =>
-                  setActiveIndex(
-                    getWrappedIndex(activeIndex + position.offset)
-                  )
-                }
-                className={cn(
-                  "absolute z-20 -translate-x-1/2 -translate-y-1/2 rounded-full p-1 transition-[filter] duration-300 hover:brightness-105",
-                  isActive && "z-30"
-                )}
-                initial={false}
-                animate={{
-                  left: position.left,
-                  scale: isActive ? 1 : position.scale,
-                  top: position.top,
-                }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span
-                  className={cn(
-                    "block rounded-full border border-[#d8dde4] bg-white p-1 shadow-[0_18px_45px_rgba(0,52,102,0.12)] transition duration-300",
-                    isActive &&
-                      "border-[#003466] shadow-[0_22px_55px_rgba(0,52,102,0.2)] ring-4 ring-[#003466]/10"
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "block rounded-full bg-cover bg-center",
-                      position.className
-                    )}
-                    role="img"
-                    aria-label={testimonial.name}
-                    style={{ backgroundImage: `url(${testimonial.image})` }}
-                  />
-                </span>
-              </motion.button>
-            );
-          })}
-        </div>
-
-        <div className="mx-auto mt-2 grid max-w-5xl grid-cols-[auto_1fr_auto] items-center gap-4 sm:gap-8">
-          <button
-            type="button"
-            aria-label="Show previous testimonial"
-            onClick={goToPrevious}
-            className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#111217] shadow-[0_12px_28px_rgba(0,52,102,0.08)] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:text-[#003466]"
-          >
-            <ChevronLeft className="size-5" aria-hidden="true" />
-          </button>
-
+      <div className="relative mx-auto w-full max-w-[1900px] border border-[#e4e7ec] bg-white px-5 py-12 sm:px-8 md:px-12 md:py-16 lg:px-16 xl:px-20">
+        <div className="relative mx-auto grid max-w-[1500px] gap-12 md:grid-cols-[0.82fr_1.18fr] md:items-center lg:gap-20">
           <motion.div
-            key={activeTestimonial.name}
-            className="text-center"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-md text-left"
+            initial={{ opacity: 0, y: 18 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-80px" }}
+            whileInView={{ opacity: 1, y: 0 }}
           >
-            <p className="mx-auto max-w-3xl text-balance text-base leading-7 text-[#666666] sm:text-lg">
-              {activeTestimonial.text}
+            <h2 className="text-balance text-4xl font-normal leading-[1.05] tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
+              From our <span className="block font-semibold">community.</span>
+            </h2>
+            <p className="mt-7 max-w-sm text-base leading-8 text-[#333333] sm:text-lg">
+              Real stories from real teams. See how Tidewrk helps transform
+              delivery, capability, and customer-focused work.
             </p>
-            <p className="mt-3 text-sm text-[#666666]">
-              <span className="font-semibold text-[#111217]">
-                {activeTestimonial.name}
-              </span>
-              <span className="mx-2 text-[#b5bbc3]">/</span>
-              {activeTestimonial.role}
-            </p>
+
+            <div className="mt-8 flex items-center gap-4">
+              <button
+                type="button"
+                aria-label="Show previous testimonial"
+                onClick={goToPrevious}
+                className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#111217] shadow-[0_12px_28px_rgba(0,52,102,0.08)] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:text-[#003466]"
+              >
+                <ChevronLeft className="size-5" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                aria-label="Show next testimonial"
+                onClick={goToNext}
+                className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#111217] shadow-[0_12px_28px_rgba(0,52,102,0.08)] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:text-[#003466]"
+              >
+                <ChevronRight className="size-5" aria-hidden="true" />
+              </button>
+            </div>
           </motion.div>
 
-          <button
-            type="button"
-            aria-label="Show next testimonial"
-            onClick={goToNext}
-            className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#111217] shadow-[0_12px_28px_rgba(0,52,102,0.08)] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:text-[#003466]"
-          >
-            <ChevronRight className="size-5" aria-hidden="true" />
-          </button>
+          <div className="relative min-h-[320px]">
+            <motion.div
+              key={activeTestimonial.name}
+              className="max-w-4xl"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Quote
+                aria-hidden="true"
+                className="mb-4 size-10 fill-[#003466] text-[#003466]"
+              />
+              <blockquote className="text-balance text-3xl font-normal leading-[1.14] tracking-normal text-[#111217] sm:text-4xl lg:text-[2.7rem]">
+                {activeTestimonial.text}
+              </blockquote>
+
+              <div className="mt-8 flex items-center gap-4">
+                <span
+                  className="block size-14 shrink-0 rounded-full bg-cover bg-center ring-1 ring-[#d8dde4]"
+                  role="img"
+                  aria-label={activeTestimonial.name}
+                  style={{
+                    backgroundImage: `url(${activeTestimonial.image})`,
+                  }}
+                />
+                <p className="text-sm leading-5 text-[#333333]">
+                  <span className="block text-base font-semibold text-[#111217]">
+                    {activeTestimonial.name}
+                  </span>
+                  {activeTestimonial.role}
+                </p>
+              </div>
+
+              <div className="mt-8 flex gap-2">
+                {testimonials.map((testimonial, index) => (
+                  <button
+                    key={testimonial.name}
+                    type="button"
+                    aria-label={`Show testimonial from ${testimonial.name}`}
+                    onClick={() => setActiveIndex(index)}
+                    className="h-1.5 rounded-full bg-[#d5dbe3] transition-all duration-300 data-[active=true]:w-9 data-[active=true]:bg-[#003466] data-[active=false]:w-3"
+                    data-active={index === activeIndex}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

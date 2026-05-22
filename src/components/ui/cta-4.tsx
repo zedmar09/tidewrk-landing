@@ -18,7 +18,7 @@ export const Cta4 = ({
   secondaryButtonUrl = "#services",
 }: Cta4Props) => {
   return (
-    <section className="relative w-full overflow-hidden bg-[#003466] px-[4vw] py-20 text-white md:py-28">
+    <section className="relative w-full overflow-hidden bg-[#003466] px-5 py-20 text-white sm:px-8 md:px-12 md:py-28 lg:px-16 xl:px-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.10)_1px,transparent_1px)] bg-[size:44px_44px] opacity-70 [mask-image:radial-gradient(ellipse_at_center,white,transparent_72%)]"
@@ -28,11 +28,11 @@ export const Cta4 = ({
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_620px_at_50%_0%,rgba(255,255,255,0.14),transparent_62%)]"
       />
 
-      <div className="relative mx-auto grid max-w-5xl place-items-center text-center">
-        <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-normal text-white sm:text-5xl lg:text-6xl">
+      <div className="relative mx-auto grid max-w-6xl place-items-center text-center">
+        <h2 className="max-w-5xl text-balance text-4xl font-semibold leading-[1.02] tracking-normal text-white sm:text-5xl lg:text-6xl">
           {title}
         </h2>
-        <p className="mt-5 max-w-2xl text-balance text-sm leading-7 text-white/78 sm:text-base">
+        <p className="mt-6 max-w-4xl text-balance text-base leading-8 text-white/82 sm:text-lg sm:leading-9 lg:text-xl">
           {description}
         </p>
 
