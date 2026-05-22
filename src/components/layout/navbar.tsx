@@ -80,7 +80,7 @@ export function Navbar() {
                 <div className="invisible absolute left-1/2 top-[calc(100%-0.25rem)] min-w-72 -translate-x-1/2 rounded-lg border border-[#e4e7ec] bg-white/96 p-2 opacity-0 shadow-[0_18px_60px_rgba(0,52,102,0.12)] backdrop-blur-md transition group-hover:visible group-hover:translate-y-1 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-1 group-focus-within:opacity-100">
                   {item.children.map((child) => (
                     <Link
-                      className="block rounded-md px-4 py-3 text-sm leading-5 text-[#666666] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
+                      className="block rounded-none px-4 py-3 text-sm leading-5 text-[#666666] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
                       href={child.href}
                       key={child.label}
                     >
@@ -93,7 +93,11 @@ export function Navbar() {
           ))}
         </div>
 
-        <Button asChild size="sm" className="hidden pl-5 pr-4 lg:inline-flex">
+        <Button
+          asChild
+          size="sm"
+          className="hidden rounded-none pl-5 pr-4 shadow-none lg:inline-flex"
+        >
           <Link href="#contact">
             Contact Us
             <Mail className="h-4 w-4" />
@@ -104,7 +108,7 @@ export function Navbar() {
           aria-controls="mobile-navigation"
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-          className="inline-flex size-10 items-center justify-center rounded-full border border-[#e4e7ec] bg-white text-[#003466] shadow-[0_10px_28px_rgba(0,52,102,0.08)] transition hover:bg-[#f3f7fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466] focus-visible:ring-offset-2 lg:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-none border border-[#e4e7ec] bg-white text-[#003466] shadow-[0_10px_28px_rgba(0,52,102,0.08)] transition hover:bg-[#f3f7fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466] focus-visible:ring-offset-2 lg:hidden"
           onClick={() => setIsMenuOpen((current) => !current)}
           type="button"
         >
@@ -136,7 +140,7 @@ export function Navbar() {
                 <>
                   <button
                     aria-expanded={openSection === item.label}
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-base font-medium text-[#111217] transition hover:bg-[#f3f7fb]"
+                    className="flex w-full items-center justify-between rounded-none px-3 py-3 text-left text-base font-medium text-[#111217] transition hover:bg-[#f3f7fb]"
                     onClick={() =>
                       setOpenSection((current) =>
                         current === item.label ? null : item.label,
@@ -162,7 +166,7 @@ export function Navbar() {
                       <div className="grid gap-1 px-3 pb-3">
                         {item.children.map((child) => (
                           <Link
-                            className="rounded-md px-3 py-2 text-sm leading-6 text-[#666666] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
+                            className="rounded-none px-3 py-2 text-sm leading-6 text-[#666666] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
                             href={child.href}
                             key={child.label}
                             onClick={closeMenu}
@@ -176,7 +180,7 @@ export function Navbar() {
                 </>
               ) : (
                 <Link
-                  className="block rounded-lg px-3 py-3 text-base font-medium text-[#111217] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
+                  className="block rounded-none px-3 py-3 text-base font-medium text-[#111217] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
                   href={item.href}
                   onClick={closeMenu}
                 >
@@ -186,7 +190,7 @@ export function Navbar() {
             </div>
           ))}
 
-          <Button asChild size="lg" className="mt-4 w-full">
+          <Button asChild size="lg" className="mt-4 w-full rounded-none shadow-none">
             <Link href="#contact" onClick={closeMenu}>
               Contact Us
               <Mail className="h-4 w-4" />

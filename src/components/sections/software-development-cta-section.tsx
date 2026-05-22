@@ -26,7 +26,8 @@ export function SoftwareDevelopmentCtaSection() {
           <div className="pointer-events-none absolute inset-0 bg-white/72" />
 
           <div className="relative">
-            <div className="inline-flex border border-[#f1d5be] bg-[#fff8f2] px-4 py-2 text-sm font-medium text-[#f07835]">
+            <div className="inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2 text-sm font-medium text-[#003466]">
+              <span className="size-2 bg-[#f58220]" aria-hidden="true" />
               Ready to move forward?
             </div>
             <h2 className="mt-6 max-w-4xl text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
@@ -72,22 +73,15 @@ export function SoftwareDevelopmentCtaSection() {
               </div>
 
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                {ctaSteps.map((step, index) => {
+                {ctaSteps.map((step) => {
                   const StepIcon = step.icon;
-                  const isOrange = index === 1;
 
                   return (
                     <div
                       className="border border-[#e4e9ef] bg-white p-4"
                       key={step.label}
                     >
-                      <span
-                        className={
-                          isOrange
-                            ? "flex size-11 items-center justify-center border border-[#f1d5be] bg-[#fff8f2] text-[#f07835]"
-                            : "flex size-11 items-center justify-center border border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]"
-                        }
-                      >
+                      <span className="flex size-11 items-center justify-center border border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]">
                         <StepIcon className="size-5" aria-hidden="true" />
                       </span>
                       <p className="mt-4 text-lg font-semibold text-[#111217]">

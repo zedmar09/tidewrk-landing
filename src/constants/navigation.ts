@@ -11,7 +11,7 @@ export const navigationItems: NavigationItem[] = [
       },
       {
         label: "Staff Augmentation",
-        href: "#staff-augmentation",
+        href: "/staff-augmentation",
       },
       {
         label: "Offshoring",

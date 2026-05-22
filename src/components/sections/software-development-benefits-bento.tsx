@@ -60,6 +60,7 @@ export function SoftwareDevelopmentBenefitsBento() {
     <section className="relative overflow-hidden bg-white px-5 py-12 sm:px-8 md:py-20 lg:px-[6vw]">
       <div className="relative mx-auto w-full">
         <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-5 h-1 w-14 bg-[#f58220]" aria-hidden="true" />
           <h2 className="text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
             Why Dedicated Teams Work
           </h2>
@@ -106,9 +107,10 @@ function VisualPanel({
 }) {
   return (
     <div className="relative mx-3 mt-3 flex h-36 items-center justify-center overflow-hidden bg-[#fbfcfd] sm:h-40">
+      <div className="absolute right-4 top-4 z-10 size-2 bg-[#f58220]" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
-      <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#f0a264]/50 to-transparent" />
-      <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#f0a264]/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/50 to-transparent" />
+      <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/40 to-transparent" />
 
       {variant === "analytics" && <AnalyticsVisual icon={Icon} />}
       {variant === "network" && <NetworkVisual icon={Icon} />}
@@ -167,7 +169,7 @@ function AnalyticsVisual({ icon: Icon }: { icon: typeof UsersRound }) {
       <div className="absolute right-[13%] top-[53%] h-px w-[26%] bg-[#e7edf4]" />
       <div className="absolute left-[13%] top-[61%] h-px w-[20%] bg-[#edf1f5]" />
       <div className="absolute right-[13%] top-[61%] h-px w-[20%] bg-[#edf1f5]" />
-      <div className="relative flex size-14 items-center justify-center rounded-2xl border border-[#f0d4bd] bg-white text-[#f07835] shadow-[0_20px_70px_rgba(240,120,53,0.16)]">
+      <div className="relative flex size-14 items-center justify-center rounded-2xl border border-[#d7e6f6] bg-white text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.16)]">
         <Icon className="size-6" />
       </div>
     </>
@@ -201,7 +203,7 @@ function IntegrationVisual({ icon: Icon }: { icon: typeof UsersRound }) {
       <VisualNode className="bottom-[18%] right-[20%] bg-[#eef7ff]">
         <Layers3 className="size-4" />
       </VisualNode>
-      <div className="relative flex size-16 items-center justify-center rounded-2xl border border-[#f0d4bd] bg-white text-[#f07835] shadow-[0_20px_70px_rgba(240,120,53,0.14)]">
+      <div className="relative flex size-16 items-center justify-center rounded-2xl border border-[#d7e6f6] bg-white text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.14)]">
         <Icon className="size-7" />
       </div>
     </>
@@ -213,20 +215,20 @@ function PerformanceVisual({ icon: Icon }: { icon: typeof UsersRound }) {
     <>
       <div className="absolute right-6 top-6 rounded-xl border border-[#e4e9ef] bg-white px-4 py-3 shadow-[0_18px_54px_rgba(0,52,102,0.08)]">
         <div className="h-2 w-20 rounded-full bg-[#e8edf3]" />
-        <div className="mt-2 h-2 w-12 rounded-full bg-[#f0a264]/60" />
+        <div className="mt-2 h-2 w-12 rounded-full bg-[#003466]/60" />
       </div>
       <div className="absolute bottom-6 left-6 right-6 h-16 rounded-xl border border-[#e4e9ef] bg-white px-4 py-3 shadow-[0_18px_54px_rgba(0,52,102,0.08)]">
         <div className="flex h-full items-end gap-2">
           <div className="h-5 flex-1 rounded-t bg-[#dfe7ef]" />
           <div className="h-8 flex-1 rounded-t bg-[#cbd9e8]" />
           <div className="h-6 flex-1 rounded-t bg-[#dfe7ef]" />
-          <div className="h-10 flex-1 rounded-t bg-[#f0a264]/70" />
+          <div className="h-10 flex-1 rounded-t bg-[#003466]/70" />
           <div className="h-7 flex-1 rounded-t bg-[#dfe7ef]" />
           <div className="h-11 flex-1 rounded-t bg-[#003466]/80" />
         </div>
         <svg
           aria-hidden
-          className="absolute inset-x-5 top-4 h-8 text-[#f07835]"
+          className="absolute inset-x-5 top-4 h-8 text-[#003466]"
           fill="none"
           viewBox="0 0 140 32"
         >
@@ -249,7 +251,7 @@ function WorkflowVisual({ icon: Icon }: { icon: typeof UsersRound }) {
   return (
     <>
       <div className="absolute left-[14%] top-[30%] h-3 w-[28%] rounded-full bg-[#dfe7ef]" />
-      <div className="absolute right-[14%] top-[30%] h-3 w-[28%] rounded-full bg-[#f0a264]/55" />
+      <div className="absolute right-[14%] top-[30%] h-3 w-[28%] rounded-full bg-[#003466]/55" />
       <div className="absolute bottom-[28%] left-[14%] h-3 w-[38%] rounded-full bg-[#e8edf3]" />
       <div className="absolute bottom-[28%] right-[14%] h-3 w-[20%] rounded-full bg-[#dfe7ef]" />
       <div className="relative flex size-14 items-center justify-center rounded-2xl border border-[#d7e6f6] bg-white text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.13)]">

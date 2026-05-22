@@ -142,7 +142,8 @@ export function TestimonialsSection() {
             viewport={{ once: true, margin: "-80px" }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            <div className="mb-6 inline-flex border border-[#f1d5be] bg-[#fff8f2] px-4 py-2 text-sm font-medium text-[#f07835]">
+            <div className="mb-6 inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2 text-sm font-medium text-[#003466]">
+              <span className="size-2 bg-[#f58220]" aria-hidden="true" />
               Client stories
             </div>
             <h2 className="text-balance text-4xl font-normal leading-[1.05] tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
@@ -158,7 +159,7 @@ export function TestimonialsSection() {
                 type="button"
                 aria-label="Show previous testimonial"
                 onClick={goToPrevious}
-                className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#003466] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:bg-[#f7fbff]"
+                className="flex size-12 items-center justify-center rounded-none border border-[#dfe5ec] bg-white text-[#003466] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:bg-[#f7fbff]"
               >
                 <ChevronLeft className="size-5" aria-hidden="true" />
               </button>
@@ -166,7 +167,7 @@ export function TestimonialsSection() {
                 type="button"
                 aria-label="Show next testimonial"
                 onClick={goToNext}
-                className="flex size-12 items-center justify-center rounded-full border border-[#dfe5ec] bg-white text-[#003466] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:bg-[#f7fbff]"
+                className="flex size-12 items-center justify-center rounded-none border border-[#dfe5ec] bg-white text-[#003466] transition duration-300 hover:-translate-y-0.5 hover:border-[#003466]/35 hover:bg-[#f7fbff]"
               >
                 <ChevronRight className="size-5" aria-hidden="true" />
               </button>
@@ -174,7 +175,9 @@ export function TestimonialsSection() {
           </motion.div>
 
           <div className="relative min-h-[320px] border border-[#e6e8ec] bg-white p-6 sm:p-8 lg:p-10">
-            <div className="absolute bottom-0 left-0 top-0 w-1.5 bg-[#003466]" />
+            <div className="absolute bottom-0 left-0 top-0 w-1.5 bg-[#003466]">
+              <span className="block h-16 w-full bg-[#f58220]" aria-hidden="true" />
+            </div>
             <motion.div
               key={activeTestimonial.name}
               className="max-w-4xl"
@@ -214,7 +217,7 @@ export function TestimonialsSection() {
                     type="button"
                     aria-label={`Show testimonial from ${testimonial.name}`}
                     onClick={() => setActiveIndex(index)}
-                    className="h-1.5 rounded-full bg-[#d5dbe3] transition-all duration-300 data-[active=true]:w-9 data-[active=true]:bg-[#003466] data-[active=false]:w-3"
+                    className="h-1.5 rounded-none bg-[#d5dbe3] transition-all duration-300 data-[active=true]:w-9 data-[active=true]:bg-[#003466] data-[active=false]:w-3"
                     data-active={index === activeIndex}
                   />
                 ))}

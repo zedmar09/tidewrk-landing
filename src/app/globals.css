@@ -41,6 +41,21 @@
   }
 }
 
+@keyframes staff-growth-carousel-autoplay {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.staff-growth-carousel-track {
+  animation: staff-growth-carousel-autoplay 34s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

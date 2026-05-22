@@ -19,7 +19,6 @@ const features = [
     description:
       "Experts in front-end, back-end, and database technologies, bringing your vision to life.",
     icon: Code2,
-    tone: "blue",
     visual: "build",
   },
   {
@@ -27,7 +26,6 @@ const features = [
     description:
       "Unlocking the power of your data to gain valuable business insights.",
     icon: BarChart3,
-    tone: "orange",
     visual: "analytics",
   },
   {
@@ -35,7 +33,6 @@ const features = [
     description:
       "Leveraging data to solve complex problems and drive innovation.",
     icon: FlaskConical,
-    tone: "blue",
     visual: "experiment",
   },
   {
@@ -43,7 +40,6 @@ const features = [
     description:
       "Building robust and scalable data infrastructure for your organization.",
     icon: Database,
-    tone: "orange",
     visual: "pipeline",
   },
   {
@@ -51,7 +47,6 @@ const features = [
     description:
       "Designing intuitive and enjoyable user experiences for your digital products.",
     icon: Palette,
-    tone: "blue",
     visual: "design",
   },
   {
@@ -59,7 +54,6 @@ const features = [
     description:
       "Harnessing the power of AI to automate tasks and gain a competitive edge.",
     icon: BrainCircuit,
-    tone: "orange",
     visual: "intelligence",
   },
   {
@@ -67,7 +61,6 @@ const features = [
     description:
       "Creating engaging and user-friendly mobile apps for your business.",
     icon: Smartphone,
-    tone: "blue",
     visual: "mobile",
   },
   {
@@ -75,7 +68,6 @@ const features = [
     description:
       "Ensuring the quality and reliability of your software through expert testing.",
     icon: ShieldCheck,
-    tone: "orange",
     visual: "quality",
   },
   {
@@ -83,7 +75,6 @@ const features = [
     description:
       "Enhancing operational efficiency and effectiveness through skilled virtual assistance.",
     icon: BriefcaseBusiness,
-    tone: "blue",
     visual: "operations",
   },
 ];
@@ -96,7 +87,8 @@ export function Features() {
     >
       <div className="relative mx-auto max-w-[1900px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="text-center">
-          <div className="mb-5 inline-flex border border-[#f1d5be] bg-[#fff8f2] px-4 py-2 text-sm font-medium text-[#f07835]">
+          <div className="mb-5 inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2 text-sm font-medium text-[#003466]">
+            <span className="size-2 bg-[#f58220]" aria-hidden="true" />
             Our Services
           </div>
           <h2 className="text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
@@ -119,7 +111,6 @@ export function Features() {
               >
                 <ServiceVisualPanel
                   icon={Icon}
-                  tone={feature.tone}
                   variant={feature.visual}
                 />
 
@@ -148,41 +139,36 @@ export function Features() {
 
 function ServiceVisualPanel({
   icon: Icon,
-  tone,
   variant,
 }: {
   icon: typeof Code2;
-  tone: string;
   variant: string;
 }) {
-  const isOrange = tone === "orange";
-
   return (
     <div className="relative mx-3 mt-3 flex h-36 items-center justify-center overflow-hidden bg-[#fbfcfd] sm:h-40">
+      <div className="absolute right-4 top-4 size-2 bg-[#f58220]" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
-      <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#f0a264]/50 to-transparent" />
-      <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#f0a264]/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/18 to-transparent" />
+      <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/14 to-transparent" />
 
-      {variant === "build" && <BuildVisual icon={Icon} isOrange={isOrange} />}
-      {variant === "analytics" && <AnalyticsVisual icon={Icon} isOrange={isOrange} />}
-      {variant === "experiment" && <ExperimentVisual icon={Icon} isOrange={isOrange} />}
-      {variant === "pipeline" && <PipelineVisual icon={Icon} isOrange={isOrange} />}
-      {variant === "design" && <DesignVisual icon={Icon} isOrange={isOrange} />}
-      {variant === "intelligence" && <IntelligenceVisual icon={Icon} isOrange={isOrange} />}
-      {variant === "mobile" && <MobileVisual icon={Icon} isOrange={isOrange} />}
-      {variant === "quality" && <QualityVisual icon={Icon} isOrange={isOrange} />}
-      {variant === "operations" && <OperationsVisual icon={Icon} isOrange={isOrange} />}
+      {variant === "build" && <BuildVisual icon={Icon} />}
+      {variant === "analytics" && <AnalyticsVisual icon={Icon} />}
+      {variant === "experiment" && <ExperimentVisual icon={Icon} />}
+      {variant === "pipeline" && <PipelineVisual icon={Icon} />}
+      {variant === "design" && <DesignVisual icon={Icon} />}
+      {variant === "intelligence" && <IntelligenceVisual icon={Icon} />}
+      {variant === "mobile" && <MobileVisual icon={Icon} />}
+      {variant === "quality" && <QualityVisual icon={Icon} />}
+      {variant === "operations" && <OperationsVisual icon={Icon} />}
     </div>
   );
 }
 
 function CenterIcon({
   icon: Icon,
-  isOrange,
   size = "large",
 }: {
   icon: typeof Code2;
-  isOrange: boolean;
   size?: "medium" | "large";
 }) {
   return (
@@ -190,9 +176,7 @@ function CenterIcon({
       className={cn(
         "relative flex items-center justify-center rounded-2xl border bg-white",
         size === "large" ? "size-16" : "size-14",
-        isOrange
-          ? "border-[#f0d4bd] text-[#f07835] shadow-[0_20px_70px_rgba(240,120,53,0.14)]"
-          : "border-[#d7e6f6] text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.12)]",
+        "border-[#d7e6f6] text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.12)]",
       )}
     >
       <Icon className={size === "large" ? "size-7" : "size-6"} aria-hidden="true" />
@@ -219,7 +203,7 @@ function MiniNode({
   );
 }
 
-function BuildVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function BuildVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <MiniNode className="left-[14%] top-[28%] bg-[#f7fbff]">
@@ -228,111 +212,111 @@ function BuildVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: b
       <MiniNode className="right-[13%] top-[30%]">
         <ShieldCheck className="size-4" />
       </MiniNode>
-      <MiniNode className="bottom-[18%] left-[22%] bg-[#fff8f2] text-[#f07835]">
+      <MiniNode className="bottom-[18%] left-[22%] bg-[#f5f9fd] text-[#003466]">
         <Code2 className="size-4" />
       </MiniNode>
-      <CenterIcon icon={Icon} isOrange={isOrange} />
+      <CenterIcon icon={Icon} />
     </>
   );
 }
 
-function AnalyticsVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function AnalyticsVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute bottom-7 left-7 right-7 h-16 rounded-xl border border-[#e4e9ef] bg-white px-4 py-3 shadow-[0_18px_54px_rgba(0,52,102,0.08)]">
         <div className="flex h-full items-end gap-2">
           <span className="h-5 flex-1 rounded-t bg-[#dfe7ef]" />
-          <span className="h-8 flex-1 rounded-t bg-[#f0a264]/70" />
+          <span className="h-8 flex-1 rounded-t bg-[#003466]/35" />
           <span className="h-6 flex-1 rounded-t bg-[#dfe7ef]" />
           <span className="h-11 flex-1 rounded-t bg-[#003466]/80" />
         </div>
       </div>
-      <CenterIcon icon={Icon} isOrange={isOrange} size="medium" />
+      <CenterIcon icon={Icon} size="medium" />
     </>
   );
 }
 
-function ExperimentVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function ExperimentVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute left-[12%] top-[36%] h-3 w-[28%] rounded-full bg-[#dfe7ef]" />
-      <div className="absolute right-[12%] top-[36%] h-3 w-[22%] rounded-full bg-[#f0a264]/60" />
+      <div className="absolute right-[12%] top-[36%] h-3 w-[22%] rounded-full bg-[#003466]/25" />
       <div className="absolute bottom-[25%] left-[18%] h-3 w-[46%] rounded-full bg-[#e8edf3]" />
-      <CenterIcon icon={Icon} isOrange={isOrange} size="medium" />
+      <CenterIcon icon={Icon} size="medium" />
     </>
   );
 }
 
-function PipelineVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function PipelineVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
-      <MiniNode className="left-[12%] top-[35%] bg-[#fff8f2] text-[#f07835]">
+      <MiniNode className="left-[12%] top-[35%] bg-[#f5f9fd] text-[#003466]">
         <Database className="size-4" />
       </MiniNode>
       <MiniNode className="right-[12%] top-[35%] bg-[#f7fbff]">
         <BarChart3 className="size-4" />
       </MiniNode>
-      <div className="absolute left-[24%] right-[24%] top-1/2 h-[3px] -translate-y-1/2 bg-[#f0a264]/55" />
-      <CenterIcon icon={Icon} isOrange={isOrange} />
+      <div className="absolute left-[24%] right-[24%] top-1/2 h-[3px] -translate-y-1/2 bg-[#003466]/25" />
+      <CenterIcon icon={Icon} />
     </>
   );
 }
 
-function DesignVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function DesignVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute left-[10%] top-[28%] h-16 w-[35%] rounded-xl border border-[#e4e9ef] bg-white/85 shadow-[0_18px_54px_rgba(0,52,102,0.07)]" />
-      <div className="absolute right-[10%] bottom-[22%] h-16 w-[35%] rounded-xl border border-[#f0d4bd] bg-[#fff8f2]" />
-      <CenterIcon icon={Icon} isOrange={isOrange} />
+      <div className="absolute right-[10%] bottom-[22%] h-16 w-[35%] rounded-xl border border-[#d7e6f6] bg-[#f5f9fd]" />
+      <CenterIcon icon={Icon} />
     </>
   );
 }
 
-function IntelligenceVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function IntelligenceVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <MiniNode className="left-[15%] top-[24%]">
         <BrainCircuit className="size-4" />
       </MiniNode>
-      <MiniNode className="right-[15%] top-[24%] bg-[#fff8f2] text-[#f07835]">
+      <MiniNode className="right-[15%] top-[24%] bg-[#f5f9fd] text-[#003466]">
         <SparkDot />
       </MiniNode>
       <MiniNode className="bottom-[20%] left-[22%] bg-[#f7fbff]">
         <Code2 className="size-4" />
       </MiniNode>
-      <CenterIcon icon={Icon} isOrange={isOrange} />
+      <CenterIcon icon={Icon} />
     </>
   );
 }
 
-function MobileVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function MobileVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute left-[16%] top-[20%] h-24 w-14 rounded-2xl border border-[#e4e9ef] bg-white shadow-[0_18px_54px_rgba(0,52,102,0.08)]" />
-      <div className="absolute right-[16%] top-[28%] h-20 w-12 rounded-2xl border border-[#f0d4bd] bg-[#fff8f2]" />
-      <CenterIcon icon={Icon} isOrange={isOrange} size="medium" />
+      <div className="absolute right-[16%] top-[28%] h-20 w-12 rounded-2xl border border-[#d7e6f6] bg-[#f5f9fd]" />
+      <CenterIcon icon={Icon} size="medium" />
     </>
   );
 }
 
-function QualityVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function QualityVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute bottom-6 left-1/2 h-14 w-[72%] -translate-x-1/2 rounded-xl border border-[#e4e9ef] bg-white/90 shadow-[0_18px_54px_rgba(0,52,102,0.08)]" />
-      <div className="absolute bottom-12 left-1/2 h-14 w-[58%] -translate-x-1/2 rounded-xl border border-[#f0d4bd] bg-[#fff8f2]" />
-      <CenterIcon icon={Icon} isOrange={isOrange} size="medium" />
+      <div className="absolute bottom-12 left-1/2 h-14 w-[58%] -translate-x-1/2 rounded-xl border border-[#d7e6f6] bg-[#f5f9fd]" />
+      <CenterIcon icon={Icon} size="medium" />
     </>
   );
 }
 
-function OperationsVisual({ icon: Icon, isOrange }: { icon: typeof Code2; isOrange: boolean }) {
+function OperationsVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute left-[13%] top-[30%] h-3 w-[32%] rounded-full bg-[#dfe7ef]" />
-      <div className="absolute right-[13%] top-[30%] h-3 w-[26%] rounded-full bg-[#f0a264]/55" />
+      <div className="absolute right-[13%] top-[30%] h-3 w-[26%] rounded-full bg-[#003466]/25" />
       <div className="absolute bottom-[28%] left-[13%] h-3 w-[42%] rounded-full bg-[#e8edf3]" />
       <div className="absolute bottom-[28%] right-[13%] h-3 w-[18%] rounded-full bg-[#dfe7ef]" />
-      <CenterIcon icon={Icon} isOrange={isOrange} />
+      <CenterIcon icon={Icon} />
     </>
   );
 }

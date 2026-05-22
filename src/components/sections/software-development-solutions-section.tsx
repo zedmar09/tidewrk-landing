@@ -101,7 +101,8 @@ export function SoftwareDevelopmentSolutionsSection() {
     >
       <div className="mx-auto grid w-full max-w-[1900px] gap-10 lg:grid-cols-2 lg:items-start lg:gap-12 xl:gap-16">
         <div className="lg:sticky lg:top-24">
-          <div className="inline-flex rounded-full border border-[#dedfe6] bg-white px-4 py-2 text-sm font-normal text-[#666666]">
+          <div className="inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2 text-sm font-medium text-[#003466]">
+            <span className="size-2 bg-[#f58220]" aria-hidden="true" />
             Software Solutions
           </div>
           <h2 className="mt-6 max-w-2xl text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
@@ -145,7 +146,7 @@ export function SoftwareDevelopmentSolutionsSection() {
                     aria-hidden="true"
                     className={cn(
                       "hidden size-5 shrink-0 text-[#9aa3ad] transition group-hover:translate-x-1 group-hover:text-[#003466] sm:block",
-                      isActive && "translate-x-1 text-[#003466]",
+                      isActive && "translate-x-1 text-[#f58220]",
                     )}
                   />
                 </button>
@@ -179,8 +180,8 @@ export function SoftwareDevelopmentSolutionsSection() {
           <div className="flex flex-1 flex-col justify-center px-6 py-8 sm:px-8 lg:py-10">
             <div className="relative min-h-[360px] overflow-hidden border border-[#dfe5ec] bg-white">
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:38px_38px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
-              <div className="pointer-events-none absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-[#f0a264]/50 to-transparent" />
-              <div className="pointer-events-none absolute left-1/2 top-10 h-[calc(100%-5rem)] w-px bg-gradient-to-b from-transparent via-[#f0a264]/40 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/50 to-transparent" />
+              <div className="pointer-events-none absolute left-1/2 top-10 h-[calc(100%-5rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/40 to-transparent" />
 
               <div className="absolute left-[8%] top-[18%] border border-[#e0e6ee] bg-white px-4 py-3">
                 <p className="text-sm font-semibold text-[#111217]">Plan</p>
@@ -198,7 +199,7 @@ export function SoftwareDevelopmentSolutionsSection() {
               </div>
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex size-32 items-center justify-center border border-[#f0d4bd] bg-white text-[#f07835]">
+                <div className="flex size-32 items-center justify-center border border-[#d7e6f6] bg-white text-[#003466]">
                   <ActiveIcon className="size-14" aria-hidden="true" />
                 </div>
               </div>

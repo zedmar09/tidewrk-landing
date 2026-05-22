@@ -19,7 +19,7 @@ const syncInputs = [
     label: "Systems",
     description: "Cleaner workflows and smarter collaboration.",
     icon: Blocks,
-    tone: "orange",
+    tone: "blue",
   },
   {
     label: "Technology",
@@ -47,20 +47,13 @@ export function CtaSection() {
             <div className="grid gap-3">
               {syncInputs.map((item) => {
                 const ItemIcon = item.icon;
-                const isOrange = item.tone === "orange";
 
                 return (
                   <div
                     className="grid grid-cols-[auto_1fr] items-center gap-4 border border-[#dfe5ec] bg-white p-4"
                     key={item.label}
                   >
-                    <span
-                      className={
-                        isOrange
-                          ? "flex size-12 items-center justify-center border border-[#f1d5be] bg-[#fff8f2] text-[#f07835]"
-                          : "flex size-12 items-center justify-center border border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]"
-                      }
-                    >
+                    <span className="flex size-12 items-center justify-center border border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]">
                       <ItemIcon className="size-6" aria-hidden="true" />
                     </span>
                     <div>
@@ -77,7 +70,7 @@ export function CtaSection() {
             </div>
 
             <div className="relative mx-auto h-12 w-px bg-[#cbd8e6]">
-              <span className="absolute left-1/2 top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 bg-[#f07835]" />
+              <span className="absolute left-1/2 top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 bg-[#003466]" />
             </div>
 
             <div className="border border-[#003466] bg-white p-5">
@@ -99,7 +92,8 @@ export function CtaSection() {
           </div>
 
           <div className="relative flex flex-col justify-center lg:pl-8 xl:pl-14">
-            <div className="inline-flex w-fit border border-[#f1d5be] bg-[#fff8f2] px-4 py-2 text-sm font-medium text-[#f07835]">
+            <div className="inline-flex w-fit items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2 text-sm font-medium text-[#003466]">
+              <span className="size-2 bg-[#f58220]" aria-hidden="true" />
               Ready to move forward?
             </div>
             <h2 className="mt-6 max-w-4xl text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
@@ -135,7 +129,7 @@ export function CtaSection() {
                 Start with one conversation, then leave with a practical next
                 step.
               </p>
-              <Sparkles className="hidden size-5 shrink-0 text-[#f07835] sm:block" />
+              <Sparkles className="hidden size-5 shrink-0 text-[#003466] sm:block" />
             </div>
           </div>
         </div>

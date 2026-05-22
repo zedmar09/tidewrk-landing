@@ -89,7 +89,7 @@ export function SoftwareDevelopmentCustomFitSection() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="inline-flex rounded-full border border-[#dedfe6] bg-white/82 px-4 py-2 text-sm font-normal text-[#666666] shadow-[0_10px_36px_rgba(0,52,102,0.06)]">
+            <div className="inline-flex border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2 text-sm font-medium text-[#003466]">
               Custom Fit Software
             </div>
             <h2 className="mt-5 max-w-3xl text-balance text-3xl font-semibold leading-tight text-[#111217] sm:text-4xl md:text-5xl">
@@ -127,7 +127,7 @@ export function SoftwareDevelopmentCustomFitSection() {
                 <button
                   aria-pressed={isActive}
                   className={cn(
-                    "group relative overflow-hidden rounded-xl border p-5 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466]/28 focus-visible:ring-offset-2",
+                    "group relative overflow-hidden rounded-none border p-5 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466]/28 focus-visible:ring-offset-2",
                     isActive
                       ? "border-[#003466] bg-[#003466] text-white shadow-[0_20px_60px_rgba(0,52,102,0.20)]"
                       : "border-[#dfe5ec] bg-white/82 text-[#111217] shadow-[0_16px_45px_rgba(0,52,102,0.05)] hover:-translate-y-0.5 hover:border-[#003466]/45",
@@ -139,7 +139,7 @@ export function SoftwareDevelopmentCustomFitSection() {
                   <span className="relative z-10 flex items-start gap-4">
                     <span
                       className={cn(
-                        "flex size-11 shrink-0 items-center justify-center rounded-lg border transition-colors duration-300",
+                        "flex size-11 shrink-0 items-center justify-center rounded-none border transition-colors duration-300",
                         isActive
                           ? "border-white/25 bg-white/12 text-white"
                           : "border-[#003466]/12 bg-[#003466]/6 text-[#003466] group-hover:bg-[#003466]/10",

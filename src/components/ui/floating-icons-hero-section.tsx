@@ -100,8 +100,8 @@ const Icon = ({
         }
         className={cn(
           "flex size-14 items-center justify-center border p-3 sm:size-16 md:size-20 md:p-4",
-          index % 3 === 1
-            ? "border-[#f1d5be] bg-[#fff8f2] text-[#f07835]"
+          index === 1
+            ? "border-[#ffd9b8] bg-[#fff8f2] text-[#f58220]"
             : "border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]",
         )}
         transition={{
@@ -154,7 +154,8 @@ const FloatingIconsHero = React.forwardRef<
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl text-center">
-        <div className="mx-auto mb-6 inline-flex rounded-full border border-[#dedfe6] bg-white/80 px-4 py-2 text-sm font-normal text-[#666666] shadow-[0_10px_36px_rgba(0,52,102,0.06)]">
+        <div className="mx-auto mb-6 inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2.5 text-sm font-medium text-[#003466]">
+          <span className="size-2 bg-[#f58220]" aria-hidden="true" />
           Software Development
         </div>
         <h1 className="text-balance text-[clamp(2.5rem,8vw,5.7rem)] font-semibold leading-[1.04] tracking-normal text-[#111217]">

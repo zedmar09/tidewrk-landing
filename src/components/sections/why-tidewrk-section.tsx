@@ -116,6 +116,7 @@ export function WhyTidewrkSection() {
               >
                 {index > 0 ? (
                   <div className="absolute left-0 top-4 hidden h-28 w-[3px] bg-[#d8e3ee] md:block">
+                    <span className="absolute left-0 top-0 h-4 w-full bg-[#f58220]" />
                     <span className="absolute left-0 top-1/2 h-12 w-full -translate-y-1/2 bg-[#003466]" />
                   </div>
                 ) : null}

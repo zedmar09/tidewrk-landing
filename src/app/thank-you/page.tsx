@@ -5,7 +5,8 @@ export default function ThankYouPage() {
   return (
     <main className="grid min-h-screen place-items-center px-6 text-center">
       <div className="max-w-xl">
-        <p className="mb-4 text-sm font-medium uppercase tracking-[0.16em] text-[#5b5e68]">
+        <p className="mb-4 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.16em] text-[#5b5e68]">
+          <span className="size-2 bg-[#f58220]" aria-hidden="true" />
           Tidewrk
         </p>
         <h1 className="text-4xl font-semibold text-[#111217] sm:text-5xl">

@@ -66,7 +66,8 @@ export function SoftwareDevelopmentTeamGrid() {
       <div className="mx-auto w-full max-w-[1900px]">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
-            <div className="inline-flex border border-[#dfe5ec] bg-white px-4 py-2 text-sm font-medium text-[#003466]">
+            <div className="inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2 text-sm font-medium text-[#003466]">
+              <span className="size-2 bg-[#f58220]" aria-hidden="true" />
               Full delivery team
             </div>
             <h2 className="mt-6 max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
@@ -92,9 +93,9 @@ export function SoftwareDevelopmentTeamGrid() {
                 Specialists are assigned where they create the most momentum.
               </p>
             </div>
-            <div className="flex items-center gap-2 text-sm font-medium text-[#f07835]">
+            <div className="flex items-center gap-2 text-sm font-medium text-[#003466]">
               Idea
-              <span className="h-px w-10 bg-[#f0a264]" />
+              <span className="h-px w-10 bg-[#003466]" />
               Launch
             </div>
           </div>
@@ -128,7 +129,7 @@ export function SoftwareDevelopmentTeamGrid() {
                         <span
                           className={cn(
                             "text-xs font-semibold uppercase tracking-[0.14em] 2xl:text-sm",
-                            isTop ? "text-[#003466]" : "text-[#f07835]",
+                            isTop ? "text-[#003466]" : "text-[#003466]",
                           )}
                         >
                           Step {String(index + 1).padStart(2, "0")}
@@ -143,7 +144,7 @@ export function SoftwareDevelopmentTeamGrid() {
                           "mt-5 flex size-12 shrink-0 items-center justify-center border 2xl:size-14",
                           isTop
                             ? "border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]"
-                            : "border-[#f1d5be] bg-[#fff8f2] text-[#f07835]",
+                            : "border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]",
                         )}
                       >
                         <ExpertIcon
@@ -162,7 +163,7 @@ export function SoftwareDevelopmentTeamGrid() {
                       <p
                         className={cn(
                           "mt-5 border-t border-[#edf0f3] pt-4 text-sm font-medium leading-5",
-                          isTop ? "text-[#003466]" : "text-[#f07835]",
+                          isTop ? "text-[#003466]" : "text-[#003466]",
                         )}
                       >
                         {expert.outcome}
@@ -187,7 +188,7 @@ export function SoftwareDevelopmentTeamGrid() {
                         "flex size-11 items-center justify-center border",
                         isTop
                           ? "border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]"
-                          : "border-[#f1d5be] bg-[#fff8f2] text-[#f07835]",
+                          : "border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]",
                       )}
                     >
                       <ExpertIcon className="size-5" aria-hidden="true" />
@@ -196,7 +197,7 @@ export function SoftwareDevelopmentTeamGrid() {
                       <span
                         className={cn(
                           "mt-3 h-full min-h-10 w-px",
-                          isTop ? "bg-[#dfe5ec]" : "bg-[#f1d5be]",
+                          isTop ? "bg-[#dfe5ec]" : "bg-[#d8e6f5]",
                       )}
                     />
                   )}
@@ -206,7 +207,7 @@ export function SoftwareDevelopmentTeamGrid() {
                       <p
                         className={cn(
                           "text-sm font-semibold uppercase tracking-[0.14em]",
-                          isTop ? "text-[#003466]" : "text-[#f07835]",
+                          isTop ? "text-[#003466]" : "text-[#003466]",
                         )}
                       >
                         Step {String(index + 1).padStart(2, "0")}
@@ -224,7 +225,7 @@ export function SoftwareDevelopmentTeamGrid() {
                     <p
                       className={cn(
                         "mt-4 border-t border-[#edf0f3] pt-4 text-sm font-medium",
-                        isTop ? "text-[#003466]" : "text-[#f07835]",
+                        isTop ? "text-[#003466]" : "text-[#003466]",
                       )}
                     >
                       {expert.outcome}

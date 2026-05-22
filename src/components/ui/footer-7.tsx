@@ -118,14 +118,14 @@ export const Footer7 = ({
               </label>
               <div className="mt-3 flex flex-col gap-3 sm:flex-row">
                 <input
-                  className="min-h-11 flex-1 rounded-full border border-[#d8dee6] bg-white px-4 text-sm text-[#111217] outline-none transition placeholder:text-[#8b9098] focus:border-[#003466] focus:ring-2 focus:ring-[#003466]/15"
+                  className="min-h-11 flex-1 rounded-none border border-[#d8dee6] bg-white px-4 text-sm text-[#111217] outline-none transition placeholder:text-[#8b9098] focus:border-[#003466] focus:ring-2 focus:ring-[#003466]/15"
                   id="footer-newsletter-email"
                   name="email"
                   placeholder="Enter your email"
                   type="email"
                 />
                 <button
-                  className="min-h-11 rounded-full bg-[#003466] px-6 text-sm font-semibold text-white transition hover:bg-[#00284f]"
+                  className="min-h-11 rounded-none bg-[#003466] px-6 text-sm font-semibold text-white transition hover:bg-[#00284f]"
                   type="submit"
                 >
                   Subscribe
