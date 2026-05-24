@@ -29,7 +29,7 @@ export const navigationItems: NavigationItem[] = [
     children: [
       {
         label: "Full-Stack Development Team",
-        href: "#full-stack-development-team",
+        href: "/full-stack-development-team",
       },
       {
         label: "Business Intelligence",
