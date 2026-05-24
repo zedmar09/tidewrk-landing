@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, type ComponentType, type ReactNode } from "react";
 import {
   ArrowRight,
   Code2,
@@ -11,7 +11,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const solutions = [
@@ -94,6 +93,14 @@ export function SoftwareDevelopmentSolutionsSection() {
   const activeSolution = solutions[activeIndex];
   const ActiveIcon = activeSolution.icon;
 
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % solutions.length);
+    }, 6000);
+
+    return () => window.clearInterval(interval);
+  }, [activeIndex]);
+
   return (
     <section
       className="relative overflow-hidden bg-white px-5 py-12 sm:px-8 md:py-20 lg:px-[6vw]"
@@ -155,82 +162,122 @@ export function SoftwareDevelopmentSolutionsSection() {
           </div>
         </div>
 
-        <article className="relative flex min-h-full flex-col overflow-hidden border border-[#dfe5ec] bg-[#fbfcfd]">
+        <article className="relative flex min-h-full flex-col overflow-hidden border border-[#dfe5ec] bg-white">
           <div className="border-b border-[#e3e8ee] bg-white px-6 py-5 sm:px-8">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <span className="flex size-12 items-center justify-center bg-[#003466] text-white">
-                  <ActiveIcon className="size-6" aria-hidden="true" />
-                </span>
-                <div>
-                  <p className="text-sm leading-5 text-[#666666]">
-                    Selected solution
-                  </p>
-                  <h3 className="text-2xl font-semibold leading-tight text-[#111217] sm:text-3xl">
-                    {activeSolution.title}
-                  </h3>
-                </div>
-              </div>
-              <span className="border border-[#dfe5ec] bg-white px-4 py-2 text-sm text-[#003466]">
-                {activeSolution.bestFor}
+            <div className="flex items-center gap-3">
+              <span className="flex size-12 items-center justify-center bg-[#003466] text-white">
+                <ActiveIcon className="size-6" aria-hidden="true" />
               </span>
+              <div>
+                <p className="text-sm leading-5 text-[#666666]">
+                  Selected solution
+                </p>
+                <h3 className="text-2xl font-semibold leading-tight text-[#111217] sm:text-3xl">
+                  {activeSolution.title}
+                </h3>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-1 flex-col justify-center px-6 py-8 sm:px-8 lg:py-10">
-            <div className="relative min-h-[360px] overflow-hidden border border-[#dfe5ec] bg-white">
+          <div className="flex flex-1 flex-col p-5 sm:p-7 lg:p-8">
+            <div className="relative flex min-h-[520px] flex-1 overflow-hidden border border-[#dfe5ec] bg-[#fbfcfd] p-5 sm:p-7">
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:38px_38px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
-              <div className="pointer-events-none absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/50 to-transparent" />
-              <div className="pointer-events-none absolute left-1/2 top-10 h-[calc(100%-5rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/40 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/30 to-transparent" />
+              <div className="pointer-events-none absolute left-1/2 top-10 h-[calc(100%-5rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/24 to-transparent" />
 
-              <div className="absolute left-[8%] top-[18%] border border-[#e0e6ee] bg-white px-4 py-3">
-                <p className="text-sm font-semibold text-[#111217]">Plan</p>
-                <p className="mt-1 text-xs text-[#666666]">Align goals</p>
-              </div>
-              <div className="absolute right-[8%] top-[22%] border border-[#e0e6ee] bg-white px-4 py-3">
-                <p className="text-sm font-semibold text-[#111217]">Build</p>
-                <p className="mt-1 text-xs text-[#666666]">Ship value</p>
-              </div>
-              <div className="absolute bottom-[16%] left-1/2 -translate-x-1/2 border border-[#e0e6ee] bg-white px-4 py-3">
-                <p className="text-sm font-semibold text-[#111217]">
-                  Improve
-                </p>
-                <p className="mt-1 text-xs text-[#666666]">Keep growing</p>
-              </div>
+              <div className="relative z-10 grid w-full grid-rows-[auto_1fr_auto] gap-6">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#003466]">
+                      What it creates
+                    </p>
+                    <p className="mt-2 max-w-md text-base leading-7 text-[#555555]">
+                      {activeSolution.description}
+                    </p>
+                  </div>
+                  <span className="hidden h-2 w-2 bg-[#f58220] sm:block" aria-hidden="true" />
+                </div>
 
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex size-32 items-center justify-center border border-[#d7e6f6] bg-white text-[#003466]">
-                  <ActiveIcon className="size-14" aria-hidden="true" />
+                <div className="grid place-items-center">
+                  <SolutionVisualPanel icon={ActiveIcon} />
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {activeSolution.outcomes.map((outcome, index) => (
+                    <div
+                      className="border border-[#dfe5ec] bg-white p-4"
+                      key={outcome}
+                    >
+                      <span
+                        className={cn(
+                          "text-sm font-semibold",
+                          index === 1 ? "text-[#f58220]" : "text-[#003466]",
+                        )}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p className="mt-4 text-lg font-semibold leading-tight text-[#111217]">
+                        {outcome}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-
-            <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-[#333333] sm:text-xl sm:leading-9">
-              {activeSolution.description}
-            </p>
-
-            <div className="mx-auto mt-6 flex max-w-3xl flex-wrap justify-center gap-3">
-              {activeSolution.outcomes.map((outcome) => (
-                <span
-                  className="border border-[#dfe5ec] bg-white px-4 py-2 text-sm font-medium text-[#333333]"
-                  key={outcome}
-                >
-                  {outcome}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-8 flex justify-center">
-              <Button asChild className="shadow-none" size="lg">
-                <a href="#contact">
-                  Talk to Tidewrk
-                  <ArrowRight className="size-5" aria-hidden="true" />
-                </a>
-              </Button>
             </div>
           </div>
         </article>
       </div>
     </section>
+  );
+}
+
+function SolutionVisualPanel({
+  icon: Icon,
+}: {
+  icon: ComponentType<{ className?: string }>;
+}) {
+  return (
+    <div className="relative flex h-64 w-full max-w-xl items-center justify-center overflow-hidden border border-[#dfe5ec] bg-white sm:h-72">
+      <div className="absolute right-4 top-4 z-10 size-2 bg-[#f58220]" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
+      <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/45 to-transparent" />
+      <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/36 to-transparent" />
+
+      <SolutionVisualNode className="left-[12%] top-[20%] bg-[#f7fbff]">
+        <Compass className="size-4" aria-hidden="true" />
+      </SolutionVisualNode>
+      <SolutionVisualNode className="right-[12%] top-[24%] bg-white">
+        <Code2 className="size-4" aria-hidden="true" />
+      </SolutionVisualNode>
+      <SolutionVisualNode className="bottom-[18%] left-[18%] bg-[#fff8f2] text-[#f58220]">
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </SolutionVisualNode>
+      <SolutionVisualNode className="bottom-[18%] right-[18%] bg-[#eef7ff]">
+        <ShieldCheck className="size-4" aria-hidden="true" />
+      </SolutionVisualNode>
+
+      <div className="relative flex size-20 items-center justify-center border border-[#d7e6f6] bg-white text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.14)] sm:size-24">
+        <Icon className="size-9 sm:size-11" aria-hidden="true" />
+      </div>
+    </div>
+  );
+}
+
+function SolutionVisualNode({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "absolute flex size-11 items-center justify-center border border-[#e0e6ee] bg-white text-[#003466] shadow-[0_14px_40px_rgba(0,52,102,0.1)]",
+        className,
+      )}
+    >
+      {children}
+    </div>
   );
 }

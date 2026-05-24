@@ -146,7 +146,6 @@ function ServiceVisualPanel({
 }) {
   return (
     <div className="relative mx-3 mt-3 flex h-36 items-center justify-center overflow-hidden bg-[#fbfcfd] sm:h-40">
-      <div className="absolute right-4 top-4 size-2 bg-[#f58220]" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
       <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/18 to-transparent" />
       <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/14 to-transparent" />
@@ -212,7 +211,7 @@ function BuildVisual({ icon: Icon }: { icon: typeof Code2 }) {
       <MiniNode className="right-[13%] top-[30%]">
         <ShieldCheck className="size-4" />
       </MiniNode>
-      <MiniNode className="bottom-[18%] left-[22%] bg-[#f5f9fd] text-[#003466]">
+      <MiniNode className="bottom-[18%] left-[22%] border-[#ffd9b8] bg-[#fff8f2] text-[#f58220]">
         <Code2 className="size-4" />
       </MiniNode>
       <CenterIcon icon={Icon} />
@@ -227,7 +226,7 @@ function AnalyticsVisual({ icon: Icon }: { icon: typeof Code2 }) {
         <div className="flex h-full items-end gap-2">
           <span className="h-5 flex-1 rounded-t bg-[#dfe7ef]" />
           <span className="h-8 flex-1 rounded-t bg-[#003466]/35" />
-          <span className="h-6 flex-1 rounded-t bg-[#dfe7ef]" />
+          <span className="h-6 flex-1 rounded-t bg-[#f58220]/55" />
           <span className="h-11 flex-1 rounded-t bg-[#003466]/80" />
         </div>
       </div>
@@ -240,7 +239,7 @@ function ExperimentVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute left-[12%] top-[36%] h-3 w-[28%] rounded-full bg-[#dfe7ef]" />
-      <div className="absolute right-[12%] top-[36%] h-3 w-[22%] rounded-full bg-[#003466]/25" />
+      <div className="absolute right-[12%] top-[36%] h-3 w-[22%] rounded-full bg-[#f58220]/55" />
       <div className="absolute bottom-[25%] left-[18%] h-3 w-[46%] rounded-full bg-[#e8edf3]" />
       <CenterIcon icon={Icon} size="medium" />
     </>
@@ -256,7 +255,7 @@ function PipelineVisual({ icon: Icon }: { icon: typeof Code2 }) {
       <MiniNode className="right-[12%] top-[35%] bg-[#f7fbff]">
         <BarChart3 className="size-4" />
       </MiniNode>
-      <div className="absolute left-[24%] right-[24%] top-1/2 h-[3px] -translate-y-1/2 bg-[#003466]/25" />
+      <div className="absolute left-[24%] right-[24%] top-1/2 h-[3px] -translate-y-1/2 bg-[#f58220]/55" />
       <CenterIcon icon={Icon} />
     </>
   );
@@ -266,7 +265,7 @@ function DesignVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute left-[10%] top-[28%] h-16 w-[35%] rounded-xl border border-[#e4e9ef] bg-white/85 shadow-[0_18px_54px_rgba(0,52,102,0.07)]" />
-      <div className="absolute right-[10%] bottom-[22%] h-16 w-[35%] rounded-xl border border-[#d7e6f6] bg-[#f5f9fd]" />
+      <div className="absolute right-[10%] bottom-[22%] h-16 w-[35%] rounded-xl border border-[#ffd9b8] bg-[#fff8f2]" />
       <CenterIcon icon={Icon} />
     </>
   );
@@ -278,7 +277,7 @@ function IntelligenceVisual({ icon: Icon }: { icon: typeof Code2 }) {
       <MiniNode className="left-[15%] top-[24%]">
         <BrainCircuit className="size-4" />
       </MiniNode>
-      <MiniNode className="right-[15%] top-[24%] bg-[#f5f9fd] text-[#003466]">
+      <MiniNode className="right-[15%] top-[24%] border-[#ffd9b8] bg-[#fff8f2] text-[#f58220]">
         <SparkDot />
       </MiniNode>
       <MiniNode className="bottom-[20%] left-[22%] bg-[#f7fbff]">
@@ -293,7 +292,7 @@ function MobileVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute left-[16%] top-[20%] h-24 w-14 rounded-2xl border border-[#e4e9ef] bg-white shadow-[0_18px_54px_rgba(0,52,102,0.08)]" />
-      <div className="absolute right-[16%] top-[28%] h-20 w-12 rounded-2xl border border-[#d7e6f6] bg-[#f5f9fd]" />
+      <div className="absolute right-[16%] top-[28%] h-20 w-12 rounded-2xl border border-[#ffd9b8] bg-[#fff8f2]" />
       <CenterIcon icon={Icon} size="medium" />
     </>
   );
@@ -303,7 +302,7 @@ function QualityVisual({ icon: Icon }: { icon: typeof Code2 }) {
   return (
     <>
       <div className="absolute bottom-6 left-1/2 h-14 w-[72%] -translate-x-1/2 rounded-xl border border-[#e4e9ef] bg-white/90 shadow-[0_18px_54px_rgba(0,52,102,0.08)]" />
-      <div className="absolute bottom-12 left-1/2 h-14 w-[58%] -translate-x-1/2 rounded-xl border border-[#d7e6f6] bg-[#f5f9fd]" />
+      <div className="absolute bottom-12 left-1/2 h-14 w-[58%] -translate-x-1/2 rounded-xl border border-[#ffd9b8] bg-[#fff8f2]" />
       <CenterIcon icon={Icon} size="medium" />
     </>
   );
@@ -315,7 +314,7 @@ function OperationsVisual({ icon: Icon }: { icon: typeof Code2 }) {
       <div className="absolute left-[13%] top-[30%] h-3 w-[32%] rounded-full bg-[#dfe7ef]" />
       <div className="absolute right-[13%] top-[30%] h-3 w-[26%] rounded-full bg-[#003466]/25" />
       <div className="absolute bottom-[28%] left-[13%] h-3 w-[42%] rounded-full bg-[#e8edf3]" />
-      <div className="absolute bottom-[28%] right-[13%] h-3 w-[18%] rounded-full bg-[#dfe7ef]" />
+      <div className="absolute bottom-[28%] right-[13%] h-3 w-[18%] rounded-full bg-[#f58220]/55" />
       <CenterIcon icon={Icon} />
     </>
   );

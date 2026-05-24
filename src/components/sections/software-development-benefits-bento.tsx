@@ -107,7 +107,6 @@ function VisualPanel({
 }) {
   return (
     <div className="relative mx-3 mt-3 flex h-36 items-center justify-center overflow-hidden bg-[#fbfcfd] sm:h-40">
-      <div className="absolute right-4 top-4 z-10 size-2 bg-[#f58220]" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
       <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/50 to-transparent" />
       <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/40 to-transparent" />
@@ -150,7 +149,7 @@ function NetworkVisual({ icon: Icon }: { icon: typeof UsersRound }) {
       <VisualNode className="right-[12%] top-[28%] bg-[#eef7ff]">
         <Rocket className="size-4" />
       </VisualNode>
-      <VisualNode className="bottom-[18%] left-[22%] bg-[#f7f8fa]">
+      <VisualNode className="bottom-[18%] left-[22%] border-[#ffd9b8] bg-[#fff8f2] text-[#f58220]">
         <ShieldCheck className="size-4" />
       </VisualNode>
       <div className="relative flex size-16 items-center justify-center rounded-2xl border border-[#e4e9ef] bg-white text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.12)]">
@@ -167,7 +166,7 @@ function AnalyticsVisual({ icon: Icon }: { icon: typeof UsersRound }) {
       <div className="absolute right-[9%] top-[39%] h-14 w-[36%] rounded-xl border border-[#e4e9ef] bg-white/85 shadow-[0_18px_54px_rgba(0,52,102,0.07)]" />
       <div className="absolute left-[13%] top-[53%] h-px w-[26%] bg-[#e7edf4]" />
       <div className="absolute right-[13%] top-[53%] h-px w-[26%] bg-[#e7edf4]" />
-      <div className="absolute left-[13%] top-[61%] h-px w-[20%] bg-[#edf1f5]" />
+      <div className="absolute left-[13%] top-[61%] h-px w-[20%] bg-[#f58220]/45" />
       <div className="absolute right-[13%] top-[61%] h-px w-[20%] bg-[#edf1f5]" />
       <div className="relative flex size-14 items-center justify-center rounded-2xl border border-[#d7e6f6] bg-white text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.16)]">
         <Icon className="size-6" />
@@ -180,7 +179,7 @@ function QualityVisual({ icon: Icon }: { icon: typeof UsersRound }) {
   return (
     <>
       <div className="absolute bottom-6 left-1/2 h-14 w-[72%] -translate-x-1/2 rounded-xl border border-[#e4e9ef] bg-white/90 shadow-[0_18px_54px_rgba(0,52,102,0.08)]" />
-      <div className="absolute bottom-12 left-1/2 h-14 w-[58%] -translate-x-1/2 rounded-xl border border-[#e4e9ef] bg-white/80" />
+      <div className="absolute bottom-12 left-1/2 h-14 w-[58%] -translate-x-1/2 rounded-xl border border-[#ffd9b8] bg-[#fff8f2]/80" />
       <div className="relative flex size-14 items-center justify-center rounded-2xl border border-[#d7e6f6] bg-white text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.13)]">
         <Icon className="size-6" />
       </div>
@@ -197,7 +196,7 @@ function IntegrationVisual({ icon: Icon }: { icon: typeof UsersRound }) {
       <VisualNode className="right-[12%] top-[32%] rotate-[10deg]">
         <ShieldCheck className="size-4" />
       </VisualNode>
-      <VisualNode className="bottom-[18%] left-[20%] bg-[#f8f8f9]">
+      <VisualNode className="bottom-[18%] left-[20%] border-[#ffd9b8] bg-[#fff8f2] text-[#f58220]">
         <Gauge className="size-4" />
       </VisualNode>
       <VisualNode className="bottom-[18%] right-[20%] bg-[#eef7ff]">
@@ -223,7 +222,7 @@ function PerformanceVisual({ icon: Icon }: { icon: typeof UsersRound }) {
           <div className="h-8 flex-1 rounded-t bg-[#cbd9e8]" />
           <div className="h-6 flex-1 rounded-t bg-[#dfe7ef]" />
           <div className="h-10 flex-1 rounded-t bg-[#003466]/70" />
-          <div className="h-7 flex-1 rounded-t bg-[#dfe7ef]" />
+          <div className="h-7 flex-1 rounded-t bg-[#f58220]/55" />
           <div className="h-11 flex-1 rounded-t bg-[#003466]/80" />
         </div>
         <svg
@@ -253,7 +252,7 @@ function WorkflowVisual({ icon: Icon }: { icon: typeof UsersRound }) {
       <div className="absolute left-[14%] top-[30%] h-3 w-[28%] rounded-full bg-[#dfe7ef]" />
       <div className="absolute right-[14%] top-[30%] h-3 w-[28%] rounded-full bg-[#003466]/55" />
       <div className="absolute bottom-[28%] left-[14%] h-3 w-[38%] rounded-full bg-[#e8edf3]" />
-      <div className="absolute bottom-[28%] right-[14%] h-3 w-[20%] rounded-full bg-[#dfe7ef]" />
+      <div className="absolute bottom-[28%] right-[14%] h-3 w-[20%] rounded-full bg-[#f58220]/55" />
       <div className="relative flex size-14 items-center justify-center rounded-2xl border border-[#d7e6f6] bg-white text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.13)]">
         <Icon className="size-6" />
       </div>

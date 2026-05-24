@@ -15,11 +15,11 @@ export const navigationItems: NavigationItem[] = [
       },
       {
         label: "Offshoring",
-        href: "#offshoring",
+        href: "/offshoring",
       },
       {
         label: "Executive Advisory Consulting",
-        href: "#executive-advisory-consulting",
+        href: "/executive-advisory-consulting",
       },
     ],
   },

@@ -95,7 +95,9 @@ export function SoftwareDevelopmentTeamGrid() {
             </div>
             <div className="flex items-center gap-2 text-sm font-medium text-[#003466]">
               Idea
-              <span className="h-px w-10 bg-[#003466]" />
+              <span className="flex h-px w-10 bg-[#003466]">
+                <span className="h-px w-3 bg-[#f58220]" />
+              </span>
               Launch
             </div>
           </div>
@@ -103,7 +105,9 @@ export function SoftwareDevelopmentTeamGrid() {
           <div className="hidden xl:block">
             <div className="relative grid min-h-[540px] grid-cols-6 overflow-hidden px-6 py-8">
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.03)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:linear-gradient(to_bottom,transparent,black_14%,black_86%,transparent)]" />
-              <div className="absolute left-10 right-10 top-1/2 h-px bg-[#cbd6e2]" />
+              <div className="absolute left-10 right-10 top-1/2 h-px bg-[#cbd6e2]">
+                <span className="absolute left-1/2 top-0 h-px w-20 -translate-x-1/2 bg-[#f58220]" />
+              </div>
 
               {experts.map((expert, index) => {
                 const ExpertIcon = expert.icon;

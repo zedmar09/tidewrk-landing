@@ -132,7 +132,7 @@ const FloatingIconsHero = React.forwardRef<
   return (
     <section
       className={cn(
-        "relative flex min-h-[88svh] w-full items-center justify-center overflow-hidden bg-white px-5 pb-12 pt-24 sm:px-8 lg:px-12",
+        "relative overflow-hidden bg-white px-5 pb-0 pt-[4.75rem] sm:px-8 sm:pt-20 lg:px-[6vw]",
         className,
       )}
       onMouseMove={handleMouseMove}
@@ -141,36 +141,38 @@ const FloatingIconsHero = React.forwardRef<
     >
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.045)_1px,transparent_1px)] bg-[size:48px_48px]" />
       <div className="pointer-events-none absolute inset-0 bg-white/70" />
-      <div className="pointer-events-none absolute inset-0 h-full w-full">
-        {icons.map((iconData, index) => (
-          <Icon
-            iconData={iconData}
-            index={index}
-            key={iconData.id}
-            mouseX={mouseX}
-            mouseY={mouseY}
-          />
-        ))}
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-6xl text-center">
-        <div className="mx-auto mb-6 inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2.5 text-sm font-medium text-[#003466]">
-          <span className="size-2 bg-[#f58220]" aria-hidden="true" />
-          Software Development
+      <div className="relative mx-auto flex min-h-[calc(100svh-4.75rem)] w-full max-w-[1900px] flex-col justify-center py-12 sm:py-16">
+        <div className="pointer-events-none absolute inset-0 h-full w-full">
+          {icons.map((iconData, index) => (
+            <Icon
+              iconData={iconData}
+              index={index}
+              key={iconData.id}
+              mouseX={mouseX}
+              mouseY={mouseY}
+            />
+          ))}
         </div>
-        <h1 className="text-balance text-[clamp(2.5rem,8vw,5.7rem)] font-semibold leading-[1.04] tracking-normal text-[#111217]">
-          {title}
-        </h1>
-        <p className="mx-auto mt-7 max-w-5xl text-balance text-lg leading-8 text-[#666666] sm:text-xl sm:leading-9 lg:text-2xl lg:leading-10">
-          {subtitle}
-        </p>
-        <div className="mt-9">
-          <Button asChild size="lg" className="w-full sm:w-auto">
-            <a href={ctaHref}>
-              {ctaText}
-              <ArrowRight className="size-5" />
-            </a>
-          </Button>
+
+        <div className="relative z-10 mx-auto max-w-6xl text-center">
+          <div className="mx-auto mb-6 inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2.5 text-sm font-medium text-[#003466]">
+            <span className="size-2 bg-[#f58220]" aria-hidden="true" />
+            Software Development
+          </div>
+          <h1 className="mx-auto max-w-5xl text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-[#111217] sm:text-6xl lg:text-7xl xl:text-[4.85rem]">
+            {title}
+          </h1>
+          <p className="mx-auto mt-5 max-w-5xl text-balance text-lg leading-8 text-[#666666] sm:text-xl sm:leading-9 lg:text-[1.35rem] lg:leading-9">
+            {subtitle}
+          </p>
+          <div className="mt-7">
+            <Button asChild size="lg" className="w-full sm:w-auto">
+              <a href={ctaHref}>
+                {ctaText}
+                <ArrowRight className="size-5" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
