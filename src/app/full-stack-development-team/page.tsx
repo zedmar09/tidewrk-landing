@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
-import { FullStackDevelopmentTeamBenefitsBento } from "@/components/sections/full-stack-development-team-benefits-bento";
-import { FullStackDevelopmentTeamBuildShowcase } from "@/components/sections/full-stack-development-team-build-showcase";
-import { FullStackDevelopmentTeamClosingSection } from "@/components/sections/full-stack-development-team-closing-section";
-import { FullStackDevelopmentTeamHero } from "@/components/sections/full-stack-development-team-hero";
-import { FullStackDevelopmentTeamOverviewSection } from "@/components/sections/full-stack-development-team-overview-section";
+import {
+  FullStackDevelopmentTeamBenefitsBento,
+  FullStackDevelopmentTeamBuildShowcase,
+  FullStackDevelopmentTeamClosingSection,
+  FullStackDevelopmentTeamHero,
+  FullStackDevelopmentTeamOverviewSection,
+} from "@/components/sections/full-stack-development-team";
 
 export const metadata: Metadata = {
   title: "Full-Stack Development Team | Tidewrk",

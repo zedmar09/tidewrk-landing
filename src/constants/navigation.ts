@@ -33,7 +33,7 @@ export const navigationItems: NavigationItem[] = [
       },
       {
         label: "Business Intelligence",
-        href: "#business-intelligence",
+        href: "/business-intelligence",
       },
       {
         label: "Data Science",
