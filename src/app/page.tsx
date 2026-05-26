@@ -1,6 +1,7 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import {
+  AiWorkflowSection,
   FeaturesSection,
   HeroSection,
   SolutionsSection,
@@ -14,6 +15,7 @@ export default function Home() {
         <HeroSection />
         <FeaturesSection />
         <SolutionsSection />
+        <AiWorkflowSection />
       </main>
       <Footer />
     </>

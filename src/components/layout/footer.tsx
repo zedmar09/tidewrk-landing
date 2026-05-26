@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 
-import tidewrkLogo from "@/assets/images/tidewrk-logo.svg";
+import { FooterLogoOutline } from "@/components/layout/footer-logo-outline";
 
 const footerLinks = [
   { label: "Services", href: "/#services" },
@@ -87,12 +86,7 @@ export function Footer() {
 
         <div className="mx-auto mt-24 w-full md:mt-32">
           <Link href="/" aria-label="Go to Tidewrk home page">
-            <Image
-              alt="Tidewrk"
-              className="mx-auto h-auto w-full brightness-0 invert"
-              priority={false}
-              src={tidewrkLogo}
-            />
+            <FooterLogoOutline />
           </Link>
         </div>
 

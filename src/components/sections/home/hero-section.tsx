@@ -48,6 +48,9 @@ export function HeroSection() {
             "linear-gradient(112deg, transparent 0%, #000 13%, #000 86%, transparent 100%)",
           maskImage:
             "linear-gradient(112deg, transparent 0%, #000 13%, #000 86%, transparent 100%)",
+          backfaceVisibility: "hidden",
+          contain: "layout paint",
+          transform: "translate3d(0,0,0)",
         }}
         viewBox="-360 0 2160 720"
       >
@@ -93,11 +96,11 @@ export function HeroSection() {
             </span>
             <span
               aria-hidden="true"
-              className="tidewrk-glow-text block min-h-[2.08em] w-full overflow-hidden sm:min-h-[1.05em]"
+              className="tidewrk-glow-text hero-typing-slot block h-[2.08em] w-full overflow-hidden sm:h-[1.05em]"
             >
               <TypeAnimation
                 className="inline-block max-w-full whitespace-normal break-words sm:min-w-[18ch] sm:whitespace-nowrap"
-                cursor={true}
+                cursor={false}
                 deletionSpeed={{ type: "keyStrokeDelayInMs", value: 34 }}
                 preRenderFirstString={true}
                 repeat={Infinity}

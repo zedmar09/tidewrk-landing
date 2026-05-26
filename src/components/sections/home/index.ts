@@ -1,5 +1,6 @@
 export { ClientListSection } from "./client-list-section";
 export { CtaSection } from "./cta-section";
+export { AiWorkflowSection } from "./ai-workflow-section";
 export { FeaturesSection } from "./features-section";
 export { HeroSection } from "./hero-section";
 export { SolutionsSection } from "./solutions-section";
