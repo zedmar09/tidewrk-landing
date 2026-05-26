@@ -63,6 +63,17 @@
   }
 }
 
+@keyframes tide-current-mobile {
+  0%,
+  100% {
+    transform: translate3d(-0.6%, 0.35%, 0);
+  }
+
+  50% {
+    transform: translate3d(0.6%, -0.35%, 0);
+  }
+}
+
 .tide-wave-geometry {
   mask-image: linear-gradient(
     112deg,
@@ -84,6 +95,14 @@
 
 .tide-wave-line-alt {
   animation-name: tide-current-from-right;
+}
+
+@media (max-width: 640px) {
+  .tide-wave-line,
+  .tide-wave-line-alt {
+    animation-name: tide-current-mobile;
+    animation-duration: 14s !important;
+  }
 }
 
 .tidewrk-glow-text {

@@ -33,14 +33,14 @@ const heroPhrases = [
 
 export function HeroSection() {
   return (
-    <section className="relative z-0 min-h-[100svh] overflow-hidden bg-[#02050a] px-5 pb-6 pt-[5rem] text-white sm:px-8 sm:pt-20 lg:px-[6vw]">
+    <section className="relative z-0 min-h-[100svh] overflow-hidden bg-[#02050a] px-5 pb-6 pt-[4.75rem] text-white sm:px-8 sm:pt-20 lg:px-[6vw]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,63,114,0.78),transparent_45%),radial-gradient(ellipse_at_50%_20%,rgba(0,63,114,0.32),transparent_32%),linear-gradient(180deg,#02050a_0%,#07111f_46%,#02050a_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#003f72]/46 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#02050a] via-[#02050a]/88 to-transparent" />
 
       <svg
         aria-hidden="true"
-        className="tide-wave-geometry pointer-events-none absolute -bottom-[2%] -left-[20%] h-[76svh] min-h-[560px] w-[150%] opacity-82"
+        className="tide-wave-geometry pointer-events-none absolute -bottom-[1%] -left-[88%] h-[42svh] min-h-[290px] w-[280%] opacity-45 sm:-left-[42%] sm:h-[58svh] sm:min-h-[430px] sm:w-[205%] sm:opacity-60 lg:-bottom-[2%] lg:-left-[20%] lg:h-[76svh] lg:min-h-[560px] lg:w-[150%] lg:opacity-82"
         fill="none"
         preserveAspectRatio="none"
         style={{
@@ -74,9 +74,9 @@ export function HeroSection() {
         ))}
       </svg>
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-[1900px] flex-col items-center justify-start pb-8 pt-[clamp(2.75rem,9svh,6rem)] text-center sm:pb-10 lg:pb-12">
-        <div className="mx-auto flex max-w-5xl flex-col items-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-sm font-medium text-white/78 shadow-[0_14px_50px_rgba(0,0,0,0.18)] backdrop-blur-md sm:px-4">
+      <div className="relative mx-auto flex min-h-[calc(100svh-4.75rem)] w-full max-w-[1900px] flex-col items-center justify-start pb-8 pt-[clamp(2rem,7svh,6rem)] text-center sm:min-h-[calc(100svh-5rem)] sm:pb-10 sm:pt-[clamp(2.75rem,9svh,6rem)] lg:pb-12">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center">
+          <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-center text-xs font-medium text-white/78 shadow-[0_14px_50px_rgba(0,0,0,0.18)] backdrop-blur-md sm:px-4 sm:text-sm">
             <span className="tidewrk-glow-badge rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em]">
               Tidewrk
             </span>
@@ -86,17 +86,17 @@ export function HeroSection() {
 
           <h1
             aria-label={heroContent.headline}
-            className="mt-7 max-w-6xl text-balance text-[2.75rem] font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl sm:leading-[1.02] lg:text-[4.55rem] xl:text-[5.25rem]"
+            className="mt-7 w-full max-w-6xl text-balance text-[clamp(2.25rem,12vw,3.15rem)] font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl sm:leading-[1.02] lg:text-[4.55rem] xl:text-[5.25rem]"
           >
             <span aria-hidden="true" className="block">
               The current behind{" "}
             </span>
             <span
               aria-hidden="true"
-              className="tidewrk-glow-text block min-h-[1.05em]"
+              className="tidewrk-glow-text block min-h-[2.08em] w-full overflow-hidden sm:min-h-[1.05em]"
             >
               <TypeAnimation
-                className="inline-block min-w-[18ch]"
+                className="inline-block max-w-full whitespace-normal break-words sm:min-w-[18ch] sm:whitespace-nowrap"
                 cursor={true}
                 deletionSpeed={{ type: "keyStrokeDelayInMs", value: 34 }}
                 preRenderFirstString={true}
@@ -115,20 +115,20 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <p className="mt-6 max-w-4xl text-pretty text-base leading-7 text-white/70 sm:text-xl sm:leading-8 lg:text-[1.25rem]">
+          <p className="mt-5 max-w-4xl text-pretty text-[0.98rem] leading-7 text-white/70 sm:mt-6 sm:text-xl sm:leading-8 lg:text-[1.25rem]">
             {heroContent.description}
           </p>
 
-          <div className="mt-8 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+          <div className="mt-7 flex w-full max-w-sm flex-col items-center justify-center gap-3 sm:mt-8 sm:w-auto sm:max-w-none sm:flex-row">
             <Link
-              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-white px-8 text-lg font-semibold text-[#003f72] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f9fd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-6 text-base font-semibold text-[#003f72] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f9fd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
               href={heroContent.primaryCta.href}
             >
               <Sparkles className="size-5" aria-hidden="true" />
               {heroContent.primaryCta.label}
             </Link>
             <Link
-              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full border border-white/24 bg-white/6 px-8 text-lg font-semibold text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-white/24 bg-white/6 px-6 text-base font-semibold text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
               href={heroContent.secondaryCta.href}
             >
               <Play className="size-5 fill-white/14" aria-hidden="true" />
@@ -137,33 +137,33 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative mt-auto grid w-full gap-5 pt-16 md:grid-cols-[1fr_auto] md:items-center md:pt-20 lg:pt-24">
-          <div className="grid w-full max-w-2xl grid-cols-1 items-center gap-5 text-center sm:grid-cols-3 md:justify-self-start">
+        <div className="relative mt-auto grid w-full gap-4 pt-12 sm:gap-5 sm:pt-16 md:grid-cols-[1fr_auto] md:items-center md:pt-20 lg:pt-24">
+          <div className="grid w-full max-w-2xl grid-cols-3 items-start gap-3 text-center sm:gap-5 md:justify-self-start">
             {heroStats.map((stat) => (
               <div key={stat.label} className="mx-auto w-full max-w-44">
-                <p className="text-4xl font-semibold leading-none text-white/88 sm:text-5xl">
+                <p className="text-3xl font-semibold leading-none text-white/88 sm:text-5xl">
                   {stat.value}
                   <span className="tidewrk-glow-text">
                     {stat.suffix}
                   </span>
                 </p>
-                <p className="mt-2 max-w-40 text-sm leading-5 text-white/54">
+                <p className="mx-auto mt-2 max-w-32 text-[0.68rem] leading-4 text-white/54 sm:max-w-40 sm:text-sm sm:leading-5">
                   {stat.label}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mx-auto w-full max-w-[30rem] rounded-[1.4rem] border border-white/10 bg-white/[0.07] p-4 text-left shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl md:mx-0 md:w-[30rem]">
+          <div className="mx-auto w-full max-w-[30rem] rounded-[1.1rem] border border-white/10 bg-white/[0.07] p-3 text-left shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:rounded-[1.4rem] sm:p-4 md:mx-0 md:w-[30rem]">
             <div className="flex items-center gap-4">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[#003f72]/45 bg-[#003f72]/20 text-white shadow-[0_0_26px_rgba(0,63,114,0.45)]">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#003f72]/45 bg-[#003f72]/20 text-white shadow-[0_0_26px_rgba(0,63,114,0.45)] sm:size-11">
                 <BrainCircuit className="size-5" aria-hidden="true" />
               </span>
               <div>
-                <p className="text-base font-semibold uppercase tracking-[0.08em] text-white">
+                <p className="text-sm font-semibold uppercase tracking-[0.08em] text-white sm:text-base">
                   Smart execution support
                 </p>
-                <p className="mt-1 text-sm leading-5 text-white/56">
+                <p className="mt-1 text-xs leading-5 text-white/56 sm:text-sm">
                   People, systems, data, and practical AI support aligned around your next move.
                 </p>
               </div>
