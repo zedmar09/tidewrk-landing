@@ -1,12 +1,9 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import {
-  ClientListSection,
-  CtaSection,
   FeaturesSection,
   HeroSection,
-  TestimonialsSection,
-  WhyTidewrkSection,
+  SolutionsSection,
 } from "@/components/sections/home";
 
 export default function Home() {
@@ -15,11 +12,8 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <ClientListSection />
-        <WhyTidewrkSection />
         <FeaturesSection />
-        <TestimonialsSection />
-        <CtaSection />
+        <SolutionsSection />
       </main>
       <Footer />
     </>

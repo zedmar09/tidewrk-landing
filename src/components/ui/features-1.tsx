@@ -1,330 +1,285 @@
+import Link from "next/link";
 import {
-  BarChart3,
+  ArrowUpRight,
   BrainCircuit,
-  BriefcaseBusiness,
   Code2,
-  Database,
-  FlaskConical,
-  Palette,
+  Compass,
+  Globe2,
+  Network,
   ShieldCheck,
-  Smartphone,
+  UsersRound,
+  Workflow,
 } from "lucide-react";
-import type { ReactNode } from "react";
 
-import { cn } from "@/lib/utils";
-
-const features = [
+const services = [
   {
-    title: "Full-Stack Dev Team",
+    title: "Software Development",
     description:
-      "Experts in front-end, back-end, and database technologies, bringing your vision to life.",
-    icon: Code2,
-    visual: "build",
+      "Build secure, scalable software with the right product, design, engineering, QA, and AI-supported workflow behind it.",
+    href: "/software-development",
+    visual: "software",
+    className: "lg:col-span-5",
   },
   {
-    title: "Business Intelligence",
+    title: "Staff Augmentation",
     description:
-      "Unlocking the power of your data to gain valuable business insights.",
-    icon: BarChart3,
-    visual: "analytics",
+      "Add skilled professionals who fit your team, strengthen capacity, and help work move forward with modern tools.",
+    href: "/staff-augmentation",
+    visual: "staff",
+    className: "lg:col-span-3",
   },
   {
-    title: "Data Science",
+    title: "Offshoring",
     description:
-      "Leveraging data to solve complex problems and drive innovation.",
-    icon: FlaskConical,
-    visual: "experiment",
+      "Create global operating flow with aligned teams, clear handoffs, and practical AI support where it improves coordination.",
+    href: "/offshoring",
+    visual: "offshoring",
+    className: "lg:col-span-3",
   },
   {
-    title: "Data Engineering",
+    title: "Executive Advisory Consulting",
     description:
-      "Building robust and scalable data infrastructure for your organization.",
-    icon: Database,
-    visual: "pipeline",
-  },
-  {
-    title: "UX/UI Design",
-    description:
-      "Designing intuitive and enjoyable user experiences for your digital products.",
-    icon: Palette,
-    visual: "design",
-  },
-  {
-    title: "Machine Learning",
-    description:
-      "Harnessing the power of AI to automate tasks and gain a competitive edge.",
-    icon: BrainCircuit,
-    visual: "intelligence",
-  },
-  {
-    title: "Mobile App Development",
-    description:
-      "Creating engaging and user-friendly mobile apps for your business.",
-    icon: Smartphone,
-    visual: "mobile",
-  },
-  {
-    title: "QA Testing & Engineering",
-    description:
-      "Ensuring the quality and reliability of your software through expert testing.",
-    icon: ShieldCheck,
-    visual: "quality",
-  },
-  {
-    title: "Virtual Assistance / Business Administrations",
-    description:
-      "Enhancing operational efficiency and effectiveness through skilled virtual assistance.",
-    icon: BriefcaseBusiness,
-    visual: "operations",
+      "Give leaders objective guidance on strategy, transformation, operations, and AI-aware decisions for the next move.",
+    href: "/executive-advisory-consulting",
+    visual: "advisory",
+    className: "lg:col-span-5",
   },
 ];
 
 export function Features() {
   return (
     <section
-      className="relative z-0 overflow-hidden bg-white py-10 md:py-16"
+      className="relative z-0 scroll-mt-20 overflow-hidden bg-[#02050a] px-5 py-14 text-white sm:px-8 md:py-20 lg:px-[6vw]"
       id="services"
     >
-      <div className="relative mx-auto max-w-[1900px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        <div className="text-center">
-          <div className="mb-5 inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2 text-sm font-medium text-[#003466]">
-            <span className="size-2 bg-[#f58220]" aria-hidden="true" />
-            Our Services
-          </div>
-          <h2 className="text-balance text-4xl font-semibold leading-tight tracking-normal text-[#111217] sm:text-5xl lg:text-6xl">
-            Built to cover your needs
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#02050a] via-[#02050a]/80 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#02050a] via-[#02050a]/80 to-transparent"
+      />
+
+      <div className="relative mx-auto max-w-[1800px]">
+        <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <h2 className="max-w-4xl text-balance text-[2.7rem] font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-[4.75rem]">
+            Services that keep{" "}
+            <span className="tidewrk-glow-text">work moving</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-4xl text-lg leading-8 text-[#666666] sm:text-xl sm:leading-9">
-            Tidewrk brings talent, technology, and advisory support together so
-            teams can solve problems without adding operational drag.
+          <p className="max-w-3xl text-pretty text-lg leading-8 text-white/62 sm:text-xl sm:leading-9 lg:justify-self-end lg:self-center">
+            Tidewrk supports your next move with the people, systems,
+            leadership, and practical AI support needed to improve execution
+            without adding operational drag.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid grid-cols-1 gap-6 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => {
-            const Icon = feature.icon;
+        <div className="mt-10 grid grid-cols-1 gap-5 md:mt-14 md:grid-cols-2 lg:grid-cols-8">
+          {services.map((service) => (
+            <article
+              className={`group relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.075),rgba(255,255,255,0.035))] p-2 shadow-[0_24px_90px_rgba(0,0,0,0.2)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-[#003f72]/70 hover:bg-white/[0.065] ${service.className}`}
+              key={service.title}
+            >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#003f72] to-transparent opacity-0 transition duration-500 group-hover:opacity-100"
+              />
+              <ServiceVisual variant={service.visual} />
 
-            return (
-              <article
-                className="group overflow-hidden border border-[#e6e8ec] bg-white transition duration-500 hover:-translate-y-1 hover:border-[#ccd8e4]"
-                key={feature.title}
-              >
-                <ServiceVisualPanel
-                  icon={Icon}
-                  variant={feature.visual}
-                />
-
-                <div className="px-6 pb-7 pt-4 sm:px-7">
-                  <h3 className="text-pretty text-2xl font-semibold leading-tight tracking-normal text-[#111217]">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-7 text-[#666666] sm:text-lg sm:leading-8">
-                    {feature.description}
-                  </p>
-                  <a
-                    className="mt-6 inline-flex text-sm font-semibold text-[#003466] transition-colors duration-300 hover:text-[#00284f]"
-                    href="#contact"
+              <div className="px-4 pb-5 pt-4 sm:px-5 sm:pb-6">
+                <div className="flex items-start justify-between gap-5">
+                  <div>
+                    <h3 className="text-pretty text-2xl font-semibold leading-tight tracking-normal text-white">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-base leading-7 text-white/58">
+                      {service.description}
+                    </p>
+                  </div>
+                  <Link
+                    aria-label={`Explore ${service.title}`}
+                    className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/8 text-white/78 transition group-hover:border-[#003f72]/70 group-hover:bg-[#003f72]/18 group-hover:text-white group-hover:shadow-[0_0_22px_rgba(0,63,114,0.55)]"
+                    href={service.href}
                   >
-                    Read More
-                  </a>
+                    <ArrowUpRight className="size-5" aria-hidden="true" />
+                  </Link>
                 </div>
-              </article>
-            );
-          })}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function ServiceVisualPanel({
-  icon: Icon,
-  variant,
-}: {
-  icon: typeof Code2;
-  variant: string;
-}) {
+function ServiceVisual({ variant }: { variant: string }) {
   return (
-    <div className="relative mx-3 mt-3 flex h-36 items-center justify-center overflow-hidden bg-[#fbfcfd] sm:h-40">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,52,102,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,52,102,0.04)_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
-      <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-[#003466]/18 to-transparent" />
-      <div className="pointer-events-none absolute left-1/2 top-8 h-[calc(100%-4rem)] w-px bg-gradient-to-b from-transparent via-[#003466]/14 to-transparent" />
+    <div className="service-visual relative flex h-56 overflow-hidden rounded-[1.1rem] border border-white/8 bg-[#04101d] text-white sm:h-64">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(0,63,114,0.42),transparent_34%),radial-gradient(circle_at_18%_18%,rgba(0,63,114,0.78),transparent_36%),radial-gradient(circle_at_88%_78%,rgba(255,255,255,0.06),transparent_24%),linear-gradient(145deg,#03070d_0%,#07182b_50%,#02050a_100%)]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-7 top-7 h-px bg-gradient-to-r from-transparent via-[#003f72]/70 to-transparent"
+      />
 
-      {variant === "build" && <BuildVisual icon={Icon} />}
-      {variant === "analytics" && <AnalyticsVisual icon={Icon} />}
-      {variant === "experiment" && <ExperimentVisual icon={Icon} />}
-      {variant === "pipeline" && <PipelineVisual icon={Icon} />}
-      {variant === "design" && <DesignVisual icon={Icon} />}
-      {variant === "intelligence" && <IntelligenceVisual icon={Icon} />}
-      {variant === "mobile" && <MobileVisual icon={Icon} />}
-      {variant === "quality" && <QualityVisual icon={Icon} />}
-      {variant === "operations" && <OperationsVisual icon={Icon} />}
+      {variant === "software" && <SoftwareVisual />}
+      {variant === "staff" && <StaffVisual />}
+      {variant === "offshoring" && <OffshoringVisual />}
+      {variant === "advisory" && <AdvisoryVisual />}
     </div>
   );
 }
 
-function CenterIcon({
-  icon: Icon,
-  size = "large",
-}: {
-  icon: typeof Code2;
-  size?: "medium" | "large";
-}) {
+function SoftwareVisual() {
   return (
-    <div
-      className={cn(
-        "relative flex items-center justify-center rounded-2xl border bg-white",
-        size === "large" ? "size-16" : "size-14",
-        "border-[#d7e6f6] text-[#003466] shadow-[0_20px_70px_rgba(0,52,102,0.12)]",
-      )}
-    >
-      <Icon className={size === "large" ? "size-7" : "size-6"} aria-hidden="true" />
-    </div>
-  );
-}
-
-function MiniNode({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={cn(
-        "absolute flex size-10 items-center justify-center rounded-xl border border-[#e0e6ee] bg-white text-[#003466] shadow-[0_14px_40px_rgba(0,52,102,0.1)]",
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
-}
-
-function BuildVisual({ icon: Icon }: { icon: typeof Code2 }) {
-  return (
-    <>
-      <MiniNode className="left-[14%] top-[28%] bg-[#f7fbff]">
-        <Database className="size-4" />
-      </MiniNode>
-      <MiniNode className="right-[13%] top-[30%]">
-        <ShieldCheck className="size-4" />
-      </MiniNode>
-      <MiniNode className="bottom-[18%] left-[22%] border-[#ffd9b8] bg-[#fff8f2] text-[#f58220]">
+    <div className="relative z-10 flex w-full items-center justify-center px-6">
+      <div className="service-build-chip absolute left-7 top-7 flex items-center gap-2 rounded-full border border-[#003f72]/45 bg-white/8 px-3 py-2 text-xs font-medium text-white/84 backdrop-blur-md">
         <Code2 className="size-4" />
-      </MiniNode>
-      <CenterIcon icon={Icon} />
-    </>
-  );
-}
-
-function AnalyticsVisual({ icon: Icon }: { icon: typeof Code2 }) {
-  return (
-    <>
-      <div className="absolute bottom-7 left-7 right-7 h-16 rounded-xl border border-[#e4e9ef] bg-white px-4 py-3 shadow-[0_18px_54px_rgba(0,52,102,0.08)]">
-        <div className="flex h-full items-end gap-2">
-          <span className="h-5 flex-1 rounded-t bg-[#dfe7ef]" />
-          <span className="h-8 flex-1 rounded-t bg-[#003466]/35" />
-          <span className="h-6 flex-1 rounded-t bg-[#f58220]/55" />
-          <span className="h-11 flex-1 rounded-t bg-[#003466]/80" />
+        Product build
+      </div>
+      <div className="service-security-pulse absolute right-7 top-8 rounded-full border border-[#003f72]/45 bg-white/8 p-3 text-white shadow-[0_0_22px_rgba(0,63,114,0.35)] backdrop-blur-md">
+        <ShieldCheck className="size-5" />
+      </div>
+      <div className="relative w-full max-w-lg overflow-hidden rounded-[1.15rem] border border-[#003f72]/35 bg-[#02050a]/64 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#003f72] to-transparent" />
+        <div className="service-terminal-scan pointer-events-none absolute inset-x-0 top-1/2 h-10 -translate-y-1/2 bg-gradient-to-b from-transparent via-[#003f72]/20 to-transparent" />
+        <div className="mb-4 flex items-center gap-2 text-white">
+          <span className="size-2 rounded-full bg-[#003f72] shadow-[0_0_16px_rgba(0,63,114,0.9)]" />
+          <span className="size-2 rounded-full bg-white/36" />
+          <span className="size-2 rounded-full bg-[#003f72]/70" />
+        </div>
+        <div className="service-code-flow space-y-3">
+          <div className="h-3 w-4/5 rounded-full bg-[#003f72]/50" />
+          <div className="h-3 w-2/3 rounded-full bg-white/10" />
+          <div className="flex items-center gap-3">
+            <div className="h-3 flex-1 rounded-full bg-[#003f72]/80" />
+            <div className="rounded-full bg-[#003f72] px-3 py-1 text-xs font-semibold text-white shadow-[0_0_18px_rgba(0,63,114,0.75)]">
+              AI assist
+            </div>
+          </div>
+          <div className="h-3 w-3/4 rounded-full bg-white/10" />
         </div>
       </div>
-      <CenterIcon icon={Icon} size="medium" />
-    </>
+    </div>
   );
 }
 
-function ExperimentVisual({ icon: Icon }: { icon: typeof Code2 }) {
+function StaffVisual() {
+  const people = [
+    { top: "16%", left: "16%" },
+    { top: "34%", left: "34%" },
+    { top: "18%", right: "17%" },
+    { bottom: "17%", left: "24%" },
+    { bottom: "18%", right: "24%" },
+  ];
+
   return (
-    <>
-      <div className="absolute left-[12%] top-[36%] h-3 w-[28%] rounded-full bg-[#dfe7ef]" />
-      <div className="absolute right-[12%] top-[36%] h-3 w-[22%] rounded-full bg-[#f58220]/55" />
-      <div className="absolute bottom-[25%] left-[18%] h-3 w-[46%] rounded-full bg-[#e8edf3]" />
-      <CenterIcon icon={Icon} size="medium" />
-    </>
+    <div className="relative z-10 flex w-full items-center justify-center">
+      <svg
+        aria-hidden="true"
+        className="service-match-lines absolute inset-8 h-[calc(100%-4rem)] w-[calc(100%-4rem)]"
+        fill="none"
+        viewBox="0 0 260 160"
+      >
+        <path d="M130 80 L46 34" stroke="rgba(255,255,255,0.22)" />
+        <path d="M130 80 L202 32" stroke="rgba(255,255,255,0.22)" />
+        <path d="M130 80 L62 130" stroke="rgba(255,255,255,0.22)" />
+        <path d="M130 80 L204 128" stroke="rgba(255,255,255,0.22)" />
+      </svg>
+      <div className="absolute inset-0">
+        {people.map((style, index) => (
+          <span
+            className="service-match-node absolute flex size-12 items-center justify-center rounded-full border border-[#003f72]/45 bg-white/8 text-white shadow-[0_0_34px_rgba(0,63,114,0.2)] backdrop-blur-md"
+            key={index}
+            style={{ ...style, animationDelay: `${index * -0.55}s` }}
+          >
+            <UsersRound className="size-5" />
+          </span>
+        ))}
+      </div>
+      <div className="service-core-orbit relative rounded-full border border-[#003f72]/70 bg-[#003f72] p-5 text-white shadow-[0_0_0_18px_rgba(0,63,114,0.16),0_28px_70px_rgba(0,0,0,0.28)]">
+        <span className="absolute inset-[-18px] rounded-full border border-dashed border-[#003f72]/42" />
+        <BrainCircuit className="size-9" />
+      </div>
+      <div className="service-match-chip absolute bottom-6 rounded-full border border-[#003f72]/45 bg-white/9 px-4 py-2 text-xs font-semibold text-white/84 backdrop-blur-md">
+        Skills matched to workflow
+      </div>
+    </div>
   );
 }
 
-function PipelineVisual({ icon: Icon }: { icon: typeof Code2 }) {
+function OffshoringVisual() {
+  const routePath = "M8 66 C78 12 140 92 214 44 C288 -2 334 68 412 22";
+
   return (
-    <>
-      <MiniNode className="left-[12%] top-[35%] bg-[#f5f9fd] text-[#003466]">
-        <Database className="size-4" />
-      </MiniNode>
-      <MiniNode className="right-[12%] top-[35%] bg-[#f7fbff]">
-        <BarChart3 className="size-4" />
-      </MiniNode>
-      <div className="absolute left-[24%] right-[24%] top-1/2 h-[3px] -translate-y-1/2 bg-[#f58220]/55" />
-      <CenterIcon icon={Icon} />
-    </>
+    <div className="relative z-10 flex w-full items-center justify-center px-7">
+      <div className="service-route-start absolute left-8 top-8 flex size-12 items-center justify-center rounded-full border border-[#003f72]/45 bg-white/8 text-white backdrop-blur-md">
+        <Globe2 className="size-6" />
+      </div>
+      <div className="service-route-end absolute right-8 bottom-8 flex size-12 items-center justify-center rounded-full border border-[#003f72]/45 bg-white/8 text-white backdrop-blur-md">
+        <Workflow className="size-6" />
+      </div>
+      <svg
+        aria-hidden="true"
+        className="absolute inset-x-5 top-1/2 h-24 -translate-y-1/2"
+        fill="none"
+        viewBox="0 0 420 120"
+      >
+        <path
+          d="M8 82 C80 20 138 104 212 55 C290 4 332 80 412 33"
+          stroke="rgba(0,63,114,0.34)"
+          strokeWidth="2"
+        />
+        <path d={routePath} stroke="rgba(0,63,114,0.78)" strokeWidth="4" />
+        <circle r="5" fill="#ffffff">
+          <animateMotion dur="4.8s" path={routePath} repeatCount="indefinite" />
+        </circle>
+        <circle r="3" fill="#003f72">
+          <animateMotion
+            begin="1.6s"
+            dur="4.8s"
+            path={routePath}
+            repeatCount="indefinite"
+          />
+        </circle>
+      </svg>
+      <div className="rounded-[1rem] border border-[#003f72]/35 bg-[#02050a]/64 px-5 py-4 text-center shadow-[0_24px_70px_rgba(0,0,0,0.24)] backdrop-blur">
+        <p className="text-sm font-semibold text-white">Global flow</p>
+        <p className="mt-1 text-xs text-white/54">
+          Aligned teams, clearer handoffs
+        </p>
+      </div>
+    </div>
   );
 }
 
-function DesignVisual({ icon: Icon }: { icon: typeof Code2 }) {
+function AdvisoryVisual() {
   return (
-    <>
-      <div className="absolute left-[10%] top-[28%] h-16 w-[35%] rounded-xl border border-[#e4e9ef] bg-white/85 shadow-[0_18px_54px_rgba(0,52,102,0.07)]" />
-      <div className="absolute right-[10%] bottom-[22%] h-16 w-[35%] rounded-xl border border-[#ffd9b8] bg-[#fff8f2]" />
-      <CenterIcon icon={Icon} />
-    </>
-  );
-}
-
-function IntelligenceVisual({ icon: Icon }: { icon: typeof Code2 }) {
-  return (
-    <>
-      <MiniNode className="left-[15%] top-[24%]">
-        <BrainCircuit className="size-4" />
-      </MiniNode>
-      <MiniNode className="right-[15%] top-[24%] border-[#ffd9b8] bg-[#fff8f2] text-[#f58220]">
-        <SparkDot />
-      </MiniNode>
-      <MiniNode className="bottom-[20%] left-[22%] bg-[#f7fbff]">
-        <Code2 className="size-4" />
-      </MiniNode>
-      <CenterIcon icon={Icon} />
-    </>
-  );
-}
-
-function MobileVisual({ icon: Icon }: { icon: typeof Code2 }) {
-  return (
-    <>
-      <div className="absolute left-[16%] top-[20%] h-24 w-14 rounded-2xl border border-[#e4e9ef] bg-white shadow-[0_18px_54px_rgba(0,52,102,0.08)]" />
-      <div className="absolute right-[16%] top-[28%] h-20 w-12 rounded-2xl border border-[#ffd9b8] bg-[#fff8f2]" />
-      <CenterIcon icon={Icon} size="medium" />
-    </>
-  );
-}
-
-function QualityVisual({ icon: Icon }: { icon: typeof Code2 }) {
-  return (
-    <>
-      <div className="absolute bottom-6 left-1/2 h-14 w-[72%] -translate-x-1/2 rounded-xl border border-[#e4e9ef] bg-white/90 shadow-[0_18px_54px_rgba(0,52,102,0.08)]" />
-      <div className="absolute bottom-12 left-1/2 h-14 w-[58%] -translate-x-1/2 rounded-xl border border-[#ffd9b8] bg-[#fff8f2]" />
-      <CenterIcon icon={Icon} size="medium" />
-    </>
-  );
-}
-
-function OperationsVisual({ icon: Icon }: { icon: typeof Code2 }) {
-  return (
-    <>
-      <div className="absolute left-[13%] top-[30%] h-3 w-[32%] rounded-full bg-[#dfe7ef]" />
-      <div className="absolute right-[13%] top-[30%] h-3 w-[26%] rounded-full bg-[#003466]/25" />
-      <div className="absolute bottom-[28%] left-[13%] h-3 w-[42%] rounded-full bg-[#e8edf3]" />
-      <div className="absolute bottom-[28%] right-[13%] h-3 w-[18%] rounded-full bg-[#f58220]/55" />
-      <CenterIcon icon={Icon} />
-    </>
-  );
-}
-
-function SparkDot() {
-  return (
-    <span className="relative flex size-4">
-      <span className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 rounded-full bg-current" />
-      <span className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 rounded-full bg-current" />
-    </span>
+    <div className="relative z-10 flex w-full items-center justify-center px-6">
+      <div className="absolute inset-x-8 top-8 grid grid-cols-3 gap-3">
+        {["Strategy", "Risk", "Growth"].map((label) => (
+          <div
+            className="service-decision-chip rounded-full border border-[#003f72]/40 bg-white/8 px-3 py-2 text-center text-xs font-medium text-white/84 backdrop-blur-md"
+            key={label}
+          >
+            {label}
+          </div>
+        ))}
+      </div>
+      <div className="service-core-orbit relative flex size-28 items-center justify-center rounded-full border border-[#003f72]/70 bg-[#003f72] text-white shadow-[0_0_0_28px_rgba(0,63,114,0.12),0_30px_90px_rgba(0,0,0,0.3)]">
+        <span className="absolute inset-[-24px] rounded-full border border-dashed border-[#003f72]/35" />
+        <Compass className="size-12" />
+      </div>
+      <div className="absolute bottom-7 grid w-[86%] grid-cols-2 gap-3">
+        <div className="service-insight-card rounded-[0.85rem] border border-[#003f72]/35 bg-white/8 px-4 py-3 backdrop-blur-md">
+          <Network className="mb-2 size-5 text-white" />
+          <div className="service-insight-bar h-2 w-4/5 rounded-full bg-[#003f72]/50" />
+        </div>
+        <div className="service-insight-card service-insight-card-delayed rounded-[0.85rem] border border-[#003f72]/35 bg-white/8 px-4 py-3 backdrop-blur-md">
+          <BrainCircuit className="mb-2 size-5 text-white" />
+          <div className="service-insight-bar h-2 w-2/3 rounded-full bg-[#003f72]/50" />
+        </div>
+      </div>
+    </div>
   );
 }

@@ -5,16 +5,16 @@ import type {
 } from "@/types";
 
 export const heroContent: HeroContent = {
-  eyebrow: "Tidewrk",
-  headline: "Powering Progress Through Talent and Technology Solutions",
+  eyebrow: "Strategic support for what comes next",
+  headline: "The current behind your next move.",
   description:
-    "Tidewrk connects businesses with the right talent, technology, and expertise to solve challenges, scale smarter, and move forward with confidence.",
+    "Strategic talent, smarter systems, and practical AI support built to keep your business moving.",
   primaryCta: {
-    label: "Why Tidewrk",
-    href: "#why-tidewrk",
+    label: "Talk to Tidewrk",
+    href: "#contact",
   },
   secondaryCta: {
-    label: "Our Services",
+    label: "Explore Services",
     href: "#services",
   },
 };

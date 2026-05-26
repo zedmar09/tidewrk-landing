@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Tidewrk",
   description:
-    "Tidewrk helps teams launch polished service workflows with less operational drag.",
+    "Tidewrk helps businesses move forward with the right talent, smarter systems, practical AI support, and reliable execution.",
   url: "https://tidewrk.com",
   cta: {
     primary: "Start now",

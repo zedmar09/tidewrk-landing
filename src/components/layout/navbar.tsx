@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
 import { useEffect, useState } from "react";
-import { ChevronDown, Mail, Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 import { navigationItems } from "@/constants/navigation";
 import { Button } from "@/components/ui/button";
 import tidewrkLogo from "@/assets/images/tidewrk-logo.svg";
@@ -13,9 +13,18 @@ import tidewrkLogo from "@/assets/images/tidewrk-logo.svg";
 export function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openSection, setOpenSection] = useState<string | null>(
-    navigationItems.find((item) => item.children)?.label ?? null,
-  );
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrolled = () => {
+      setIsScrolled(window.scrollY > 12);
+    };
+
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateScrolled);
+  }, []);
 
   useEffect(() => {
     if (!isMenuOpen) {
@@ -48,8 +57,45 @@ export function Navbar() {
     }
   };
 
+  const handleNavItemClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    closeMenu();
+
+    if (pathname !== "/") {
+      return;
+    }
+
+    const hash = href.startsWith("/#")
+      ? href.slice(2)
+      : href.startsWith("#")
+        ? href.slice(1)
+        : "";
+
+    if (!hash) {
+      return;
+    }
+
+    const target = document.getElementById(hash);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.pushState(null, "", `#${hash}`);
+  };
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#eef0f3] bg-white">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 text-white transition-colors duration-300 ${
+        isScrolled
+          ? "border-b border-white/12 bg-[#02050a]/32 shadow-[0_18px_60px_rgba(0,0,0,0.16)] backdrop-blur-2xl"
+          : "bg-transparent"
+      }`}
+    >
       <nav className="mx-auto flex h-16 w-full max-w-[1800px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link
           href="/"
@@ -59,44 +105,30 @@ export function Navbar() {
         >
           <Image
             alt="Tidewrk"
-            className="h-8 w-auto"
+            className="h-8 w-auto brightness-0 invert"
             priority
             src={tidewrkLogo}
           />
         </Link>
 
-        <div className="hidden items-center gap-10 text-[1.02rem] font-normal text-[#666666] lg:flex">
+        <div className="hidden items-center gap-10 text-[1.02rem] font-normal text-white/72 lg:flex">
           {navigationItems.map((item) => (
-            <div className="group relative" key={item.label}>
-              <Link
-                className="inline-flex h-16 items-center gap-1.5 transition hover:text-[#003466]"
-                href={item.href}
-              >
-                {item.label}
-                {item.children ? <ChevronDown className="h-4 w-4" /> : null}
-              </Link>
-
-              {item.children ? (
-                <div className="invisible absolute left-1/2 top-[calc(100%-0.25rem)] min-w-72 -translate-x-1/2 rounded-lg border border-[#e4e7ec] bg-white/96 p-2 opacity-0 shadow-[0_18px_60px_rgba(0,52,102,0.12)] backdrop-blur-md transition group-hover:visible group-hover:translate-y-1 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-1 group-focus-within:opacity-100">
-                  {item.children.map((child) => (
-                    <Link
-                      className="block rounded-none px-4 py-3 text-sm leading-5 text-[#666666] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
-                      href={child.href}
-                      key={child.label}
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              ) : null}
-            </div>
+            <Link
+              className="inline-flex h-16 items-center transition hover:text-white"
+              href={item.href}
+              key={item.label}
+              onClick={(event) => handleNavItemClick(event, item.href)}
+            >
+              {item.label}
+            </Link>
           ))}
         </div>
 
         <Button
           asChild
+          variant="secondary"
           size="sm"
-          className="hidden rounded-none pl-5 pr-4 shadow-none lg:inline-flex"
+          className="hidden rounded-full border border-white/18 bg-white/10 pl-5 pr-4 text-white shadow-none backdrop-blur-md hover:bg-white/16 lg:inline-flex"
         >
           <Link href="#contact">
             Contact Us
@@ -108,7 +140,7 @@ export function Navbar() {
           aria-controls="mobile-navigation"
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-          className="inline-flex size-10 items-center justify-center rounded-none border border-[#e4e7ec] bg-white text-[#003466] shadow-[0_10px_28px_rgba(0,52,102,0.08)] transition hover:bg-[#f3f7fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466] focus-visible:ring-offset-2 lg:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-full border border-white/16 bg-white/8 text-white shadow-none transition hover:bg-white/14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 lg:hidden"
           onClick={() => setIsMenuOpen((current) => !current)}
           type="button"
         >
@@ -117,7 +149,7 @@ export function Navbar() {
       </nav>
 
       <div
-        className={`fixed inset-0 top-16 z-40 bg-[#111217]/24 transition-opacity duration-200 lg:hidden ${
+        className={`fixed inset-0 top-16 z-40 bg-[#003f72]/70 transition-opacity duration-200 lg:hidden ${
           isMenuOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -126,7 +158,7 @@ export function Navbar() {
       />
 
       <div
-        className={`fixed inset-x-0 top-16 z-50 max-h-[calc(100svh-4rem)] overflow-y-auto border-b border-[#e4e7ec] bg-white px-5 pb-6 pt-4 shadow-[0_22px_70px_rgba(0,52,102,0.14)] transition duration-300 sm:px-8 lg:hidden ${
+        className={`fixed inset-x-0 top-16 z-50 max-h-[calc(100svh-4rem)] overflow-y-auto border-b border-white/10 bg-[#003f72]/96 px-5 pb-6 pt-4 shadow-[0_22px_70px_rgba(0,0,0,0.26)] backdrop-blur-xl transition duration-300 sm:px-8 lg:hidden ${
           isMenuOpen
             ? "translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-3 opacity-0"
@@ -135,62 +167,23 @@ export function Navbar() {
       >
         <div className="mx-auto flex max-w-3xl flex-col gap-2">
           {navigationItems.map((item) => (
-            <div className="border-b border-[#eef0f3] py-2 last:border-b-0" key={item.label}>
-              {item.children ? (
-                <>
-                  <button
-                    aria-expanded={openSection === item.label}
-                    className="flex w-full items-center justify-between rounded-none px-3 py-3 text-left text-base font-medium text-[#111217] transition hover:bg-[#f3f7fb]"
-                    onClick={() =>
-                      setOpenSection((current) =>
-                        current === item.label ? null : item.label,
-                      )
-                    }
-                    type="button"
-                  >
-                    {item.label}
-                    <ChevronDown
-                      className={`size-4 text-[#666666] transition-transform ${
-                        openSection === item.label ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <div
-                    className={`grid overflow-hidden transition-all duration-300 ${
-                      openSection === item.label
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
-                  >
-                    <div className="min-h-0">
-                      <div className="grid gap-1 px-3 pb-3">
-                        {item.children.map((child) => (
-                          <Link
-                            className="rounded-none px-3 py-2 text-sm leading-6 text-[#666666] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
-                            href={child.href}
-                            key={child.label}
-                            onClick={closeMenu}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <Link
-                  className="block rounded-none px-3 py-3 text-base font-medium text-[#111217] transition hover:bg-[#f3f7fb] hover:text-[#003466]"
-                  href={item.href}
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </Link>
-              )}
+            <div className="border-b border-white/10 py-2 last:border-b-0" key={item.label}>
+              <Link
+                className="block rounded-none px-3 py-3 text-base font-medium text-white transition hover:bg-white/10"
+                href={item.href}
+                onClick={(event) => handleNavItemClick(event, item.href)}
+              >
+                {item.label}
+              </Link>
             </div>
           ))}
 
-          <Button asChild size="lg" className="mt-4 w-full rounded-none shadow-none">
+          <Button
+            asChild
+            size="lg"
+            variant="secondary"
+            className="mt-4 w-full rounded-full bg-white text-[#003f72] shadow-none hover:bg-[#f5f9fd]"
+          >
             <Link href="#contact" onClick={closeMenu}>
               Contact Us
               <Mail className="h-4 w-4" />

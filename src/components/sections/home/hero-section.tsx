@@ -1,227 +1,176 @@
 "use client";
 
 import Link from "next/link";
-import * as React from "react";
-import { motion, useMotionValue, useReducedMotion, useSpring } from "framer-motion";
-import {
-  ArrowRight,
-  BadgeCheck,
-  Blocks,
-  BrainCircuit,
-  Code2,
-  Handshake,
-  Sparkles,
-  UsersRound,
-} from "lucide-react";
-import { heroContent } from "@/constants/landing-page";
-import { cn } from "@/lib/utils";
+import { ArrowRight, BrainCircuit, Play, Sparkles } from "lucide-react";
+import { TypeAnimation } from "react-type-animation";
 
-const floatingHeroIcons = [
-  {
-    id: 1,
-    label: "Talent solutions",
-    icon: UsersRound,
-    className: "-left-8 top-[18%] hidden sm:block",
-  },
-  {
-    id: 2,
-    label: "Technology systems",
-    icon: Code2,
-    className: "-right-8 top-[18%]",
-  },
-  {
-    id: 3,
-    label: "Workflow design",
-    icon: Blocks,
-    className: "bottom-[18%] left-[7%]",
-  },
-  {
-    id: 4,
-    label: "Vendor collaboration",
-    icon: Handshake,
-    className: "bottom-[17%] right-[7%] hidden sm:block",
-  },
-  {
-    id: 5,
-    label: "Strategic expertise",
-    icon: BrainCircuit,
-    className: "left-[23%] top-[9%] hidden xl:block",
-  },
-  {
-    id: 6,
-    label: "Smarter scaling",
-    icon: Sparkles,
-    className: "right-[23%] top-[9%] hidden xl:block",
-  },
-  {
-    id: 7,
-    label: "Reliable execution",
-    icon: BadgeCheck,
-    className: "bottom-[8%] left-[30%] hidden 2xl:block",
-  },
+import { heroContent, whyTidewrkContent } from "@/constants/landing-page";
+
+const heroStats = whyTidewrkContent.stats.filter(
+  (stat) => stat.label !== "Years of Partnership",
+);
+
+const wavePaths = [
+  "M-560 720 C-220 610 20 720 170 520 C340 294 512 378 680 500 C842 618 1012 432 1192 318 C1394 190 1596 232 2040 54",
+  "M-560 696 C-206 594 42 700 194 502 C364 282 528 366 700 482 C866 594 1034 416 1216 304 C1412 184 1628 214 2040 42",
+  "M-560 672 C-192 578 64 680 218 484 C388 270 544 354 720 464 C890 570 1056 400 1240 290 C1430 178 1660 196 2040 30",
+  "M-560 648 C-178 562 86 660 242 466 C412 258 560 342 740 446 C914 546 1078 384 1264 276 C1448 172 1692 178 2040 18",
+  "M-560 624 C-164 546 108 640 266 448 C436 246 576 330 760 428 C938 522 1100 368 1288 262 C1466 166 1724 160 2040 6",
+  "M-560 600 C-150 530 130 620 290 430 C460 234 592 318 780 410 C962 498 1122 352 1312 248 C1484 160 1756 142 2040 -6",
+  "M-560 576 C-136 514 152 600 314 412 C484 222 608 306 800 392 C986 474 1144 336 1336 234 C1502 154 1788 124 2040 -18",
+  "M-560 552 C-122 498 174 580 338 394 C508 210 624 294 820 374 C1010 450 1166 320 1360 220 C1520 148 1820 106 2040 -30",
+  "M-560 528 C-108 482 196 560 362 376 C532 198 640 282 840 356 C1034 426 1188 304 1384 206 C1538 142 1852 88 2040 -42",
+  "M-560 504 C-94 466 218 540 386 358 C556 186 656 270 860 338 C1058 402 1210 288 1408 192 C1556 136 1884 70 2040 -54",
+  "M-560 480 C-80 450 240 520 410 340 C580 174 672 258 880 320 C1082 378 1232 272 1432 178 C1574 130 1916 52 2040 -66",
+  "M-560 456 C-66 434 262 500 434 322 C604 162 688 246 900 302 C1106 354 1254 256 1456 164 C1592 124 1948 34 2040 -78",
+];
+
+const heroPhrases = [
+  "your next move.",
+  "work that flows.",
+  "teams that deliver.",
 ];
 
 export function HeroSection() {
-  const mouseX = React.useRef(0);
-  const mouseY = React.useRef(0);
-
-  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
-    mouseX.current = event.clientX;
-    mouseY.current = event.clientY;
-  };
-
   return (
-    <section
-      className="relative z-0 overflow-hidden bg-white px-5 pb-0 pt-[4.75rem] sm:px-8 sm:pt-20 lg:px-[6vw]"
-      onMouseMove={handleMouseMove}
-    >
-      <div className="relative mx-auto flex min-h-[calc(100svh-4.75rem)] w-full max-w-[1900px] flex-col justify-center py-12 sm:py-16">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full"
-        >
-          {floatingHeroIcons.map((iconData, index) => (
-            <FloatingHeroIcon
-              iconData={iconData}
-              index={index}
-              key={iconData.id}
-              mouseX={mouseX}
-              mouseY={mouseY}
-            />
-          ))}
-        </div>
+    <section className="relative z-0 min-h-[100svh] overflow-hidden bg-[#02050a] px-5 pb-6 pt-[5rem] text-white sm:px-8 sm:pt-20 lg:px-[6vw]">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,63,114,0.78),transparent_45%),radial-gradient(ellipse_at_50%_20%,rgba(0,63,114,0.32),transparent_32%),linear-gradient(180deg,#02050a_0%,#07111f_46%,#02050a_100%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#003f72]/46 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#02050a] via-[#02050a]/88 to-transparent" />
 
-        <div className="relative z-10 mx-auto max-w-6xl text-center">
-          <div className="inline-flex items-center gap-2 border border-[#d8e6f5] bg-[#f5f9fd] px-4 py-2.5 text-sm font-medium text-[#003466]">
-            <span className="size-2 bg-[#f58220]" aria-hidden="true" />
-            Talent + Technology + Execution
+      <svg
+        aria-hidden="true"
+        className="tide-wave-geometry pointer-events-none absolute -bottom-[2%] -left-[20%] h-[76svh] min-h-[560px] w-[150%] opacity-82"
+        fill="none"
+        preserveAspectRatio="none"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(112deg, transparent 0%, #000 13%, #000 86%, transparent 100%)",
+          maskImage:
+            "linear-gradient(112deg, transparent 0%, #000 13%, #000 86%, transparent 100%)",
+        }}
+        viewBox="-360 0 2160 720"
+      >
+        {wavePaths.map((path, index) => (
+          <path
+            d={path}
+            key={path}
+            className={index % 2 === 0 ? "tide-wave-line" : "tide-wave-line tide-wave-line-alt"}
+            stroke={
+              index % 3 === 0
+                ? "rgba(0,63,114,0.58)"
+                : index % 3 === 1
+                  ? "rgba(255,255,255,0.18)"
+                  : "rgba(0,63,114,0.46)"
+            }
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={index % 4 === 0 ? 1.6 : 1}
+            style={{
+              animationDelay: `${index * -0.58}s`,
+              animationDuration: `${8.6 + (index % 5) * 0.9}s`,
+            }}
+          />
+        ))}
+      </svg>
+
+      <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-[1900px] flex-col items-center justify-start pb-8 pt-[clamp(2.75rem,9svh,6rem)] text-center sm:pb-10 lg:pb-12">
+        <div className="mx-auto flex max-w-5xl flex-col items-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-sm font-medium text-white/78 shadow-[0_14px_50px_rgba(0,0,0,0.18)] backdrop-blur-md sm:px-4">
+            <span className="tidewrk-glow-badge rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em]">
+              Tidewrk
+            </span>
+            {heroContent.eyebrow}
+            <ArrowRight className="size-4 text-white/60" aria-hidden="true" />
           </div>
 
-          <h1 className="mx-auto mt-5 max-w-5xl text-balance text-5xl font-semibold leading-[1.02] tracking-normal text-[#111217] sm:text-6xl lg:text-7xl xl:text-[4.85rem]">
-            {heroContent.headline}
+          <h1
+            aria-label={heroContent.headline}
+            className="mt-7 max-w-6xl text-balance text-[2.75rem] font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl sm:leading-[1.02] lg:text-[4.55rem] xl:text-[5.25rem]"
+          >
+            <span aria-hidden="true" className="block">
+              The current behind{" "}
+            </span>
+            <span
+              aria-hidden="true"
+              className="tidewrk-glow-text block min-h-[1.05em]"
+            >
+              <TypeAnimation
+                className="inline-block min-w-[18ch]"
+                cursor={true}
+                deletionSpeed={{ type: "keyStrokeDelayInMs", value: 34 }}
+                preRenderFirstString={true}
+                repeat={Infinity}
+                sequence={[
+                  heroPhrases[0],
+                  1700,
+                  heroPhrases[1],
+                  1700,
+                  heroPhrases[2],
+                  1700,
+                ]}
+                speed={{ type: "keyStrokeDelayInMs", value: 52 }}
+                wrapper="span"
+              />
+            </span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-5xl text-balance text-lg leading-8 text-[#555555] sm:text-xl sm:leading-9 lg:text-[1.35rem] lg:leading-9">
+          <p className="mt-6 max-w-4xl text-pretty text-base leading-7 text-white/70 sm:text-xl sm:leading-8 lg:text-[1.25rem]">
             {heroContent.description}
           </p>
 
-          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <Link
-              className="inline-flex h-14 w-full items-center justify-center gap-2 bg-[#003466] px-8 text-lg font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#0a447a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466]/30 sm:w-auto"
+              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-white px-8 text-lg font-semibold text-[#003f72] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f9fd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:w-auto"
               href={heroContent.primaryCta.href}
             >
               <Sparkles className="size-5" aria-hidden="true" />
               {heroContent.primaryCta.label}
             </Link>
             <Link
-              className="inline-flex h-14 w-full items-center justify-center gap-2 border border-[#d8e6f5] bg-white px-8 text-lg font-semibold text-[#003466] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f9fd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466]/30 sm:w-auto"
+              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full border border-white/24 bg-white/6 px-8 text-lg font-semibold text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:w-auto"
               href={heroContent.secondaryCta.href}
             >
+              <Play className="size-5 fill-white/14" aria-hidden="true" />
               {heroContent.secondaryCta.label}
-              <ArrowRight className="size-5" aria-hidden="true" />
             </Link>
+          </div>
+        </div>
+
+        <div className="relative mt-auto grid w-full gap-5 pt-16 md:grid-cols-[1fr_auto] md:items-center md:pt-20 lg:pt-24">
+          <div className="grid w-full max-w-2xl grid-cols-1 items-center gap-5 text-center sm:grid-cols-3 md:justify-self-start">
+            {heroStats.map((stat) => (
+              <div key={stat.label} className="mx-auto w-full max-w-44">
+                <p className="text-4xl font-semibold leading-none text-white/88 sm:text-5xl">
+                  {stat.value}
+                  <span className="tidewrk-glow-text">
+                    {stat.suffix}
+                  </span>
+                </p>
+                <p className="mt-2 max-w-40 text-sm leading-5 text-white/54">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto w-full max-w-[30rem] rounded-[1.4rem] border border-white/10 bg-white/[0.07] p-4 text-left shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl md:mx-0 md:w-[30rem]">
+            <div className="flex items-center gap-4">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[#003f72]/45 bg-[#003f72]/20 text-white shadow-[0_0_26px_rgba(0,63,114,0.45)]">
+                <BrainCircuit className="size-5" aria-hidden="true" />
+              </span>
+              <div>
+                <p className="text-base font-semibold uppercase tracking-[0.08em] text-white">
+                  Smart execution support
+                </p>
+                <p className="mt-1 text-sm leading-5 text-white/56">
+                  People, systems, data, and practical AI support aligned around your next move.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function FloatingHeroIcon({
-  mouseX,
-  mouseY,
-  iconData,
-  index,
-}: {
-  mouseX: React.MutableRefObject<number>;
-  mouseY: React.MutableRefObject<number>;
-  iconData: (typeof floatingHeroIcons)[number];
-  index: number;
-}) {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { damping: 22, stiffness: 260 });
-  const springY = useSpring(y, { damping: 22, stiffness: 260 });
-  const HeroIcon = iconData.icon;
-
-  React.useEffect(() => {
-    if (shouldReduceMotion) {
-      return;
-    }
-
-    const handleMouseMove = () => {
-      if (!ref.current) {
-        return;
-      }
-
-      const rect = ref.current.getBoundingClientRect();
-      const iconCenterX = rect.left + rect.width / 2;
-      const iconCenterY = rect.top + rect.height / 2;
-      const distance = Math.hypot(
-        mouseX.current - iconCenterX,
-        mouseY.current - iconCenterY,
-      );
-
-      if (distance < 150) {
-        const angle = Math.atan2(
-          mouseY.current - iconCenterY,
-          mouseX.current - iconCenterX,
-        );
-        const force = (1 - distance / 150) * 44;
-        x.set(-Math.cos(angle) * force);
-        y.set(-Math.sin(angle) * force);
-      } else {
-        x.set(0);
-        y.set(0);
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY, shouldReduceMotion, x, y]);
-
-  return (
-    <motion.div
-      animate={{ opacity: 1, scale: 1 }}
-      className={cn("absolute", iconData.className)}
-      initial={{ opacity: 0, scale: 0.72 }}
-      ref={ref}
-      style={{ x: springX, y: springY }}
-      transition={{
-        delay: index * 0.06,
-        duration: 0.55,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      <motion.div
-        animate={
-          shouldReduceMotion
-            ? undefined
-            : {
-                rotate: [0, 4, 0, -4, 0],
-                x: [0, 5, 0, -5, 0],
-                y: [0, -7, 0, 7, 0],
-              }
-        }
-        className={cn(
-          "flex size-14 items-center justify-center border p-3 sm:size-16 md:size-20 md:p-4",
-          index === 1
-            ? "border-[#ffd9b8] bg-[#fff8f2] text-[#f58220]"
-            : index % 3 === 2
-            ? "border-[#d8e6f5] bg-white text-[#003466]"
-            : "border-[#d8e6f5] bg-[#f5f9fd] text-[#003466]",
-        )}
-        transition={{
-          duration: 5 + (index % 5) * 0.6,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "mirror",
-        }}
-      >
-        <HeroIcon className="size-8 md:size-10" aria-hidden="true" />
-      </motion.div>
-    </motion.div>
   );
 }
