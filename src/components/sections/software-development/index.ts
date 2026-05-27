@@ -1,5 +1,7 @@
 export { SoftwareDevelopmentBenefitsBento } from "./software-development-benefits-bento";
 export { SoftwareDevelopmentBenefitsStory } from "./software-development-benefits-story";
+export { SoftwareDevelopmentBuildFlowSection } from "./software-development-build-flow-section";
+export { SoftwareDevelopmentBuildOutcomesSection } from "./software-development-build-outcomes-section";
 export { SoftwareDevelopmentCtaSection } from "./software-development-cta-section";
 export { SoftwareDevelopmentCustomFitSection } from "./software-development-custom-fit-section";
 export { SoftwareDevelopmentHero } from "./software-development-hero";

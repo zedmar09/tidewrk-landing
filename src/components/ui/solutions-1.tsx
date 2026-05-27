@@ -4,6 +4,7 @@ import {
   BarChart3,
   BrainCircuit,
   CheckCircle2,
+  CloudCog,
   Code2,
   Database,
   FlaskConical,
@@ -16,15 +17,17 @@ import {
   Sparkles,
   Workflow,
 } from "lucide-react";
+import { FaAws, FaMicrosoft } from "react-icons/fa6";
+import { SiCloudflare, SiDigitalocean, SiGooglecloud } from "react-icons/si";
 
 const solutions = [
   {
     title: "Full-Stack Development Team",
     label: "End-to-end build",
     description:
-      "One aligned team to plan, design, build, test, launch, and improve software without handoff drag.",
+      "A modern implementation team that carries product work from strategy to release without splitting ownership.",
     advantage:
-      "AI-supported workflows help the team move faster while keeping product quality and business goals connected.",
+      "AI-supported research, code review, and testing practices help the team move with sharper technical judgment.",
     href: "/full-stack-development-team",
     icon: Layers3,
     signal: "Product delivery",
@@ -34,9 +37,9 @@ const solutions = [
     title: "Business Intelligence",
     label: "Clearer decisions",
     description:
-      "Turn scattered business data into dashboards, reports, and insight your team can act on with confidence.",
+      "Give leaders a clearer command view of performance, risk, and opportunity without chasing stale reports.",
     advantage:
-      "AI-assisted analysis helps surface trends, risks, and opportunities sooner.",
+      "AI-assisted discovery can surface early movement in the numbers before it becomes obvious.",
     href: "/business-intelligence",
     icon: BarChart3,
     signal: "Decision clarity",
@@ -46,9 +49,9 @@ const solutions = [
     title: "Data Science",
     label: "Smarter patterns",
     description:
-      "Use data to understand customers, forecast demand, improve operations, and find the next opportunity.",
+      "Turn complex business signals into patterns your team can use for planning, forecasting, and growth.",
     advantage:
-      "Practical AI and modeling support turn complex signals into useful business direction.",
+      "Modern modeling is strongest when it points to practical decisions, not abstract dashboards.",
     href: "#contact",
     icon: FlaskConical,
     signal: "Pattern discovery",
@@ -58,9 +61,9 @@ const solutions = [
     title: "Data Engineering",
     label: "Reliable data flow",
     description:
-      "Build the pipelines, warehouses, integrations, and data foundations your teams need to trust the numbers.",
+      "Build the data plumbing behind reliable reporting, automation, analytics, and intelligent products.",
     advantage:
-      "Automation reduces manual reporting work and keeps information flowing across systems.",
+      "Well-designed pipelines make AI-supported workflows possible because the source information is dependable.",
     href: "#contact",
     icon: Database,
     signal: "Data foundation",
@@ -70,9 +73,9 @@ const solutions = [
     title: "Web / Desktop Application Development",
     label: "Operational tools",
     description:
-      "Create secure business applications, portals, dashboards, and internal tools built around how work actually happens.",
+      "Create business applications that feel current, reduce manual work, and fit the way teams actually operate.",
     advantage:
-      "AI-enabled features can reduce repetitive steps and make everyday workflows easier.",
+      "Selective AI features can handle routine steps while people stay focused on service, judgment, and outcomes.",
     href: "#contact",
     icon: MonitorCog,
     signal: "Workflow tools",
@@ -82,9 +85,9 @@ const solutions = [
     title: "Mobile Application Development",
     label: "Work anywhere",
     description:
-      "Launch mobile experiences that help customers, teams, and field operations stay connected wherever work moves.",
+      "Design mobile experiences that keep customers, teams, and field operations connected to the work that matters.",
     advantage:
-      "Smart integrations and automation keep mobile experiences useful, timely, and connected to the business.",
+      "Modern integrations keep mobile experiences timely, useful, and connected to the systems behind them.",
     href: "#contact",
     icon: Smartphone,
     signal: "Connected work",
@@ -94,21 +97,33 @@ const solutions = [
     title: "Machine Learning",
     label: "Adaptive systems",
     description:
-      "Apply models that help automate decisions, personalize experiences, forecast outcomes, and improve over time.",
+      "Apply intelligent automation where prediction, personalization, or consistency can improve the business rhythm.",
     advantage:
-      "We focus on practical use cases, measurable value, and responsible integration into real workflows.",
+      "We keep machine learning grounded in measurable value, responsible use, and workflows people can trust.",
     href: "#contact",
     icon: BrainCircuit,
     signal: "Adaptive logic",
     visual: "learning",
   },
   {
+    title: "Cloud Services",
+    label: "Scalable infrastructure",
+    description:
+      "Plan, migrate, and manage cloud environments across AWS, Azure, Google Cloud, Cloudflare, DigitalOcean, and modern platforms so systems stay flexible, secure, and ready to grow.",
+    advantage:
+      "Cloud strategy works best when infrastructure, data, automation, and delivery teams move from the same operating plan.",
+    href: "#contact",
+    icon: CloudCog,
+    signal: "Cloud foundation",
+    visual: "cloud",
+  },
+  {
     title: "QA Testing and Engineering",
     label: "Launch confidence",
     description:
-      "Protect releases with testing strategy, automation, performance checks, and quality processes built into delivery.",
+      "Protect modern releases with thoughtful test strategy, automation, and quality checks built into delivery.",
     advantage:
-      "AI-assisted test coverage helps teams catch issues earlier and ship with more confidence.",
+      "AI-supported coverage helps teams find weak spots earlier without making quality feel heavy.",
     href: "#contact",
     icon: CheckCircle2,
     signal: "Quality guardrails",
@@ -118,9 +133,9 @@ const solutions = [
     title: "Virtual Assistance / Business Administration",
     label: "Operational support",
     description:
-      "Keep day-to-day work moving with reliable support for admin tasks, coordination, documentation, and business operations.",
+      "Support coordination, documentation, scheduling, follow-through, and the business details that keep work moving.",
     advantage:
-      "AI-supported tools help reduce manual effort, organize information, and give your core team more room to focus.",
+      "Modern admin support can use smarter tools to organize information and give specialists more room to focus.",
     href: "#contact",
     icon: Workflow,
     signal: "Admin rhythm",
@@ -153,15 +168,16 @@ export function Solutions() {
             <span className="tidewrk-glow-badge rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em]">
               Solutions
             </span>
-            Built around your next move
+            Capability for what comes next
           </div>
           <h2 className="mt-6 text-balance text-[2.7rem] font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-[4.8rem]">
-            The flow of work,{" "}
-            <span className="tidewrk-glow-text">delivered</span>
+            Modern implementation for{" "}
+            <span className="tidewrk-glow-text">real momentum</span>
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-pretty text-lg leading-8 text-white/62 sm:text-xl sm:leading-9">
-            Tidewrk aligns talent, systems, data, and practical AI support
-            around the work your business needs to move next.
+            From software and data to automation and support, Tidewrk helps
+            businesses build the operating layer behind their next move, with
+            AI used where it sharpens execution.
           </p>
         </div>
 
@@ -284,6 +300,7 @@ function SolutionVisual({
           {variant === "desktop" && <DesktopGraphic />}
           {variant === "mobile" && <MobileGraphic />}
           {variant === "learning" && <LearningGraphic />}
+          {variant === "cloud" && <CloudGraphic />}
           {variant === "testing" && <TestingGraphic />}
           {variant === "administration" && <AdministrationGraphic />}
         </div>
@@ -439,6 +456,78 @@ function LearningGraphic() {
             animationDelay: `${index * -0.45}s`,
           }}
         />
+      ))}
+    </div>
+  );
+}
+
+function CloudGraphic() {
+  const cloudProviders = [
+    { icon: FaAws, label: "AWS", position: "left-4 top-7" },
+    { icon: FaMicrosoft, label: "Azure", position: "right-2 top-5" },
+    { icon: SiGooglecloud, label: "Google Cloud", position: "left-1/2 top-1 -translate-x-1/2" },
+    { icon: SiCloudflare, label: "Cloudflare", position: "bottom-7 left-5" },
+    { icon: SiDigitalocean, label: "DigitalOcean", position: "bottom-8 right-5" },
+  ];
+
+  return (
+    <div className="relative flex h-56 w-full max-w-md items-center justify-center">
+      <svg
+        aria-hidden="true"
+        className="absolute inset-0 size-full overflow-visible"
+        fill="none"
+        viewBox="0 0 420 220"
+      >
+        <path
+          className="solution-flow-path"
+          d="M210 108 C154 78 98 76 58 54"
+          stroke="rgba(255,255,255,0.22)"
+          strokeLinecap="round"
+          strokeWidth="3"
+        />
+        <path
+          className="solution-flow-path"
+          d="M210 108 C158 134 104 146 62 174"
+          stroke="rgba(0,63,114,0.92)"
+          strokeLinecap="round"
+          strokeWidth="3"
+        />
+        <path
+          className="solution-flow-path"
+          d="M210 108 C270 76 322 72 366 48"
+          stroke="rgba(255,255,255,0.22)"
+          strokeLinecap="round"
+          strokeWidth="3"
+        />
+        <path
+          className="solution-flow-path"
+          d="M210 108 C270 136 324 146 366 174"
+          stroke="rgba(0,63,114,0.92)"
+          strokeLinecap="round"
+          strokeWidth="3"
+        />
+        <path
+          className="solution-flow-path"
+          d="M210 108 C210 76 210 42 210 22"
+          stroke="rgba(255,255,255,0.22)"
+          strokeLinecap="round"
+          strokeWidth="3"
+        />
+      </svg>
+
+      <div className="relative z-10 flex size-36 items-center justify-center rounded-[2rem] border border-[#003f72]/58 bg-[#003f72]/24 shadow-[0_0_64px_rgba(0,63,114,0.5)] backdrop-blur-md">
+        <CloudCog className="size-16" aria-hidden="true" />
+      </div>
+
+      {cloudProviders.map(({ icon: Icon, label, position }, index) => (
+        <div
+          className={`solution-stack-card absolute ${position} flex items-center gap-2 rounded-full border border-white/10 bg-white/9 px-4 py-2 text-xs font-semibold text-white/68 backdrop-blur-md`}
+          key={label}
+          style={{ animationDelay: `${index * -0.35}s` }}
+        >
+          <Icon className="size-4 text-white" aria-hidden="true" />
+          {label}
+        </div>
       ))}
     </div>
   );

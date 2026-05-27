@@ -167,7 +167,7 @@ export function HeroSection() {
                   Smart execution support
                 </p>
                 <p className="mt-1 text-xs leading-5 text-white/56 sm:text-sm">
-                  People, systems, data, and practical AI support aligned around your next move.
+                  People, systems, and data aligned around the work your next move requires.
                 </p>
               </div>
             </div>

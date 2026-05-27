@@ -26,18 +26,18 @@ const rightTools = [
 
 const boardCards = [
   {
-    eyebrow: "Talent",
-    title: "Right people",
+    eyebrow: "Signal",
+    title: "Know what matters",
     bars: ["w-16", "w-24", "w-20"],
   },
   {
-    eyebrow: "Systems",
-    title: "Clear workflow",
+    eyebrow: "Action",
+    title: "Move the right work",
     bars: ["w-24", "w-16", "w-20"],
   },
   {
-    eyebrow: "AI Support",
-    title: "Smarter motion",
+    eyebrow: "Rhythm",
+    title: "Keep output steady",
     bars: ["w-20", "w-24", "w-14"],
   },
 ];
@@ -151,19 +151,19 @@ export function AiWorkflowSection() {
         <div className="mx-auto max-w-5xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-xs font-medium text-white/76 shadow-[0_16px_60px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-4 sm:text-sm">
             <span className="tidewrk-glow-badge rounded-full px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.08em]">
-              AI Support
+              Connected Support
             </span>
-            Tools connected to the way your team works
+            AI-supported tools, human-led execution
           </div>
 
           <h2 className="mx-auto mt-6 max-w-5xl text-balance text-[2.45rem] font-semibold leading-[1.05] tracking-normal text-white sm:text-6xl lg:text-[4.35rem]">
-            One connected flow behind{" "}
+            The quiet operating layer behind{" "}
             <span className="tidewrk-glow-text">your next move</span>
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-pretty text-base leading-7 text-white/62 sm:text-xl sm:leading-8">
-            Tidewrk brings talent, systems, and practical AI support into a
-            coordinated rhythm, so tools become useful support for real work,
-            not another layer of noise.
+            We connect the platforms teams already use with modern workflows,
+            focused automation, and the human judgment needed to turn activity
+            into progress.
           </p>
         </div>
 
@@ -228,7 +228,7 @@ export function AiWorkflowSection() {
                     <span className="size-2.5 rounded-full bg-white/28" />
                   </div>
                   <span className="rounded-full border border-[#003f72]/42 bg-[#003f72]/14 px-3 py-1 text-xs font-medium text-white/70">
-                    Tidewrk operating flow
+                    Work orchestration
                   </span>
                 </div>
 
@@ -273,7 +273,7 @@ export function AiWorkflowSection() {
                   </div>
                   <div className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm font-semibold text-white/78">
                     <Sparkles className="size-4" />
-                    Work stays in motion
+                    Modern flow, less noise
                   </div>
                 </div>
               </div>

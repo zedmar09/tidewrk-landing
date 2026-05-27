@@ -15,7 +15,7 @@ const services = [
   {
     title: "Software Development",
     description:
-      "Build secure, scalable software with the right product, design, engineering, QA, and AI-supported workflow behind it.",
+      "Modern product implementation for teams that need secure platforms, clean user experiences, and AI-aware delivery choices.",
     href: "/software-development",
     visual: "software",
     className: "lg:col-span-5",
@@ -23,7 +23,7 @@ const services = [
   {
     title: "Staff Augmentation",
     description:
-      "Add skilled professionals who fit your team, strengthen capacity, and help work move forward with modern tools.",
+      "Add skilled people who can plug into today’s tools, support faster output, and strengthen the team already in motion.",
     href: "/staff-augmentation",
     visual: "staff",
     className: "lg:col-span-3",
@@ -31,7 +31,7 @@ const services = [
   {
     title: "Offshoring",
     description:
-      "Create global operating flow with aligned teams, clear handoffs, and practical AI support where it improves coordination.",
+      "Shape global capacity with modern collaboration habits, clear ownership, and smarter ways to keep work moving across time zones.",
     href: "/offshoring",
     visual: "offshoring",
     className: "lg:col-span-3",
@@ -39,7 +39,7 @@ const services = [
   {
     title: "Executive Advisory Consulting",
     description:
-      "Give leaders objective guidance on strategy, transformation, operations, and AI-aware decisions for the next move.",
+      "Help leaders make sharper calls on growth, modernization, operational change, and where AI support can create real leverage.",
     href: "/executive-advisory-consulting",
     visual: "advisory",
     className: "lg:col-span-5",
@@ -64,13 +64,13 @@ export function Features() {
       <div className="relative mx-auto max-w-[1800px]">
         <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <h2 className="max-w-4xl text-balance text-[2.7rem] font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-[4.75rem]">
-            Services that keep{" "}
-            <span className="tidewrk-glow-text">work moving</span>
+            Services built for{" "}
+            <span className="tidewrk-glow-text">forward motion</span>
           </h2>
           <p className="max-w-3xl text-pretty text-lg leading-8 text-white/62 sm:text-xl sm:leading-9 lg:justify-self-end lg:self-center">
-            Tidewrk supports your next move with the people, systems,
-            leadership, and practical AI support needed to improve execution
-            without adding operational drag.
+            Tidewrk helps leaders add modern capability at the right moment,
+            blending people, implementation discipline, and practical AI
+            support where it moves the business forward.
           </p>
         </div>
 

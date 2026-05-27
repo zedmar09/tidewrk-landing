@@ -1,11 +1,9 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import {
-  SoftwareDevelopmentBenefitsBento,
-  SoftwareDevelopmentCtaSection,
+  SoftwareDevelopmentBuildFlowSection,
+  SoftwareDevelopmentBuildOutcomesSection,
   SoftwareDevelopmentHero,
-  SoftwareDevelopmentSolutionsSection,
-  SoftwareDevelopmentTeamGrid,
 } from "@/components/sections/software-development";
 
 export default function SoftwareDevelopmentPage() {
@@ -14,10 +12,8 @@ export default function SoftwareDevelopmentPage() {
       <Navbar />
       <main>
         <SoftwareDevelopmentHero />
-        <SoftwareDevelopmentSolutionsSection />
-        <SoftwareDevelopmentBenefitsBento />
-        <SoftwareDevelopmentTeamGrid />
-        <SoftwareDevelopmentCtaSection />
+        <SoftwareDevelopmentBuildFlowSection />
+        <SoftwareDevelopmentBuildOutcomesSection />
       </main>
       <Footer />
     </>

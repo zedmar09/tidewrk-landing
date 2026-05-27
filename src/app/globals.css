@@ -132,6 +132,338 @@
   contain: layout paint;
 }
 
+@keyframes software-code-row {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scaleX(0.78);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes software-progress {
+  0%,
+  100% {
+    transform: translateX(-28%) scaleX(0.72);
+  }
+
+  50% {
+    transform: translateX(46%) scaleX(0.94);
+  }
+}
+
+@keyframes software-data-pulse {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  74% {
+    width: calc(100% - 2rem);
+    opacity: 1;
+  }
+
+  100% {
+    width: calc(100% - 2rem);
+    opacity: 0;
+  }
+}
+
+@keyframes software-pipeline-step {
+  0%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  }
+
+  50% {
+    border-color: rgba(0, 63, 114, 0.62);
+    box-shadow:
+      inset 0 0 0 1px rgba(0, 63, 114, 0.16),
+      0 0 28px rgba(0, 63, 114, 0.28);
+  }
+}
+
+.software-code-row {
+  animation: software-code-row 4.2s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+.software-progress {
+  animation: software-progress 4.8s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+.software-data-node {
+  position: relative;
+  z-index: 1;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: #07111f;
+  box-shadow: 0 0 18px rgba(0, 63, 114, 0.32);
+}
+
+.software-data-pulse {
+  animation: software-data-pulse 4.6s ease-in-out infinite;
+}
+
+.software-pipeline-step {
+  animation: software-pipeline-step 5.4s ease-in-out infinite;
+}
+
+@keyframes software-tech-node {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    border-color: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.24);
+  }
+
+  50% {
+    transform: translate3d(0, -4px, 0);
+    border-color: rgba(0, 63, 114, 0.58);
+    box-shadow:
+      0 18px 54px rgba(0, 0, 0, 0.24),
+      0 0 28px rgba(0, 63, 114, 0.34);
+  }
+}
+
+@keyframes software-flow-card {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+@keyframes software-flow-code {
+  0%,
+  100% {
+    width: 18%;
+    opacity: 0.44;
+  }
+
+  50% {
+    width: 30%;
+    opacity: 0.88;
+  }
+}
+
+@keyframes software-architecture-line {
+  0%,
+  100% {
+    opacity: 0.88;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes software-architecture-node {
+  0%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.2);
+  }
+
+  50% {
+    border-color: rgba(0, 63, 114, 0.72);
+    box-shadow:
+      0 18px 54px rgba(0, 0, 0, 0.2),
+      0 0 28px rgba(0, 63, 114, 0.38);
+  }
+}
+
+.software-tech-node {
+  animation: software-tech-node 5.2s ease-in-out infinite;
+}
+
+.software-flow-card {
+  animation: software-flow-card 7s ease-in-out infinite;
+}
+
+.software-flow-code {
+  animation: software-flow-code 4.8s ease-in-out infinite;
+}
+
+.software-architecture-line {
+  animation: software-architecture-line 5.8s ease-in-out infinite;
+  stroke: rgba(255, 255, 255, 0.94);
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.42))
+    drop-shadow(0 0 16px rgba(0, 63, 114, 1))
+    drop-shadow(0 0 36px rgba(0, 63, 114, 0.9));
+}
+
+.software-architecture-glow-lines path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-linecap: round;
+  stroke-width: 12;
+  filter:
+    blur(5px)
+    drop-shadow(0 0 22px rgba(0, 63, 114, 1))
+    drop-shadow(0 0 52px rgba(0, 63, 114, 0.82));
+}
+
+.software-architecture-node {
+  animation: software-architecture-node 5.8s ease-in-out infinite;
+}
+
+@keyframes software-outcome-rail {
+  0%,
+  100% {
+    opacity: 0.36;
+    transform: translateX(-50%) scaleY(0.92);
+  }
+
+  50% {
+    opacity: 0.86;
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+@keyframes software-outcome-card {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.software-outcome-rail {
+  animation: software-outcome-rail 6.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.software-outcome-card {
+  animation: software-outcome-card 7.2s ease-in-out infinite;
+}
+
+@keyframes software-outcome-connector {
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes software-outcome-hub {
+  0%,
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-50%, -50%, 0) scale(1.04);
+  }
+}
+
+@keyframes software-outcome-mini-card {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  50% {
+    transform: translate3d(0, -4px, 0);
+    border-color: rgba(0, 63, 114, 0.66);
+  }
+}
+
+@keyframes software-outcome-data-bar {
+  0%,
+  100% {
+    opacity: 0.48;
+    transform: scaleY(0.72);
+  }
+
+  50% {
+    opacity: 0.92;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes software-outcome-progress {
+  0%,
+  100% {
+    transform: translateX(-32%) scaleX(0.72);
+  }
+
+  50% {
+    transform: translateX(48%) scaleX(0.92);
+  }
+}
+
+.software-outcome-connector,
+.software-outcome-connector-glow {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.software-outcome-connector {
+  animation: software-outcome-connector 5.8s ease-in-out infinite;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 3.2;
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.42))
+    drop-shadow(0 0 16px rgba(0, 63, 114, 1))
+    drop-shadow(0 0 36px rgba(0, 63, 114, 0.9));
+}
+
+.software-outcome-connector-glow {
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 18;
+  filter:
+    blur(5px)
+    drop-shadow(0 0 22px rgba(0, 63, 114, 1))
+    drop-shadow(0 0 52px rgba(0, 63, 114, 0.82));
+}
+
+.software-outcome-hub {
+  animation: software-outcome-hub 6s ease-in-out infinite;
+}
+
+.software-outcome-feature-card:nth-child(2),
+.software-outcome-feature-card:nth-child(3) {
+  animation-delay: -2s;
+}
+
+.software-outcome-mini-card {
+  animation: software-outcome-mini-card 5.8s ease-in-out infinite;
+}
+
+.software-outcome-data-bar {
+  animation: software-outcome-data-bar 5.2s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.software-outcome-progress {
+  animation: software-outcome-progress 4.8s ease-in-out infinite;
+  transform-origin: left center;
+}
+
 @keyframes workflow-tool-node {
   0%,
   100% {
