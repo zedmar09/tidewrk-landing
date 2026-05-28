@@ -33,7 +33,7 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer
-      className="relative overflow-hidden bg-[#02050a] px-5 pb-8 pt-10 text-white sm:px-8 md:pt-14 lg:px-[6vw]"
+      className="relative overflow-hidden bg-[#02050a] px-5 pb-8 pt-20 text-white sm:px-8 md:pt-28 lg:px-[6vw]"
       id="contact"
     >
       <div
@@ -45,17 +45,18 @@ export function Footer() {
         className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#02050a] via-[#02050a]/88 to-transparent"
       />
 
-      <div className="relative mx-auto max-w-[1800px] rounded-[1.1rem] bg-black/16 px-5 py-9 shadow-[0_34px_120px_rgba(0,0,0,0.18)] backdrop-blur-[2px] sm:px-8 sm:py-12 lg:px-14">
-        <div className="mx-auto max-w-2xl text-center">
+      <div className="relative mx-auto max-w-[1800px] rounded-[1.1rem] bg-black/16 px-5 py-12 shadow-[0_34px_120px_rgba(0,0,0,0.18)] backdrop-blur-[2px] sm:px-8 sm:py-16 lg:px-14 lg:py-20">
+        <div className="mx-auto max-w-3xl py-8 text-center sm:py-10 lg:py-12">
           <h2 className="text-balance text-[2rem] font-semibold leading-[1.06] tracking-normal text-white sm:text-5xl lg:text-[3.7rem]">
-            Ready for your next move?{" "}
+            Ready for your{" "}
+            <span className="tidewrk-glow-text">next move</span>?{" "}
             <span className="text-white/52">
               Let&apos;s build the flow behind it.
             </span>
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div className="mt-20 grid gap-10 lg:mt-24 lg:grid-cols-[1fr_auto] lg:items-end">
           <div className="max-w-md">
             <Link
               aria-label="Go to Tidewrk home page"
@@ -96,7 +97,7 @@ export function Footer() {
             <Link
               aria-label="Back to top"
               className="flex size-11 items-center justify-center rounded-full border border-white/14 bg-white text-[#003f72] transition hover:-translate-y-1 hover:bg-white/88"
-              href="#"
+              href="#top"
             >
               <ArrowUp className="size-5" aria-hidden="true" />
             </Link>

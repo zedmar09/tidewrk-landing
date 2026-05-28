@@ -2,26 +2,30 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { IconType } from "react-icons";
-import { FaMicrosoft } from "react-icons/fa6";
 import {
   SiClaude,
-  SiGithub,
   SiGooglegemini,
+  SiHuggingface,
+  SiLangchain,
+  SiMake,
   SiOpenai,
-  SiSlack,
+  SiPerplexity,
+  SiZapier,
 } from "react-icons/si";
 import { ChevronLeft, ChevronRight, Sparkles, Workflow } from "lucide-react";
 
 const leftTools = [
-  { label: "Codex", icon: SiOpenai, position: "left-[2rem] top-[4.8rem]" },
-  { label: "Gemini", icon: SiGooglegemini, position: "left-[5.7rem] top-[13.1rem]" },
-  { label: "Outlook", icon: FaMicrosoft, position: "left-[2.4rem] top-[21.3rem]" },
+  { label: "Codex", icon: SiOpenai, position: "left-[2rem] top-[2.7rem]" },
+  { label: "Gemini", icon: SiGooglegemini, position: "left-[5.8rem] top-[10.2rem]" },
+  { label: "Perplexity", icon: SiPerplexity, position: "left-[4.2rem] top-[17.5rem]" },
+  { label: "Hugging Face", icon: SiHuggingface, position: "left-[2.2rem] top-[25rem]" },
 ];
 
 const rightTools = [
-  { label: "Claude", icon: SiClaude, position: "right-[2rem] top-[4.6rem]" },
-  { label: "GitHub", icon: SiGithub, position: "right-[5.6rem] top-[11.8rem]" },
-  { label: "Slack", icon: SiSlack, position: "right-[5rem] top-[19rem]" },
+  { label: "Claude", icon: SiClaude, position: "right-[2rem] top-[2.7rem]" },
+  { label: "LangChain", icon: SiLangchain, position: "right-[5.9rem] top-[10.2rem]" },
+  { label: "Zapier", icon: SiZapier, position: "right-[5rem] top-[17.5rem]" },
+  { label: "Make", icon: SiMake, position: "right-[2.6rem] top-[25rem]" },
 ];
 
 const boardCards = [
@@ -160,7 +164,7 @@ export function AiWorkflowSection() {
             The quiet operating layer behind{" "}
             <span className="tidewrk-glow-text">your next move</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-pretty text-base leading-7 text-white/62 sm:text-xl sm:leading-8">
+          <p className="mx-auto mt-5 max-w-4xl text-pretty text-xl leading-9 text-white/66 sm:text-2xl sm:leading-10">
             We connect the platforms teams already use with modern workflows,
             focused automation, and the human judgment needed to turn activity
             into progress.
@@ -170,7 +174,7 @@ export function AiWorkflowSection() {
         <div className="relative mx-auto mt-12 max-w-7xl sm:mt-16 lg:min-h-[34rem]">
           <svg
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-[3.5rem] hidden h-[31rem] w-full text-white/42 drop-shadow-[0_0_18px_rgba(0,63,114,0.42)] lg:block"
+            className="pointer-events-none absolute inset-x-0 top-[3.5rem] hidden h-[31rem] w-full text-white/72 lg:block"
             fill="none"
             viewBox="0 0 1200 500"
           >
@@ -184,27 +188,35 @@ export function AiWorkflowSection() {
             />
             <path
               className="workflow-connector workflow-connector-left"
-              d="M58 48 H190 C216 48 216 84 216 118 V250"
+              d="M58 32 H188 C216 32 216 70 216 112 V250"
             />
             <path
               className="workflow-connector workflow-connector-left"
-              d="M120 181 H216 V250"
+              d="M140 148 H190 C216 148 216 178 216 250"
             />
             <path
               className="workflow-connector workflow-connector-left"
-              d="M66 314 H190 C216 314 216 288 216 250"
+              d="M108 263 H190 C216 263 216 258 216 250"
+            />
+            <path
+              className="workflow-connector workflow-connector-left"
+              d="M62 383 H190 C216 383 216 315 216 250"
             />
             <path
               className="workflow-connector workflow-connector-right"
-              d="M1140 46 H1012 C984 46 984 82 984 118 V250"
+              d="M1140 32 H1012 C984 32 984 70 984 112 V250"
             />
             <path
               className="workflow-connector workflow-connector-right"
-              d="M1080 159 H984 V250"
+              d="M1060 148 H1012 C984 148 984 178 984 250"
             />
             <path
               className="workflow-connector workflow-connector-right"
-              d="M1072 275 H984 V250"
+              d="M1092 263 H1012 C984 263 984 258 984 250"
+            />
+            <path
+              className="workflow-connector workflow-connector-right"
+              d="M1138 383 H1012 C984 383 984 315 984 250"
             />
           </svg>
 
@@ -217,7 +229,7 @@ export function AiWorkflowSection() {
           <ToolCloud tools={leftTools} />
           <ToolCloud tools={rightTools} />
 
-          <div className="relative z-10 mx-auto w-full max-w-[45rem] pt-8 lg:pt-20">
+          <div className="relative z-10 mx-auto w-full max-w-[45rem] pt-8 lg:max-w-[39rem] lg:pt-20">
             <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/[0.055] p-3 shadow-[0_34px_120px_rgba(0,0,0,0.38)] backdrop-blur-xl sm:p-4">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,63,114,0.42),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.025))]" />
               <div className="relative rounded-[1.25rem] border border-white/8 bg-[#050b14]/76 p-4 sm:p-6">
@@ -281,19 +293,30 @@ export function AiWorkflowSection() {
           </div>
         </div>
 
-        <div className="relative mx-auto mt-10 max-w-7xl sm:mt-12">
-          <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end sm:gap-6">
-            <h3 className="max-w-sm text-balance text-[1.9rem] font-semibold leading-[1.03] tracking-normal text-white sm:text-[2.45rem]">
-              Hear From Our{" "}
-              <span className="block italic text-white/78">
-                Satisfied Clients
-              </span>
-            </h3>
+        <div className="relative mx-auto mt-24 max-w-7xl sm:mt-28 lg:mt-32">
+          <div className="pointer-events-none absolute left-1/2 top-20 size-52 -translate-x-1/2 rounded-full bg-[#003f72]/14 blur-3xl" />
+          <div className="relative flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end sm:gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white/54">
+                <span className="tidewrk-glow-badge rounded-full px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.08em]">
+                  Client stories
+                </span>
+                Proof from teams in motion
+              </div>
+              <h3 className="mt-5 max-w-4xl text-balance text-[1.9rem] font-semibold leading-[1.03] tracking-normal text-white sm:text-[2.55rem]">
+                Hear From Our{" "}
+                <span className="tidewrk-glow-text">Satisfied Clients</span>
+              </h3>
+              <p className="mt-4 max-w-3xl text-xl leading-9 text-white/66 sm:text-2xl sm:leading-10">
+                Stories from teams who trust Tidewrk to keep people, systems,
+                and execution moving with clarity.
+              </p>
+            </div>
 
             <div className="flex shrink-0 items-center gap-3">
               <button
                 aria-label="Show previous testimonial"
-                className="flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.075] text-white/70 transition hover:border-[#003f72]/60 hover:bg-[#003f72]/18 hover:text-white"
+                className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.055] text-white/70 shadow-[0_12px_34px_rgba(0,0,0,0.22)] transition hover:border-[#003f72]/60 hover:bg-[#003f72]/18 hover:text-white hover:shadow-[0_0_22px_rgba(0,63,114,0.3)]"
                 onClick={() => scrollTestimonials("previous")}
                 type="button"
               >
@@ -301,7 +324,7 @@ export function AiWorkflowSection() {
               </button>
               <button
                 aria-label="Show next testimonial"
-                className="flex size-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.075] text-white/70 transition hover:border-[#003f72]/60 hover:bg-[#003f72]/18 hover:text-white"
+                className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.055] text-white/70 shadow-[0_12px_34px_rgba(0,0,0,0.22)] transition hover:border-[#003f72]/60 hover:bg-[#003f72]/18 hover:text-white hover:shadow-[0_0_22px_rgba(0,63,114,0.3)]"
                 onClick={() => scrollTestimonials("next")}
                 type="button"
               >
@@ -311,7 +334,7 @@ export function AiWorkflowSection() {
           </div>
 
           <div
-            className="testimonial-carousel mt-7 flex snap-x gap-5 overflow-x-auto pb-4 sm:mt-9"
+            className="testimonial-carousel relative mt-8 flex snap-x gap-5 overflow-x-auto pb-4 sm:mt-10"
             ref={carouselRef}
             onScroll={(event) => {
               const cardWidth =
@@ -328,17 +351,30 @@ export function AiWorkflowSection() {
           >
             {testimonials.map((testimonial, index) => (
               <article
-                className="relative min-h-48 w-[calc(100vw-2.5rem)] max-w-[22rem] shrink-0 snap-start rounded-[0.7rem] border border-[#003f72]/48 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.025))] p-5 shadow-[0_22px_80px_rgba(0,0,0,0.28)] sm:w-[24rem] sm:max-w-none sm:p-6"
+                className={`relative min-h-52 w-[calc(100vw-2.5rem)] max-w-[22rem] shrink-0 snap-start overflow-hidden rounded-[1rem] border bg-white/[0.045] p-5 shadow-[0_22px_80px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.06)] transition duration-500 sm:w-[24rem] sm:max-w-none sm:p-6 ${
+                  index === activeTestimonial
+                    ? "border-[#003f72]/72 shadow-[0_22px_80px_rgba(0,0,0,0.28),0_0_8px_rgba(255,255,255,0.18),0_0_38px_rgba(0,63,114,0.68),inset_0_1px_0_rgba(255,255,255,0.08)]"
+                    : "border-white/10"
+                }`}
                 data-testimonial-card
                 key={testimonial.name}
               >
-                <div className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#003f72] to-transparent" />
-                <p className="text-sm leading-6 text-white/72">
+                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#003f72] to-transparent" />
+                {index === activeTestimonial && (
+                  <div className="pointer-events-none absolute -right-10 -top-10 size-28 rounded-full bg-[#003f72]/18 blur-2xl" />
+                )}
+                {index === activeTestimonial && (
+                  <div className="pointer-events-none absolute -left-12 bottom-0 size-32 rounded-full bg-[#003f72]/18 blur-2xl" />
+                )}
+                <div className="mb-5 text-4xl font-semibold leading-none text-white/18">
+                  “
+                </div>
+                <p className="relative text-sm leading-6 text-white/72 sm:text-[0.95rem] sm:leading-7">
                   &quot;{testimonial.quote}&quot;
                 </p>
 
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="flex size-11 items-center justify-center rounded-[0.35rem] border border-[#003f72]/48 bg-[#003f72]/20 text-sm font-bold text-white shadow-[0_0_20px_rgba(0,63,114,0.32)]">
+                <div className="relative mt-8 flex items-center gap-4">
+                  <div className="flex size-11 items-center justify-center rounded-full border border-[#003f72]/48 bg-[#003f72]/20 text-sm font-bold text-white shadow-[0_0_20px_rgba(0,63,114,0.32)]">
                     {testimonial.mark}
                   </div>
                   <div>
@@ -352,7 +388,7 @@ export function AiWorkflowSection() {
                 </div>
 
                 {index === activeTestimonial && (
-                  <span className="absolute inset-x-14 -bottom-px h-0.5 rounded-full bg-[#003f72] shadow-[0_0_16px_rgba(0,63,114,0.9)]" />
+                  <span className="absolute inset-x-14 bottom-0 h-0.5 rounded-full bg-white shadow-[0_0_7px_rgba(255,255,255,0.48),0_0_24px_rgba(0,63,114,1)]" />
                 )}
               </article>
             ))}
@@ -364,7 +400,7 @@ export function AiWorkflowSection() {
                 aria-label={`Show testimonial ${index + 1}`}
                 className={`h-1.5 rounded-full transition ${
                   index === activeTestimonial
-                    ? "w-10 bg-[#003f72] shadow-[0_0_14px_rgba(0,63,114,0.9)]"
+                    ? "w-10 bg-white shadow-[0_0_6px_rgba(255,255,255,0.5),0_0_22px_rgba(0,63,114,0.95)]"
                     : "w-4 bg-white/16 hover:bg-white/28"
                 }`}
                 key={testimonial.name}

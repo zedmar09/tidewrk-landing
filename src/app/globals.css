@@ -543,13 +543,17 @@
 .workflow-connector {
   animation: workflow-connector 4.8s linear infinite;
   stroke: currentColor;
+  stroke-dasharray: 8 10;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.8;
+  stroke-width: 1.05;
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.34))
+    drop-shadow(0 0 14px rgba(0, 63, 114, 0.82));
 }
 
 .workflow-connector-main {
-  stroke-width: 2;
+  stroke-width: 1.2;
 }
 
 .workflow-connector-left {
@@ -819,23 +823,6 @@
   animation-delay: -3s;
 }
 
-@keyframes solution-scanline {
-  0% {
-    transform: translate3d(0, -120%, 0);
-    opacity: 0;
-  }
-
-  20%,
-  74% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate3d(0, 360%, 0);
-    opacity: 0;
-  }
-}
-
 @keyframes solution-stack-float {
   0%,
   100% {
@@ -963,10 +950,6 @@
     transform: scaleX(1);
     opacity: 1;
   }
-}
-
-.solution-scanline {
-  animation: solution-scanline 5.8s ease-in-out infinite;
 }
 
 .solution-stack-card-a {

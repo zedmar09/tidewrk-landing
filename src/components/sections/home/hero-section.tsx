@@ -118,7 +118,7 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <p className="mt-5 max-w-4xl text-pretty text-[0.98rem] leading-7 text-white/70 sm:mt-6 sm:text-xl sm:leading-8 lg:text-[1.25rem]">
+          <p className="mt-5 max-w-4xl text-pretty text-xl leading-9 text-white/70 sm:mt-6 sm:text-2xl sm:leading-10">
             {heroContent.description}
           </p>
 

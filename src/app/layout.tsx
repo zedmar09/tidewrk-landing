@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={montserrat.variable}>
-      <body>{children}</body>
+      <body id="top">{children}</body>
     </html>
   );
 }

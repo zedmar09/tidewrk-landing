@@ -88,10 +88,6 @@ export function SoftwareDevelopmentBuildFlowSection() {
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(0,63,114,0.44),transparent_30%),radial-gradient(circle_at_18%_18%,rgba(0,63,114,0.36),transparent_28%),radial-gradient(circle_at_86%_84%,rgba(255,255,255,0.08),transparent_24%),linear-gradient(145deg,#02050a_0%,#07182b_52%,#02050a_100%)]"
             />
-            <div
-              aria-hidden="true"
-              className="solution-scanline pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-transparent via-[#003f72]/14 to-transparent"
-            />
             <div className="relative z-10 flex h-full min-h-[480px] flex-col justify-between sm:min-h-[520px]">
               <div className="flex items-center justify-between gap-4">
                 <span className="rounded-full border border-[#003f72]/45 bg-white/8 px-3 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white/70 backdrop-blur-md">

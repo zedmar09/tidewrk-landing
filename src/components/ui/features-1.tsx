@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-  ArrowUpRight,
   BrainCircuit,
   Code2,
   Compass,
@@ -24,7 +23,7 @@ const services = [
     title: "Staff Augmentation",
     description:
       "Add skilled people who can plug into today’s tools, support faster output, and strengthen the team already in motion.",
-    href: "/staff-augmentation",
+    href: "#contact",
     visual: "staff",
     className: "lg:col-span-3",
   },
@@ -32,7 +31,7 @@ const services = [
     title: "Offshoring",
     description:
       "Shape global capacity with modern collaboration habits, clear ownership, and smarter ways to keep work moving across time zones.",
-    href: "/offshoring",
+    href: "#contact",
     visual: "offshoring",
     className: "lg:col-span-3",
   },
@@ -40,7 +39,7 @@ const services = [
     title: "Executive Advisory Consulting",
     description:
       "Help leaders make sharper calls on growth, modernization, operational change, and where AI support can create real leverage.",
-    href: "/executive-advisory-consulting",
+    href: "#contact",
     visual: "advisory",
     className: "lg:col-span-5",
   },
@@ -67,7 +66,7 @@ export function Features() {
             Services built for{" "}
             <span className="tidewrk-glow-text">forward motion</span>
           </h2>
-          <p className="max-w-3xl text-pretty text-lg leading-8 text-white/62 sm:text-xl sm:leading-9 lg:justify-self-end lg:self-center">
+          <p className="max-w-3xl text-pretty text-xl leading-9 text-white/66 sm:text-2xl sm:leading-10 lg:justify-self-end lg:self-center">
             Tidewrk helps leaders add modern capability at the right moment,
             blending people, implementation discipline, and practical AI
             support where it moves the business forward.
@@ -76,8 +75,10 @@ export function Features() {
 
         <div className="mt-10 grid grid-cols-1 gap-5 md:mt-14 md:grid-cols-2 lg:grid-cols-8">
           {services.map((service) => (
-            <article
+            <Link
+              aria-label={`Explore ${service.title}`}
               className={`group relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.075),rgba(255,255,255,0.035))] p-2 shadow-[0_24px_90px_rgba(0,0,0,0.2)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-[#003f72]/70 hover:bg-white/[0.065] ${service.className}`}
+              href={service.href}
               key={service.title}
             >
               <div
@@ -87,25 +88,14 @@ export function Features() {
               <ServiceVisual variant={service.visual} />
 
               <div className="px-4 pb-5 pt-4 sm:px-5 sm:pb-6">
-                <div className="flex items-start justify-between gap-5">
-                  <div>
-                    <h3 className="text-pretty text-2xl font-semibold leading-tight tracking-normal text-white">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 max-w-2xl text-base leading-7 text-white/58">
-                      {service.description}
-                    </p>
-                  </div>
-                  <Link
-                    aria-label={`Explore ${service.title}`}
-                    className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/8 text-white/78 transition group-hover:border-[#003f72]/70 group-hover:bg-[#003f72]/18 group-hover:text-white group-hover:shadow-[0_0_22px_rgba(0,63,114,0.55)]"
-                    href={service.href}
-                  >
-                    <ArrowUpRight className="size-5" aria-hidden="true" />
-                  </Link>
-                </div>
+                <h3 className="text-pretty text-2xl font-semibold leading-tight tracking-normal text-white">
+                  {service.title}
+                </h3>
+                <p className="mt-4 max-w-2xl text-lg leading-8 text-white/64 sm:text-xl sm:leading-9">
+                  {service.description}
+                </p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
@@ -256,29 +246,70 @@ function OffshoringVisual() {
 function AdvisoryVisual() {
   return (
     <div className="relative z-10 flex w-full items-center justify-center px-6">
-      <div className="absolute inset-x-8 top-8 grid grid-cols-3 gap-3">
-        {["Strategy", "Risk", "Growth"].map((label) => (
-          <div
-            className="service-decision-chip rounded-full border border-[#003f72]/40 bg-white/8 px-3 py-2 text-center text-xs font-medium text-white/84 backdrop-blur-md"
-            key={label}
-          >
-            {label}
+      <svg
+        aria-hidden="true"
+        className="absolute inset-x-8 top-1/2 h-28 -translate-y-1/2"
+        fill="none"
+        viewBox="0 0 420 150"
+      >
+        <path
+          d="M56 36 H152 C176 36 184 76 210 76 C236 76 244 36 268 36 H364"
+          stroke="rgba(255,255,255,0.24)"
+          strokeLinecap="round"
+          strokeWidth="1.4"
+        />
+        <path
+          d="M64 116 H156 C178 116 188 82 210 82 C232 82 242 116 264 116 H356"
+          stroke="rgba(255,255,255,0.18)"
+          strokeLinecap="round"
+          strokeWidth="1.4"
+        />
+      </svg>
+
+      <div className="absolute left-8 top-8 rounded-[0.95rem] border border-white/10 bg-[#07111f] px-4 py-3 shadow-[0_14px_44px_rgba(0,0,0,0.26),0_0_18px_rgba(0,63,114,0.18)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">
+          Market
+        </p>
+        <div className="mt-3 flex items-end gap-1.5">
+          {[24, 38, 30, 48].map((height) => (
+            <span
+              className="w-3 rounded-t-full bg-white/64 shadow-[0_0_10px_rgba(255,255,255,0.18)]"
+              key={height}
+              style={{ height }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="absolute right-8 top-7 rounded-[0.95rem] border border-white/10 bg-[#07111f] px-4 py-3 shadow-[0_14px_44px_rgba(0,0,0,0.26),0_0_18px_rgba(0,63,114,0.18)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">
+          Risk
+        </p>
+        <div className="mt-3 space-y-2">
+          <span className="block h-2 w-20 rounded-full bg-white/24" />
+          <span className="block h-2 w-14 rounded-full bg-[#003f72]/80" />
+        </div>
+      </div>
+
+      <div className="relative flex w-full max-w-[19rem] items-center gap-4 rounded-[1.15rem] border border-white/14 bg-[#06111f] p-4 shadow-[0_20px_70px_rgba(0,0,0,0.34),0_0_18px_rgba(255,255,255,0.1),0_0_42px_rgba(0,63,114,0.3)]">
+        <div className="flex size-16 shrink-0 items-center justify-center rounded-[1rem] border border-white/12 bg-[#003f72] shadow-[0_0_22px_rgba(0,63,114,0.62)]">
+          <Compass className="size-8 text-white" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-white">
+            Executive decision map
+          </p>
+          <div className="mt-3 space-y-2">
+            <span className="block h-2 w-full rounded-full bg-white/28" />
+            <span className="block h-2 w-4/5 rounded-full bg-white/18" />
+            <span className="block h-2 w-2/3 rounded-full bg-[#003f72]/80 shadow-[0_0_14px_rgba(0,63,114,0.55)]" />
           </div>
-        ))}
-      </div>
-      <div className="service-core-orbit relative flex size-28 items-center justify-center rounded-full border border-[#003f72]/70 bg-[#003f72] text-white shadow-[0_0_0_28px_rgba(0,63,114,0.12),0_30px_90px_rgba(0,0,0,0.3)]">
-        <span className="absolute inset-[-24px] rounded-full border border-dashed border-[#003f72]/35" />
-        <Compass className="size-12" />
-      </div>
-      <div className="absolute bottom-7 grid w-[86%] grid-cols-2 gap-3">
-        <div className="service-insight-card rounded-[0.85rem] border border-[#003f72]/35 bg-white/8 px-4 py-3 backdrop-blur-md">
-          <Network className="mb-2 size-5 text-white" />
-          <div className="service-insight-bar h-2 w-4/5 rounded-full bg-[#003f72]/50" />
         </div>
-        <div className="service-insight-card service-insight-card-delayed rounded-[0.85rem] border border-[#003f72]/35 bg-white/8 px-4 py-3 backdrop-blur-md">
-          <BrainCircuit className="mb-2 size-5 text-white" />
-          <div className="service-insight-bar h-2 w-2/3 rounded-full bg-[#003f72]/50" />
-        </div>
+      </div>
+
+      <div className="absolute bottom-7 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-[#07111f] px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white/58 shadow-[0_14px_40px_rgba(0,0,0,0.24)]">
+        <Network className="size-4 text-white/72" />
+        Clearer next move
       </div>
     </div>
   );
