@@ -4,6 +4,7 @@ import {
   SoftwareDevelopmentBuildFlowSection,
   SoftwareDevelopmentBuildOutcomesSection,
   SoftwareDevelopmentHero,
+  SoftwareDevelopmentSignalsSection,
 } from "@/components/sections/software-development";
 
 export default function SoftwareDevelopmentPage() {
@@ -12,6 +13,7 @@ export default function SoftwareDevelopmentPage() {
       <Navbar />
       <main>
         <SoftwareDevelopmentHero />
+        <SoftwareDevelopmentSignalsSection />
         <SoftwareDevelopmentBuildFlowSection />
         <SoftwareDevelopmentBuildOutcomesSection />
       </main>

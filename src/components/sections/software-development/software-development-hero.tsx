@@ -23,11 +23,6 @@ import {
 } from "react-icons/si";
 
 const pipelineSteps = ["Plan", "Build", "Test", "Deploy"];
-const deliverySignals = [
-  { label: "Product clarity", value: "Aligned before build" },
-  { label: "Engineering rhythm", value: "Built to keep moving" },
-  { label: "Quality loop", value: "Reviewed as it ships" },
-];
 const techStack = [
   { icon: SiReact, label: "React" },
   { icon: SiTypescript, label: "TypeScript" },
@@ -57,25 +52,25 @@ export function SoftwareDevelopmentHero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-60 bg-gradient-to-t from-[#02050a] via-[#02050a]/86 to-transparent"
       />
 
-      <div className="relative mx-auto grid min-h-[calc(100svh-5rem)] w-full max-w-[1900px] gap-12 py-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-        <div className="max-w-4xl">
+      <div className="relative mx-auto grid min-h-[calc(100svh-5rem)] w-full max-w-[1900px] gap-12 py-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="max-w-4xl lg:max-w-none">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-xs font-medium text-white/76 shadow-[0_16px_60px_rgba(0,0,0,0.24)] backdrop-blur-md sm:px-4 sm:text-sm">
             <span className="tidewrk-glow-badge rounded-full px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.08em]">
-              Software
+              Software Development
             </span>
-            Modern software implementation
+            Engineering the flow behind digital products
             <ArrowRight className="size-4 text-white/58" aria-hidden="true" />
           </div>
 
           <h1 className="mt-7 max-w-5xl text-balance text-[clamp(2.65rem,11vw,4rem)] font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-[5rem]">
-            Build the software behind{" "}
-            <span className="tidewrk-glow-text">your next move</span>
+            The engineering current behind{" "}
+            <span className="tidewrk-glow-text">your next product move</span>
           </h1>
 
-          <p className="mt-6 max-w-3xl text-pretty text-base leading-7 text-white/66 sm:text-xl sm:leading-8">
-            Tidewrk blends experienced product engineers with AI-assisted build
-            practices to shape, ship, and improve secure software with sharper
-            quality and faster momentum.
+          <p className="mt-6 max-w-4xl text-pretty text-xl leading-9 text-white/70 sm:text-2xl sm:leading-10">
+            Tidewrk builds secure software around your next move, using smarter
+            delivery workflows to reduce friction, strengthen quality, and ship
+            with confidence.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -94,29 +89,9 @@ export function SoftwareDevelopmentHero() {
               <ArrowRight className="size-5" aria-hidden="true" />
             </Link>
           </div>
-
-          <div className="mt-10 grid gap-3 sm:grid-cols-3">
-            {deliverySignals.map((item, index) => (
-              <div
-                className="group relative overflow-hidden border-l border-white/16 bg-white/[0.035] px-4 py-4 transition duration-300 hover:border-[#003f72] hover:bg-white/[0.06]"
-                key={item.label}
-              >
-                <span className="absolute inset-y-0 left-0 w-px bg-[#003f72] opacity-0 shadow-[0_0_18px_rgba(0,63,114,0.9)] transition duration-300 group-hover:opacity-100" />
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white/34">
-                  0{index + 1}
-                </p>
-                <p className="mt-2 text-sm font-semibold text-white">
-                  {item.label}
-                </p>
-                <p className="mt-1 text-xs leading-5 text-white/48">
-                  {item.value}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-3xl lg:mx-0">
+        <div className="relative mx-auto w-full max-w-3xl lg:mx-0 lg:max-w-none">
           <div
             aria-hidden="true"
             className="absolute -inset-10 rounded-full bg-[#003f72]/28 blur-3xl"
