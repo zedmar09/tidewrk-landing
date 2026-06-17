@@ -23,7 +23,7 @@ const services = [
     title: "Staff Augmentation",
     description:
       "Add skilled people who can plug into today’s tools, support faster output, and strengthen the team already in motion.",
-    href: "#contact",
+    href: "/staff-augmentation",
     visual: "staff",
     className: "lg:col-span-3",
   },
@@ -31,7 +31,7 @@ const services = [
     title: "Offshoring",
     description:
       "Shape global capacity with modern collaboration habits, clear ownership, and smarter ways to keep work moving across time zones.",
-    href: "#contact",
+    href: "/offshoring",
     visual: "offshoring",
     className: "lg:col-span-3",
   },
@@ -39,7 +39,7 @@ const services = [
     title: "Executive Advisory Consulting",
     description:
       "Help leaders make sharper calls on growth, modernization, operational change, and where AI support can create real leverage.",
-    href: "#contact",
+    href: "/executive-advisory-consulting",
     visual: "advisory",
     className: "lg:col-span-5",
   },

@@ -58,6 +58,26 @@ type MegaMenu = {
   groups: MegaMenuGroup[];
 };
 
+const serviceRoutes = {
+  softwareDevelopment: "/software-development",
+  staffAugmentation: "/staff-augmentation",
+  offshoring: "/offshoring",
+  executiveAdvisoryConsulting: "/executive-advisory-consulting",
+};
+
+const solutionRoutes: Record<string, string> = {
+  "Full-Stack Development Team": "/full-stack-development-team",
+  "Business Intelligence": "/business-intelligence",
+  "Data Science": "/data-science",
+  "Data Engineering": "/data-engineering",
+  "Web / Desktop Application Development": "/web-desktop-application-development",
+  "Mobile Application Development": "/mobile-application-development",
+  "Machine Learning": "/machine-learning",
+  "Cloud Services": "/cloud-services",
+  "QA Testing and Engineering": "/qa-testing-and-engineering",
+  "Virtual Assistance / Business Administration": "/virtual-assistance-business-administration",
+};
+
 const megaMenus: Record<
   MegaMenuKey,
   MegaMenu
@@ -78,25 +98,25 @@ const megaMenus: Record<
             title: "Software Development",
             description:
               "Secure platforms, modern workflows, and product delivery built around business progress.",
-            href: "/software-development",
+            href: serviceRoutes.softwareDevelopment,
           },
           {
             title: "Staff Augmentation",
             description:
               "Skilled professionals who strengthen your current team without slowing hiring.",
-            href: "#contact",
+            href: serviceRoutes.staffAugmentation,
           },
           {
             title: "Offshoring",
             description:
               "Global capacity with clearer ownership, collaboration, and delivery rhythm.",
-            href: "#contact",
+            href: serviceRoutes.offshoring,
           },
           {
             title: "Executive Advisory Consulting",
             description:
               "Senior guidance for growth, modernization, and high-stakes operational decisions.",
-            href: "#contact",
+            href: serviceRoutes.executiveAdvisoryConsulting,
           },
         ],
       },
@@ -105,19 +125,19 @@ const megaMenus: Record<
         title: "Software Development",
         description:
           "Build digital products that carry work forward, connect systems, and help teams ship with confidence.",
-        href: "/software-development",
+        href: serviceRoutes.softwareDevelopment,
         cards: [
           {
             title: "Product implementation",
             description:
               "From planning and UX to front-end, back-end, integrations, testing, and release.",
-            href: "/software-development",
+            href: serviceRoutes.softwareDevelopment,
           },
           {
             title: "Modern engineering support",
             description:
               "Practical development workflows strengthened by better review, QA, and delivery habits.",
-            href: "/software-development",
+            href: serviceRoutes.softwareDevelopment,
           },
         ],
       },
@@ -126,19 +146,19 @@ const megaMenus: Record<
         title: "Staff Augmentation",
         description:
           "Add the right professionals when workloads change, deadlines tighten, or specialized capability is needed.",
-        href: "#contact",
+        href: serviceRoutes.staffAugmentation,
         cards: [
           {
             title: "Flexible capacity",
             description:
               "Scale execution support without the delay and overhead of traditional hiring.",
-            href: "#contact",
+            href: serviceRoutes.staffAugmentation,
           },
           {
             title: "Team integration",
             description:
               "Talent that works with your tools, priorities, and delivery expectations.",
-            href: "#contact",
+            href: serviceRoutes.staffAugmentation,
           },
         ],
       },
@@ -147,19 +167,19 @@ const megaMenus: Record<
         title: "Offshoring",
         description:
           "Build global operating capacity that helps work continue with structure, visibility, and reliable momentum.",
-        href: "#contact",
+        href: serviceRoutes.offshoring,
         cards: [
           {
             title: "Global execution",
             description:
               "Access skilled support across functions while keeping delivery aligned to business goals.",
-            href: "#contact",
+            href: serviceRoutes.offshoring,
           },
           {
             title: "Operational efficiency",
             description:
               "Reduce local capacity pressure while maintaining quality, ownership, and continuity.",
-            href: "#contact",
+            href: serviceRoutes.offshoring,
           },
         ],
       },
@@ -168,19 +188,19 @@ const megaMenus: Record<
         title: "Executive Advisory Consulting",
         description:
           "Support leaders with outside perspective, practical strategy, and focused guidance for what comes next.",
-        href: "#contact",
+        href: serviceRoutes.executiveAdvisoryConsulting,
         cards: [
           {
             title: "Strategic direction",
             description:
               "Clarify priorities around growth, modernization, technology, and operating change.",
-            href: "#contact",
+            href: serviceRoutes.executiveAdvisoryConsulting,
           },
           {
             title: "Decision support",
             description:
               "Bring structure and confidence to complex moves, risks, and transformation moments.",
-            href: "#contact",
+            href: serviceRoutes.executiveAdvisoryConsulting,
           },
         ],
       },
@@ -202,61 +222,61 @@ const megaMenus: Record<
             title: "Full-Stack Development Team",
             description:
               "A coordinated team that carries product work from strategy to release.",
-            href: "#contact",
+            href: solutionRoutes["Full-Stack Development Team"],
           },
           {
             title: "Business Intelligence",
             description:
               "Clearer command views for performance, risk, and opportunity.",
-            href: "#contact",
+            href: solutionRoutes["Business Intelligence"],
           },
           {
             title: "Data Science",
             description:
               "Turn complex signals into useful patterns, forecasts, and insight.",
-            href: "#contact",
+            href: solutionRoutes["Data Science"],
           },
           {
             title: "Data Engineering",
             description:
               "Reliable data foundations for reporting, automation, and analytics.",
-            href: "#contact",
+            href: solutionRoutes["Data Engineering"],
           },
           {
             title: "Web / Desktop Application Development",
             description:
               "Business applications that reduce manual work and fit team workflows.",
-            href: "#contact",
+            href: solutionRoutes["Web / Desktop Application Development"],
           },
           {
             title: "Mobile Application Development",
             description:
               "Mobile experiences for customers, teams, field work, and connected operations.",
-            href: "#contact",
+            href: solutionRoutes["Mobile Application Development"],
           },
           {
             title: "Machine Learning",
             description:
               "Adaptive systems for prediction, personalization, and smarter consistency.",
-            href: "#contact",
+            href: solutionRoutes["Machine Learning"],
           },
           {
             title: "Cloud Services",
             description:
               "Cloud environments that stay flexible, secure, and ready to grow.",
-            href: "#contact",
+            href: solutionRoutes["Cloud Services"],
           },
           {
             title: "QA Testing and Engineering",
             description:
               "Test strategy and automation that protects quality before launch.",
-            href: "#contact",
+            href: solutionRoutes["QA Testing and Engineering"],
           },
           {
             title: "Virtual Assistance / Business Administration",
             description:
               "Operational support for coordination, documentation, and follow-through.",
-            href: "#contact",
+            href: solutionRoutes["Virtual Assistance / Business Administration"],
           },
         ],
       },
@@ -294,19 +314,19 @@ const megaMenus: Record<
                           : title === "QA Testing and Engineering"
                             ? "Protect launches with thoughtful testing, automation, and release confidence."
                             : "Support administration, coordination, documentation, and follow-through that keeps work moving.",
-        href: "#contact",
+        href: solutionRoutes[title],
         cards: [
           {
             title: "Business fit",
             description:
               "Designed around the workflow, audience, and outcome your team needs to support.",
-            href: "#contact",
+            href: solutionRoutes[title],
           },
           {
             title: "Execution support",
             description:
               "Delivered with practical implementation discipline, clear ownership, and steady communication.",
-            href: "#contact",
+            href: solutionRoutes[title],
           },
         ],
       })),
@@ -736,10 +756,10 @@ function MegaMenuPanel({
   return (
     <div className="mx-auto grid max-h-[calc(100svh-4rem)] w-full max-w-[1800px] grid-cols-[minmax(20rem,26rem)_1fr] overflow-hidden">
       <aside className="flex max-h-[calc(100svh-4rem)] min-h-0 flex-col border-r border-white/10 bg-white/[0.035]">
-        <div className="min-h-0 flex-1 space-y-1 overflow-y-auto p-5">
+        <div className="min-h-0 flex-1 space-y-1 overflow-y-auto p-4">
           {menu.groups.map((group, index) => (
             <button
-              className={`block w-full rounded-[1rem] px-5 py-4 text-left text-lg transition ${
+              className={`block w-full rounded-[0.85rem] px-4 py-3 text-left text-base transition ${
                 index === activeGroupIndex
                   ? "bg-white/10 text-white"
                   : "text-white/58 hover:bg-white/[0.06] hover:text-white"
@@ -754,7 +774,7 @@ function MegaMenuPanel({
         </div>
 
         <Link
-          className="mt-auto flex items-center justify-between bg-[#003f72] px-10 py-6 text-lg font-semibold text-white transition hover:bg-[#075286]"
+          className="mt-auto flex items-center justify-between bg-[#003f72] px-8 py-5 text-base font-semibold text-white transition hover:bg-[#075286]"
           href={menu.href}
           onClick={onLinkClick}
         >
@@ -763,41 +783,41 @@ function MegaMenuPanel({
         </Link>
       </aside>
 
-      <div className="max-h-[calc(100svh-4rem)] overflow-y-auto px-12 py-10 xl:px-16">
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/42">
+      <div className="max-h-[calc(100svh-4rem)] overflow-y-auto px-10 py-8 xl:px-14">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/42">
           {activeGroup.eyebrow ?? menu.eyebrow}
         </p>
         <Link
-          className="mt-3 inline-flex items-center gap-3 text-[clamp(2.5rem,3.6vw,4.1rem)] font-semibold leading-none text-white transition hover:text-white/82"
+          className="mt-3 inline-flex items-center gap-3 text-[clamp(2rem,2.7vw,3.1rem)] font-semibold leading-none text-white transition hover:text-white/82"
           href={activeGroup.href}
           onClick={onLinkClick}
         >
           {activeGroup.title}
-          <ArrowRight className="size-10 text-[#7bbcff]" aria-hidden="true" />
+          <ArrowRight className="size-7 text-[#7bbcff]" aria-hidden="true" />
         </Link>
-        <p className="mt-5 max-w-4xl text-xl leading-9 text-white/60">
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-white/60">
           {activeGroup.description}
         </p>
 
-        <div className="mt-10 grid gap-5 xl:grid-cols-2">
+        <div className="mt-8 grid gap-4 xl:grid-cols-2">
           {activeGroup.cards.map((item) => {
             const ItemIcon = getMegaMenuIcon(item.title);
 
             return (
               <Link
-                className="group flex items-start gap-4 rounded-[1.15rem] border border-white/10 bg-white/[0.045] p-5 transition hover:border-[#003f72]/70 hover:bg-white/[0.07]"
+                className="group flex items-start gap-3 rounded-[1rem] border border-white/10 bg-white/[0.045] p-4 transition hover:border-[#003f72]/70 hover:bg-white/[0.07]"
                 href={item.href}
                 key={item.title}
                 onClick={onLinkClick}
               >
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-[0.9rem] border border-[#003f72]/45 bg-[#003f72]/18 text-white shadow-[0_0_22px_rgba(0,63,114,0.34)] transition group-hover:border-[#7bbcff]/60 group-hover:shadow-[0_0_26px_rgba(0,63,114,0.52)]">
-                  <ItemIcon className="size-5" aria-hidden="true" />
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-[0.8rem] border border-[#003f72]/45 bg-[#003f72]/18 text-white shadow-[0_0_18px_rgba(0,63,114,0.3)] transition group-hover:border-[#7bbcff]/60 group-hover:shadow-[0_0_22px_rgba(0,63,114,0.48)]">
+                  <ItemIcon className="size-4" aria-hidden="true" />
                 </span>
                 <span>
-                  <span className="block text-xl font-semibold text-white transition group-hover:text-[#b8ddff]">
+                  <span className="block text-base font-semibold leading-6 text-white transition group-hover:text-[#b8ddff]">
                     {item.title}
                   </span>
-                  <span className="mt-2 block text-base leading-7 text-white/58">
+                  <span className="mt-1.5 block text-sm leading-6 text-white/58">
                     {item.description}
                   </span>
                 </span>

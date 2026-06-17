@@ -54,13 +54,26 @@ import {
   SiXcode,
 } from "react-icons/si";
 
+const solutionRoutes: Record<string, string> = {
+  "Full-Stack Development Team": "/full-stack-development-team",
+  "Business Intelligence": "/business-intelligence",
+  "Data Science": "/data-science",
+  "Data Engineering": "/data-engineering",
+  "Web / Desktop Application Development": "/web-desktop-application-development",
+  "Mobile Application Development": "/mobile-application-development",
+  "Machine Learning": "/machine-learning",
+  "Cloud Services": "/cloud-services",
+  "QA Testing and Engineering": "/qa-testing-and-engineering",
+  "Virtual Assistance / Business Administration": "/virtual-assistance-business-administration",
+};
+
 const solutions = [
   {
     title: "Full-Stack Development Team",
     label: "End-to-end build",
     description:
       "A modern implementation team that carries product work from strategy to release without splitting ownership.",
-    href: "#contact",
+    href: solutionRoutes["Full-Stack Development Team"],
     icon: Layers3,
     signal: "Product delivery",
     visual: "full-stack",
@@ -70,7 +83,7 @@ const solutions = [
     label: "Clearer decisions",
     description:
       "Give leaders a clearer command view of performance, risk, and opportunity without chasing stale reports.",
-    href: "#contact",
+    href: solutionRoutes["Business Intelligence"],
     icon: BarChart3,
     signal: "Decision clarity",
     visual: "intelligence",
@@ -80,7 +93,7 @@ const solutions = [
     label: "Smarter patterns",
     description:
       "Turn complex business signals into patterns your team can use for planning, forecasting, and growth.",
-    href: "#contact",
+    href: solutionRoutes["Data Science"],
     icon: FlaskConical,
     signal: "Pattern discovery",
     visual: "science",
@@ -90,7 +103,7 @@ const solutions = [
     label: "Reliable data flow",
     description:
       "Build the data plumbing behind reliable reporting, automation, analytics, and intelligent products.",
-    href: "#contact",
+    href: solutionRoutes["Data Engineering"],
     icon: Database,
     signal: "Data foundation",
     visual: "engineering",
@@ -100,7 +113,7 @@ const solutions = [
     label: "Operational tools",
     description:
       "Create business applications that feel current, reduce manual work, and fit the way teams actually operate.",
-    href: "#contact",
+    href: solutionRoutes["Web / Desktop Application Development"],
     icon: MonitorCog,
     signal: "Workflow tools",
     visual: "desktop",
@@ -110,7 +123,7 @@ const solutions = [
     label: "Work anywhere",
     description:
       "Design mobile experiences that keep customers, teams, and field operations connected to the work that matters.",
-    href: "#contact",
+    href: solutionRoutes["Mobile Application Development"],
     icon: Smartphone,
     signal: "Connected work",
     visual: "mobile",
@@ -120,7 +133,7 @@ const solutions = [
     label: "Adaptive systems",
     description:
       "Apply intelligent automation where prediction, personalization, or consistency can improve the business rhythm.",
-    href: "#contact",
+    href: solutionRoutes["Machine Learning"],
     icon: BrainCircuit,
     signal: "Adaptive logic",
     visual: "learning",
@@ -130,7 +143,7 @@ const solutions = [
     label: "Scalable infrastructure",
     description:
       "Plan, migrate, and manage cloud environments across AWS, Azure, Google Cloud, Cloudflare, DigitalOcean, and modern platforms so systems stay flexible, secure, and ready to grow.",
-    href: "#contact",
+    href: solutionRoutes["Cloud Services"],
     icon: CloudCog,
     signal: "Cloud foundation",
     visual: "cloud",
@@ -140,7 +153,7 @@ const solutions = [
     label: "Launch confidence",
     description:
       "Protect modern releases with thoughtful test strategy, automation, and quality checks built into delivery.",
-    href: "#contact",
+    href: solutionRoutes["QA Testing and Engineering"],
     icon: CheckCircle2,
     signal: "Quality guardrails",
     visual: "testing",
@@ -150,7 +163,7 @@ const solutions = [
     label: "Operational support",
     description:
       "Support coordination, documentation, scheduling, follow-through, and the business details that keep work moving.",
-    href: "#contact",
+    href: solutionRoutes["Virtual Assistance / Business Administration"],
     icon: Workflow,
     signal: "Admin rhythm",
     visual: "administration",
