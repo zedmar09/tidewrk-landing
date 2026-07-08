@@ -3,37 +3,27 @@ import {
   BrainCircuit,
   Code2,
   Compass,
-  Globe2,
   Network,
   ShieldCheck,
   UsersRound,
-  Workflow,
 } from "lucide-react";
 
 const services = [
   {
     title: "Software Development",
     description:
-      "Modern product implementation for teams that need secure platforms, clean user experiences, and AI-aware delivery choices.",
+      "Modern product implementation for teams that need secure platforms, clean user experiences, remote-ready collaboration, and AI-aware delivery choices.",
     href: "/software-development",
     visual: "software",
-    className: "lg:col-span-5",
+    className: "lg:col-span-4",
   },
   {
     title: "Staff Augmentation",
     description:
-      "Add skilled people who can plug into today’s tools, support faster output, and strengthen the team already in motion.",
+      "Add skilled people, including Philippines-based remote support, who plug into today’s tools and strengthen the team already in motion.",
     href: "/staff-augmentation",
     visual: "staff",
-    className: "lg:col-span-3",
-  },
-  {
-    title: "Offshoring",
-    description:
-      "Shape global capacity with modern collaboration habits, clear ownership, and smarter ways to keep work moving across time zones.",
-    href: "/offshoring",
-    visual: "offshoring",
-    className: "lg:col-span-3",
+    className: "lg:col-span-4",
   },
   {
     title: "Executive Advisory Consulting",
@@ -41,7 +31,7 @@ const services = [
       "Help leaders make sharper calls on growth, modernization, operational change, and where AI support can create real leverage.",
     href: "/executive-advisory-consulting",
     visual: "advisory",
-    className: "lg:col-span-5",
+    className: "lg:col-span-8",
   },
 ];
 
@@ -114,7 +104,6 @@ function ServiceVisual({ variant }: { variant: string }) {
 
       {variant === "software" && <SoftwareVisual />}
       {variant === "staff" && <StaffVisual />}
-      {variant === "offshoring" && <OffshoringVisual />}
       {variant === "advisory" && <AdvisoryVisual />}
     </div>
   );
@@ -193,51 +182,6 @@ function StaffVisual() {
       </div>
       <div className="service-match-chip absolute bottom-6 rounded-full border border-[#003f72]/45 bg-white/9 px-4 py-2 text-xs font-semibold text-white/84 backdrop-blur-md">
         Skills matched to workflow
-      </div>
-    </div>
-  );
-}
-
-function OffshoringVisual() {
-  const routePath = "M8 66 C78 12 140 92 214 44 C288 -2 334 68 412 22";
-
-  return (
-    <div className="relative z-10 flex w-full items-center justify-center px-7">
-      <div className="service-route-start absolute left-8 top-8 flex size-12 items-center justify-center rounded-full border border-[#003f72]/45 bg-white/8 text-white backdrop-blur-md">
-        <Globe2 className="size-6" />
-      </div>
-      <div className="service-route-end absolute right-8 bottom-8 flex size-12 items-center justify-center rounded-full border border-[#003f72]/45 bg-white/8 text-white backdrop-blur-md">
-        <Workflow className="size-6" />
-      </div>
-      <svg
-        aria-hidden="true"
-        className="absolute inset-x-5 top-1/2 h-24 -translate-y-1/2"
-        fill="none"
-        viewBox="0 0 420 120"
-      >
-        <path
-          d="M8 82 C80 20 138 104 212 55 C290 4 332 80 412 33"
-          stroke="rgba(0,63,114,0.34)"
-          strokeWidth="2"
-        />
-        <path d={routePath} stroke="rgba(0,63,114,0.78)" strokeWidth="4" />
-        <circle r="5" fill="#ffffff">
-          <animateMotion dur="4.8s" path={routePath} repeatCount="indefinite" />
-        </circle>
-        <circle r="3" fill="#003f72">
-          <animateMotion
-            begin="1.6s"
-            dur="4.8s"
-            path={routePath}
-            repeatCount="indefinite"
-          />
-        </circle>
-      </svg>
-      <div className="rounded-[1rem] border border-[#003f72]/35 bg-[#02050a]/64 px-5 py-4 text-center shadow-[0_24px_70px_rgba(0,0,0,0.24)] backdrop-blur">
-        <p className="text-sm font-semibold text-white">Global flow</p>
-        <p className="mt-1 text-xs text-white/54">
-          Aligned teams, clearer handoffs
-        </p>
       </div>
     </div>
   );

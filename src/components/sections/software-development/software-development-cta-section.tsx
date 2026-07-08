@@ -40,7 +40,7 @@ export function SoftwareDevelopmentCtaSection() {
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild className="shadow-none" size="lg">
-                <a href="#contact">
+                <a href="/contact">
                   Start a Conversation
                   <ArrowRight className="size-5" aria-hidden="true" />
                 </a>

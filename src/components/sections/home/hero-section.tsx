@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, BrainCircuit, Play, Sparkles } from "lucide-react";
+import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 
 import { heroContent, whyTidewrkContent } from "@/constants/landing-page";
@@ -25,10 +25,11 @@ const wavePaths = [
   "M-560 456 C-66 434 262 500 434 322 C604 162 688 246 900 302 C1106 354 1254 256 1456 164 C1592 124 1948 34 2040 -78",
 ];
 
-const heroPhrases = [
-  "your next move.",
-  "work that flows.",
-  "teams that deliver.",
+const heroTaglines = [
+  "The Current\nBehind You",
+  "The current behind your work",
+  "The current behind the work that flows",
+  "The current behind your next move",
 ];
 
 export function HeroSection() {
@@ -91,25 +92,24 @@ export function HeroSection() {
             aria-label={heroContent.headline}
             className="mt-7 w-full max-w-6xl text-balance text-[clamp(2.25rem,12vw,3.15rem)] font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl sm:leading-[1.02] lg:text-[4.55rem] xl:text-[5.25rem]"
           >
-            <span aria-hidden="true" className="block">
-              The current behind{" "}
-            </span>
             <span
               aria-hidden="true"
-              className="tidewrk-glow-text hero-typing-slot block h-[2.08em] w-full overflow-hidden sm:h-[1.05em]"
+              className="tidewrk-glow-text hero-typing-slot block min-h-[3.12em] w-full overflow-hidden sm:min-h-[2.08em] lg:min-h-[2.04em]"
             >
               <TypeAnimation
-                className="inline-block max-w-full whitespace-normal break-words sm:min-w-[18ch] sm:whitespace-nowrap"
+                className="inline-block max-w-full whitespace-pre-line break-words"
                 cursor={false}
                 deletionSpeed={{ type: "keyStrokeDelayInMs", value: 34 }}
                 preRenderFirstString={true}
                 repeat={Infinity}
                 sequence={[
-                  heroPhrases[0],
+                  heroTaglines[0],
                   1700,
-                  heroPhrases[1],
+                  heroTaglines[1],
                   1700,
-                  heroPhrases[2],
+                  heroTaglines[2],
+                  1700,
+                  heroTaglines[3],
                   1700,
                 ]}
                 speed={{ type: "keyStrokeDelayInMs", value: 52 }}
@@ -124,17 +124,10 @@ export function HeroSection() {
 
           <div className="mt-7 flex w-full max-w-sm flex-col items-center justify-center gap-3 sm:mt-8 sm:w-auto sm:max-w-none sm:flex-row">
             <Link
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-6 text-base font-semibold text-[#003f72] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f9fd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
-              href={heroContent.primaryCta.href}
-            >
-              <Sparkles className="size-5" aria-hidden="true" />
-              {heroContent.primaryCta.label}
-            </Link>
-            <Link
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-white/24 bg-white/6 px-6 text-base font-semibold text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-white/18 bg-white px-6 text-base font-semibold text-[#003f72] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-[#f5f9fd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
               href={heroContent.secondaryCta.href}
             >
-              <Play className="size-5 fill-white/14" aria-hidden="true" />
+              <Play className="size-5 fill-[#003f72]/10" aria-hidden="true" />
               {heroContent.secondaryCta.label}
             </Link>
           </div>
@@ -157,21 +150,28 @@ export function HeroSection() {
             ))}
           </div>
 
-          <div className="mx-auto w-full max-w-[30rem] rounded-[1.1rem] border border-white/10 bg-white/[0.07] p-3 text-left shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:rounded-[1.4rem] sm:p-4 md:mx-0 md:w-[30rem]">
+          <Link
+            className="group mx-auto w-full max-w-[30rem] rounded-[1.1rem] border border-white/10 bg-white/[0.07] p-3 text-left shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-white/18 hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:rounded-[1.4rem] sm:p-4 md:mx-0 md:w-[30rem]"
+            href={heroContent.primaryCta.href}
+          >
             <div className="flex items-center gap-4">
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#003f72]/45 bg-[#003f72]/20 text-white shadow-[0_0_26px_rgba(0,63,114,0.45)] sm:size-11">
-                <BrainCircuit className="size-5" aria-hidden="true" />
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#003f72]/45 bg-[#003f72]/20 text-white shadow-[0_0_26px_rgba(0,63,114,0.45)] transition group-hover:border-white/28 sm:size-11">
+                <Sparkles className="size-5" aria-hidden="true" />
               </span>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-sm font-semibold uppercase tracking-[0.08em] text-white sm:text-base">
-                  Smart execution support
+                  {heroContent.primaryCta.label}
                 </p>
                 <p className="mt-1 text-xs leading-5 text-white/56 sm:text-sm">
-                  People, systems, and data aligned around the work your next move requires.
+                  Start the conversation behind your next move.
                 </p>
               </div>
+              <ArrowRight
+                className="size-5 shrink-0 text-white/54 transition group-hover:translate-x-1 group-hover:text-white"
+                aria-hidden="true"
+              />
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

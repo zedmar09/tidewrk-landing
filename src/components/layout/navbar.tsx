@@ -34,7 +34,7 @@ import { navigationItems } from "@/constants/navigation";
 import { Button } from "@/components/ui/button";
 import tidewrkLogo from "@/assets/images/tidewrk-logo.svg";
 
-type MegaMenuKey = "Services" | "Solutions" | "Careers" | "About Us";
+type MegaMenuKey = "Solutions" | "Careers" | "About Us";
 
 type MegaMenuCard = {
   title: string;
@@ -61,7 +61,6 @@ type MegaMenu = {
 const serviceRoutes = {
   softwareDevelopment: "/software-development",
   staffAugmentation: "/staff-augmentation",
-  offshoring: "/offshoring",
   executiveAdvisoryConsulting: "/executive-advisory-consulting",
 };
 
@@ -75,153 +74,27 @@ const solutionRoutes: Record<string, string> = {
   "Machine Learning": "/machine-learning",
   "Cloud Services": "/cloud-services",
   "QA Testing and Engineering": "/qa-testing-and-engineering",
-  "Virtual Assistance / Business Administration": "/virtual-assistance-business-administration",
+  "Virtual Assistants / Business Administration": "/virtual-assistance-business-administration",
 };
 
-const megaMenus: Record<
-  MegaMenuKey,
-  MegaMenu
-> = {
-  Services: {
-    eyebrow: "What Tidewrk helps you move",
-    title: "Services",
-    href: "/#services",
-    groups: [
-      {
-        label: "Core services",
-        title: "Core services",
-        description:
-          "Four ways Tidewrk helps businesses add the people, systems, and guidance behind their next move.",
-        href: "/#services",
-        cards: [
-          {
-            title: "Software Development",
-            description:
-              "Secure platforms, modern workflows, and product delivery built around business progress.",
-            href: serviceRoutes.softwareDevelopment,
-          },
-          {
-            title: "Staff Augmentation",
-            description:
-              "Skilled professionals who strengthen your current team without slowing hiring.",
-            href: serviceRoutes.staffAugmentation,
-          },
-          {
-            title: "Offshoring",
-            description:
-              "Global capacity with clearer ownership, collaboration, and delivery rhythm.",
-            href: serviceRoutes.offshoring,
-          },
-          {
-            title: "Executive Advisory Consulting",
-            description:
-              "Senior guidance for growth, modernization, and high-stakes operational decisions.",
-            href: serviceRoutes.executiveAdvisoryConsulting,
-          },
-        ],
-      },
-      {
-        label: "Software Development",
-        title: "Software Development",
-        description:
-          "Build digital products that carry work forward, connect systems, and help teams ship with confidence.",
-        href: serviceRoutes.softwareDevelopment,
-        cards: [
-          {
-            title: "Product implementation",
-            description:
-              "From planning and UX to front-end, back-end, integrations, testing, and release.",
-            href: serviceRoutes.softwareDevelopment,
-          },
-          {
-            title: "Modern engineering support",
-            description:
-              "Practical development workflows strengthened by better review, QA, and delivery habits.",
-            href: serviceRoutes.softwareDevelopment,
-          },
-        ],
-      },
-      {
-        label: "Staff Augmentation",
-        title: "Staff Augmentation",
-        description:
-          "Add the right professionals when workloads change, deadlines tighten, or specialized capability is needed.",
-        href: serviceRoutes.staffAugmentation,
-        cards: [
-          {
-            title: "Flexible capacity",
-            description:
-              "Scale execution support without the delay and overhead of traditional hiring.",
-            href: serviceRoutes.staffAugmentation,
-          },
-          {
-            title: "Team integration",
-            description:
-              "Talent that works with your tools, priorities, and delivery expectations.",
-            href: serviceRoutes.staffAugmentation,
-          },
-        ],
-      },
-      {
-        label: "Offshoring",
-        title: "Offshoring",
-        description:
-          "Build global operating capacity that helps work continue with structure, visibility, and reliable momentum.",
-        href: serviceRoutes.offshoring,
-        cards: [
-          {
-            title: "Global execution",
-            description:
-              "Access skilled support across functions while keeping delivery aligned to business goals.",
-            href: serviceRoutes.offshoring,
-          },
-          {
-            title: "Operational efficiency",
-            description:
-              "Reduce local capacity pressure while maintaining quality, ownership, and continuity.",
-            href: serviceRoutes.offshoring,
-          },
-        ],
-      },
-      {
-        label: "Executive Advisory Consulting",
-        title: "Executive Advisory Consulting",
-        description:
-          "Support leaders with outside perspective, practical strategy, and focused guidance for what comes next.",
-        href: serviceRoutes.executiveAdvisoryConsulting,
-        cards: [
-          {
-            title: "Strategic direction",
-            description:
-              "Clarify priorities around growth, modernization, technology, and operating change.",
-            href: serviceRoutes.executiveAdvisoryConsulting,
-          },
-          {
-            title: "Decision support",
-            description:
-              "Bring structure and confidence to complex moves, risks, and transformation moments.",
-            href: serviceRoutes.executiveAdvisoryConsulting,
-          },
-        ],
-      },
-    ],
-  },
+const megaMenus: Record<MegaMenuKey, MegaMenu> = {
   Solutions: {
-    eyebrow: "Capability for what comes next",
+    eyebrow: "Choose the current behind the work",
     title: "Solutions",
     href: "/#solutions",
     groups: [
       {
-        label: "Product Build",
-        title: "Product Build",
+        label: "Software Development",
+        eyebrow: "Build and modernize",
+        title: "Software Development",
         description:
-          "Modern solutions for software, data, cloud, quality, and operational support, arranged around the work your business needs to move.",
-        href: "/#solutions",
+          "For digital products, internal systems, data platforms, cloud foundations, and quality engineering that need to move from idea to release.",
+        href: serviceRoutes.softwareDevelopment,
         cards: [
           {
             title: "Full-Stack Development Team",
             description:
-              "A coordinated team that carries product work from strategy to release.",
+              "A coordinated, remote-ready team that carries product work from strategy to release.",
             href: solutionRoutes["Full-Stack Development Team"],
           },
           {
@@ -272,64 +145,82 @@ const megaMenus: Record<
               "Test strategy and automation that protects quality before launch.",
             href: solutionRoutes["QA Testing and Engineering"],
           },
+        ],
+      },
+      {
+        label: "Staff Augmentation",
+        eyebrow: "Add capability",
+        title: "Staff Augmentation",
+        description:
+          "For teams that need the right people added quickly, without turning hiring into the thing that slows the work down.",
+        href: serviceRoutes.staffAugmentation,
+        cards: [
           {
-            title: "Virtual Assistance / Business Administration",
+            title: "Virtual Assistants",
             description:
-              "Operational support for coordination, documentation, and follow-through.",
-            href: solutionRoutes["Virtual Assistance / Business Administration"],
+              "A lower-risk way to start: virtual assistants who support admin flow, coordination, documentation, and follow-through.",
+            href: solutionRoutes["Virtual Assistants / Business Administration"],
+          },
+          {
+            title: "Remote support",
+            description:
+              "Philippines-based professionals who can add steady capacity while staying aligned to your tools and priorities.",
+            href: serviceRoutes.staffAugmentation,
+          },
+          {
+            title: "Staff Augmentation",
+            description:
+              "Skilled professionals who integrate with your team and strengthen delivery capacity.",
+            href: serviceRoutes.staffAugmentation,
+          },
+          {
+            title: "Business support roles",
+            description:
+              "Reliable support for recurring work, process upkeep, and team coordination.",
+            href: serviceRoutes.staffAugmentation,
+          },
+          {
+            title: "Delivery capacity",
+            description:
+              "Flexible talent that helps overloaded teams keep important work moving.",
+            href: serviceRoutes.staffAugmentation,
           },
         ],
       },
-      ...[
-        "Full-Stack Development Team",
-        "Business Intelligence",
-        "Data Science",
-        "Data Engineering",
-        "Web / Desktop Application Development",
-        "Mobile Application Development",
-        "Machine Learning",
-        "Cloud Services",
-        "QA Testing and Engineering",
-        "Virtual Assistance / Business Administration",
-      ].map((title) => ({
-        label: title,
-        title,
+      {
+        label: "Executive Advisory Consulting",
+        eyebrow: "Navigate the next move",
+        title: "Executive Advisory Consulting",
         description:
-          title === "Full-Stack Development Team"
-            ? "Bring product, design, engineering, data, and launch support together in one aligned delivery team."
-            : title === "Business Intelligence"
-              ? "Turn business information into clearer dashboards, reports, and decision-ready insight."
-              : title === "Data Science"
-                ? "Find patterns, forecasts, and opportunities hidden inside complex business activity."
-                : title === "Data Engineering"
-                  ? "Create dependable data pipelines and structures that support reporting, analytics, and automation."
-                  : title === "Web / Desktop Application Development"
-                    ? "Build operational applications that help teams work faster with fewer manual workarounds."
-                    : title === "Mobile Application Development"
-                      ? "Design connected mobile experiences for customers, teams, and field operations."
-                      : title === "Machine Learning"
-                        ? "Apply adaptive logic where prediction, personalization, or consistency can improve outcomes."
-                        : title === "Cloud Services"
-                          ? "Plan and manage cloud foundations that keep systems flexible, secure, and scalable."
-                          : title === "QA Testing and Engineering"
-                            ? "Protect launches with thoughtful testing, automation, and release confidence."
-                            : "Support administration, coordination, documentation, and follow-through that keeps work moving.",
-        href: solutionRoutes[title],
+          "For leaders who need sharper perspective, practical strategy, and trusted guidance before the business makes its next move.",
+        href: serviceRoutes.executiveAdvisoryConsulting,
         cards: [
           {
-            title: "Business fit",
+            title: "Executive Advisory Consulting",
             description:
-              "Designed around the workflow, audience, and outcome your team needs to support.",
-            href: solutionRoutes[title],
+              "Senior guidance for modernization, growth planning, operational change, and strategic decisions.",
+            href: serviceRoutes.executiveAdvisoryConsulting,
           },
           {
-            title: "Execution support",
+            title: "Strategic direction",
             description:
-              "Delivered with practical implementation discipline, clear ownership, and steady communication.",
-            href: solutionRoutes[title],
+              "Clarify priorities across people, systems, technology, and execution.",
+            href: serviceRoutes.executiveAdvisoryConsulting,
+          },
+          {
+            title: "Decision support",
+            description:
+              "Bring outside perspective to complex moves, risks, and transformation moments.",
+            href: serviceRoutes.executiveAdvisoryConsulting,
+          },
+          {
+            title: "Operating alignment",
+            description:
+              "Connect leadership goals with the teams, workflows, and systems needed to act.",
+            href: serviceRoutes.executiveAdvisoryConsulting,
           },
         ],
-      })),
+      },
     ],
   },
   Careers: {
@@ -342,31 +233,31 @@ const megaMenus: Record<
         title: "Open roles",
         description:
           "Explore future opportunities to build with Tidewrk across technology, data, operations, and delivery.",
-        href: "#contact",
+        href: "/contact",
         cards: [
           {
             title: "Join our talent network",
             description:
               "Connect with Tidewrk for future project, delivery, and operations opportunities.",
-            href: "#contact",
+            href: "/contact",
           },
           {
             title: "Software and data roles",
             description:
               "Work on product, engineering, analytics, and intelligent workflow initiatives.",
-            href: "#contact",
+            href: "/contact",
           },
           {
             title: "Business support roles",
             description:
               "Support clients through coordination, administration, process, and operational delivery.",
-            href: "#contact",
+            href: "/contact",
           },
           {
             title: "Remote-ready collaboration",
             description:
               "Help teams move work forward with clear communication and dependable execution.",
-            href: "#contact",
+            href: "/contact",
           },
         ],
       },
@@ -375,38 +266,38 @@ const megaMenus: Record<
   "About Us": {
     eyebrow: "Who Tidewrk is",
     title: "About Us",
-    href: "#about-us",
+    href: "/about-us",
     groups: [
       {
         label: "Company",
         title: "Company",
         description:
           "Tidewrk is built around forward motion: the people, systems, and execution support behind what businesses need to do next.",
-        href: "#contact",
+        href: "/about-us",
         cards: [
           {
-            title: "The current behind your next move",
+            title: "Company focus",
             description:
-              "Tidewrk helps businesses align talent, systems, and execution around what comes next.",
-            href: "#contact",
+              "Learn what Tidewrk does, what we value, and why we are built around forward motion.",
+            href: "/about-us",
           },
           {
             title: "Modern delivery partner",
             description:
               "We support software, data, operations, and advisory work with practical implementation focus.",
-            href: "#contact",
+            href: "/about-us",
           },
           {
             title: "People and systems together",
             description:
               "Our work connects skilled teams with the workflows and technology needed to move faster.",
-            href: "#contact",
+            href: "/about-us",
           },
           {
             title: "Start a conversation",
             description:
               "Tell us what you are building, improving, or scaling next.",
-            href: "#contact",
+            href: "/contact",
           },
         ],
       },
@@ -420,7 +311,7 @@ const isMegaMenuKey = (label: string): label is MegaMenuKey =>
 const getMegaMenuIcon = (title: string): LucideIcon => {
   if (title.includes("Software")) return Code2;
   if (title.includes("Staff") || title.includes("Talent")) return UsersRound;
-  if (title.includes("Offshoring") || title.includes("Global")) return Globe2;
+  if (title.includes("Remote")) return Globe2;
   if (title.includes("Executive") || title.includes("Strategic")) return Lightbulb;
   if (title.includes("Full-Stack") || title.includes("Product")) return Layers3;
   if (title.includes("Business Intelligence")) return BarChart3;
@@ -606,7 +497,7 @@ export function Navbar() {
           size="sm"
           className="hidden rounded-full border border-white/18 bg-white/10 pl-5 pr-4 text-white shadow-none backdrop-blur-md hover:bg-white/16 lg:inline-flex"
         >
-          <Link href="#contact">
+          <Link href="/contact">
             Contact Us
             <Mail className="h-4 w-4" />
           </Link>
@@ -695,7 +586,7 @@ export function Navbar() {
                           >
                             {group.label}
                           </Link>
-                          {group.cards.slice(0, 4).map((megaItem) => (
+                          {group.cards.map((megaItem) => (
                             <Link
                               className="block px-5 py-2 text-sm text-white/60 transition hover:text-white"
                               href={megaItem.href}
@@ -728,7 +619,7 @@ export function Navbar() {
             variant="secondary"
             className="mt-4 w-full rounded-full bg-white text-[#003f72] shadow-none hover:bg-[#f5f9fd]"
           >
-            <Link href="#contact" onClick={closeMenu}>
+            <Link href="/contact" onClick={closeMenu}>
               Contact Us
               <Mail className="h-4 w-4" />
             </Link>

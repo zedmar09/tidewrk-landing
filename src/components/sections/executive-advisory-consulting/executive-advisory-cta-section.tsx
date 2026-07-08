@@ -41,7 +41,7 @@ export function ExecutiveAdvisoryCtaSection() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 className="inline-flex h-14 items-center justify-center gap-2 bg-[#003466] px-8 text-lg font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#00284f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466]/40"
-                href="#contact"
+                href="/contact"
               >
                 Talk to Tidewrk
                 <ArrowRight className="size-5" aria-hidden="true" />

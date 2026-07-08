@@ -7,7 +7,7 @@ export default function VirtualAssistanceBusinessAdministrationPage() {
     <>
       <Navbar />
       <main>
-        <PlaceholderPageHero title="Virtual Assistance / Business Administration Page" eyebrow="Solution" />
+        <PlaceholderPageHero title="Virtual Assistants / Business Administration Page" eyebrow="Service" />
       </main>
       <Footer />
     </>

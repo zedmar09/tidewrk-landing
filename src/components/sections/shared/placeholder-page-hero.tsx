@@ -49,7 +49,7 @@ export function PlaceholderPageHero({
             </Link>
             <Link
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-semibold text-[#003f72] transition hover:bg-white/88"
-              href="/#contact"
+              href="/contact"
             >
               Talk to Tidewrk
               <ArrowRight className="size-4" aria-hidden="true" />

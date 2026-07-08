@@ -53,7 +53,7 @@ export function CallToAction1() {
         </p>
 
         <a
-          href="#contact"
+          href="/contact"
           className="relative z-10 mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[#003466] shadow-[0_18px_50px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/92 sm:w-auto sm:px-12"
         >
           Start a Conversation

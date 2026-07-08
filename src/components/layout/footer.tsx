@@ -14,7 +14,7 @@ const footerLinks = [
   { label: "Services", href: "/#services" },
   { label: "Solutions", href: "/#solutions" },
   { label: "Careers", href: "#careers" },
-  { label: "About Us", href: "#about-us" },
+  { label: "About Us", href: "/about-us" },
 ];
 
 const policyLinks = [
@@ -46,15 +46,19 @@ export function Footer() {
       />
 
       <div className="relative mx-auto max-w-[1800px] rounded-[1.1rem] bg-black/16 px-5 py-12 shadow-[0_34px_120px_rgba(0,0,0,0.18)] backdrop-blur-[2px] sm:px-8 sm:py-16 lg:px-14 lg:py-20">
-        <div className="mx-auto max-w-3xl py-8 text-center sm:py-10 lg:py-12">
-          <h2 className="text-balance text-[2rem] font-semibold leading-[1.06] tracking-normal text-white sm:text-5xl lg:text-[3.7rem]">
+        <Link
+          aria-label="Talk to Tidewrk about your next move"
+          className="group mx-auto block max-w-3xl py-8 text-center outline-none sm:py-10 lg:py-12"
+          href="/contact"
+        >
+          <h2 className="text-balance text-[2rem] font-semibold leading-[1.06] tracking-normal text-white transition group-hover:text-white/92 sm:text-5xl lg:text-[3.7rem]">
             Ready for your{" "}
             <span className="tidewrk-glow-text">next move</span>?{" "}
-            <span className="text-white/52">
-              Let&apos;s build the flow behind it.
+            <span className="text-white/52 transition group-hover:text-white/68">
+              Let&apos;s start the current behind it.
             </span>
           </h2>
-        </div>
+        </Link>
 
         <div className="mt-20 grid gap-10 lg:mt-24 lg:grid-cols-[1fr_auto] lg:items-end">
           <div className="max-w-md">

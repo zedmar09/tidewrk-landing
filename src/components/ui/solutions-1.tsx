@@ -64,7 +64,7 @@ const solutionRoutes: Record<string, string> = {
   "Machine Learning": "/machine-learning",
   "Cloud Services": "/cloud-services",
   "QA Testing and Engineering": "/qa-testing-and-engineering",
-  "Virtual Assistance / Business Administration": "/virtual-assistance-business-administration",
+  "Virtual Assistants / Business Administration": "/virtual-assistance-business-administration",
 };
 
 const solutions = [
@@ -157,16 +157,6 @@ const solutions = [
     icon: CheckCircle2,
     signal: "Quality guardrails",
     visual: "testing",
-  },
-  {
-    title: "Virtual Assistance / Business Administration",
-    label: "Operational support",
-    description:
-      "Support coordination, documentation, scheduling, follow-through, and the business details that keep work moving.",
-    href: solutionRoutes["Virtual Assistance / Business Administration"],
-    icon: Workflow,
-    signal: "Admin rhythm",
-    visual: "administration",
   },
 ];
 

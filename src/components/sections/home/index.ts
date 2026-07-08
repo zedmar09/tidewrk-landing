@@ -5,4 +5,5 @@ export { FeaturesSection } from "./features-section";
 export { HeroSection } from "./hero-section";
 export { SolutionsSection } from "./solutions-section";
 export { TestimonialsSection } from "./testimonials-section";
+export { WhereTidewrkFitsSection } from "./where-tidewrk-fits-section";
 export { WhyTidewrkSection } from "./why-tidewrk-section";

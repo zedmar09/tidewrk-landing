@@ -25,7 +25,7 @@ export function BusinessIntelligenceCtaSection() {
           <div className="mt-9 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <Link
               className="inline-flex h-14 w-full items-center justify-center gap-2 bg-[#003466] px-8 text-lg font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#00284f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003466]/40 sm:w-auto"
-              href="#contact"
+              href="/contact"
             >
               Talk to Tidewrk
               <ArrowRight className="size-5" aria-hidden="true" />

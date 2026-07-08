@@ -5,6 +5,7 @@ import {
   FeaturesSection,
   HeroSection,
   SolutionsSection,
+  WhereTidewrkFitsSection,
 } from "@/components/sections/home";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <FeaturesSection />
+        <WhereTidewrkFitsSection />
         <SolutionsSection />
         <AiWorkflowSection />
       </main>

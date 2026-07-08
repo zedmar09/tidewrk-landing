@@ -6,12 +6,12 @@ import type {
 
 export const heroContent: HeroContent = {
   eyebrow: "Strategic support for what comes next",
-  headline: "The current behind your next move.",
+  headline: "The current behind your work",
   description:
     "Strategic talent, smarter systems, and practical AI support built to keep your business moving.",
   primaryCta: {
     label: "Talk to Tidewrk",
-    href: "#contact",
+    href: "/contact",
   },
   secondaryCta: {
     label: "Explore Services",
@@ -28,12 +28,7 @@ export const whyTidewrkContent: WhyTidewrkContent = {
     {
       value: 70,
       suffix: "+",
-      label: "Years of Combined Experience",
-    },
-    {
-      value: 45,
-      suffix: "+",
-      label: "Completed Projects",
+      label: "Years of Combined Leadership Experience",
     },
     {
       value: 5,
@@ -43,7 +38,7 @@ export const whyTidewrkContent: WhyTidewrkContent = {
     {
       value: 100,
       suffix: "+",
-      label: "Technology & Business Experts",
+      label: "Team Members and Growing",
     },
   ],
 };

@@ -76,7 +76,7 @@ export function SoftwareDevelopmentHero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-base font-semibold text-[#003f72] transition duration-300 hover:-translate-y-0.5 hover:bg-white/90 sm:h-14 sm:px-8"
-              href="#contact"
+              href="/contact"
             >
               Talk to Tidewrk
               <Sparkles className="size-5" aria-hidden="true" />

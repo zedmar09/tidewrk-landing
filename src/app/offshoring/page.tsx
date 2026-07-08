@@ -2,12 +2,12 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { PlaceholderPageHero } from "@/components/sections/shared/placeholder-page-hero";
 
-export default function OffshoringPage() {
+export default function RemoteTeamSupportPage() {
   return (
     <>
       <Navbar />
       <main>
-        <PlaceholderPageHero title="Offshoring Page" eyebrow="Service" />
+        <PlaceholderPageHero title="Remote Team Support Page" eyebrow="Service" />
       </main>
       <Footer />
     </>

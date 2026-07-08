@@ -2,10 +2,6 @@ import type { NavigationItem } from "@/types";
 
 export const navigationItems: NavigationItem[] = [
   {
-    label: "Services",
-    href: "/#services",
-  },
-  {
     label: "Solutions",
     href: "/#solutions",
   },
@@ -15,6 +11,6 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     label: "About Us",
-    href: "#about-us",
+    href: "/about-us",
   },
 ];
